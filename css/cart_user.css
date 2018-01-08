@@ -1,0 +1,28 @@
+.cart-user {
+  -webkit-border-radius: 8px;
+          border-radius: 8px;
+  padding: 5px 0 5px 20px;
+  border: 2px solid #ddd; }
+
+.cart-user__flex-conteiner {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.cart-user__foto-users {
+  width: 30%; }
+
+.cart-user__foto-users img {
+  max-width: 100%; }
+
+.cart-user__header__fullName-users {
+  text-align: left;
+  font-size: 1.8em; }
+
+.cart-user__header__fullName-users p i {
+  font-size: 0.7em; }

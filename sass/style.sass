@@ -1,0 +1,142 @@
+$blue			: #050C42
+$lightBlue		: #0284A8
+$aqva			: #02BEC4
+$lightGrey		: #A9E8DC
+$white			: #E1F7E7
+
+$Main-color-blue		: $blue
+$Matn-color-lightBlue	: $lightBlue
+$Main-color-aqva		: $aqva
+$Main-color-lightGrey	: $lightGrey
+$Main-color-white		: $white
+
+$mq-mobile-portrait		: 320px !default
+$mq-mobile-landscape	: 480px !default
+$mq-tablet-portrait		: 768px !default
+$mq-tablet-landscape	: 1024px !default
+$mq-desktop				: 1382px !default
+
+
+    
+
+a
+	color: #000	
+a:link
+		color: #000
+a:visited
+		color: #000
+a:hover
+		color: #000
+
+body
+	height: 150vh
+
+.navbar-default
+	background-image: none
+	box-shadow: none
+	background-color: transparent
+	border: none
+
+	.nav 
+		@media (max-width: $mq-tablet-portrait)
+			padding-left: 25px
+			
+.navbar-collapse , .container-fluid
+	padding: 
+		left:  0
+.panel .panel-collapse
+	overflow: auto
+.myNav
+	li
+		overflow: hidden
+		z-index: 2
+		background: #fff
+		width: 13em
+		text-align: center
+		border:
+			bottom:  3px solid #999	
+			
+		a 
+			padding: 
+				top: 10px
+				bottom: 7px
+
+			font-size: 1.7em
+
+	li:nth-child(3)
+		border:
+			right: 1px solid #999
+
+		border-radius: 0 0 50px 0
+
+		box-shadow: 4px -1px 3px #999;
+
+		
+    
+.navbar-default
+	margin-bottom:  10%
+
+.container-fluid .navbar-default .collapse .navbar-nav .subbuttons 
+	position: relative
+	left: -15px
+	width: auto
+	z-index: 1
+
+	a
+		padding: 3px 5px 3px 20px;
+
+		font-size: 1em
+	
+
+.container-fluid .navbar-default .collapse .navbar-nav .subbuttons:last-child
+	border:
+		right: 1px solid #999
+
+	border-radius: 0 0 50px 0	
+
+.addBlack, .black	
+	transition: all
+	animation-duration: 1000ms
+	background: #000
+
+.dayGrid
+	cursor: not-allowed	
+
+.row1 .dayGrid 
+	cursor: cell
+
+
+.col-wrap-calendar
+	overflow-y: auto
+
+@media print 
+
+	.black
+
+		background: #000
+		-webkit-print-color-adjust: exact
+
+		print-color-adjust: exact
+
+	.no-print
+		display: none
+
+.lostMoney		
+	color: #F00
+
+.addMoney
+	color: #090
+.cbalink
+	display: none
+
+.fixed
+	position: fixed
+	z-index: 99999999999
+	right: 1%
+	bottom: 2%
+
+.nav-tabs
+	border-color: transparent
+
+.nav-tabs>li>a:hover
+	border-color: transparent

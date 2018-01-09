@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+var	urlServer 	=	'http://reporter.com/Reporter_Debian';
+
 	$('.trigger').click(function(){
 		$(this).next('.clickButton').trigger('click');
 	});
@@ -9,8 +12,8 @@ $(document).ready(function(){
 	$('a[href="#artist"],a[href="#reporter"],a[href="#coast"]').click(function(){
 		var url 		= document.location.href;
 		console.log('работает');
-		if ((url	==	'http://reporter.com/prduct_rep/app/page-tab.php')	===	false ) {
-	 		location = 'http://reporter.com/prduct_rep/app/page-tab.php';
+		if ((url	==	'' + urlServer + '/app/page-tab.php')	===	false ) {
+	 		location = '' + urlServer + '/app/page-tab.php';
 		 	}	
 		});
 });

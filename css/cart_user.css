@@ -2,7 +2,8 @@
   -webkit-border-radius: 8px;
           border-radius: 8px;
   padding: 5px 0 5px 20px;
-  border: 2px solid #ddd; }
+  border: 2px solid #ddd;
+  margin: 0 0 20px 0; }
 
 .cart-user__flex-conteiner {
   -webkit-box-pack: justify;

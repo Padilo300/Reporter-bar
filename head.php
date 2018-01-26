@@ -1,3 +1,7 @@
+<?php 
+session_start(); 
+
+?>
 <!DOCTYPE html>
 <html lang="ru">
   <head>
@@ -7,9 +11,15 @@
     <title>Репортер</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-  	<link rel="stylesheet" href="css/libs.min.css">
-
+    
+    <link rel="stylesheet" href="css/login.css"           >
+    <link rel="stylesheet" href="css/normalize.css"       >
+    <link rel="stylesheet" href="css/demo.css"            >
+    <link rel="stylesheet" href="css/component.css"       >
+    <link rel="stylesheet" href="css/buttonVictoria.css"  >
+    <link rel="stylesheet" href="css/bootstrap.css"       >
+  	<link rel="stylesheet" href="css/libs.min.css"        >
+    <script src="js/jquery-3.2.1.min.js"         ></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

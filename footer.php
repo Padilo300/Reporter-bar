@@ -1,4 +1,7 @@
-  <script src="js/jquery-3.2.1.min.js" 	></script>
+  
+  <script src="js/anime.min.js"				></script>
+  <script src="js/imagesloaded.pkgd.min.js"	></script>
+  <script src="js/main.js"					></script>
   <script src='js/bootstrap.min.js' 		></script>
   <script src='libs/R_rest.js' 				></script>
   <script src="libs/R_pab.js" 				></script>

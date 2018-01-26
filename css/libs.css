@@ -5,7 +5,11 @@
 @import 'font-awesome.min.css';
 @import 'style.css';
 @import 'cart_user.css';
+@import 'login.css';
+/*@import url('https://fonts.googleapis.com/css?family=El+Messiri:400,700&subset=cyrillic');*/
 /*----------------------------------стили календаря--------------------------------------*/
+
+
 #calendarMainWrap,#WrapR_pab,#WrapR_rest{
 	min-width: 920px;
 	width: 100%;

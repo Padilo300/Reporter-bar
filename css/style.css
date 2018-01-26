@@ -10,6 +10,9 @@ a:visited {
 a:hover {
   color: #000; }
 
+.text-black {
+  color: #000; }
+
 body {
   height: 150vh; }
 
@@ -47,9 +50,6 @@ body {
           border-radius: 0 0 50px 0;
   -webkit-box-shadow: 4px -1px 3px #999;
           box-shadow: 4px -1px 3px #999; }
-
-.navbar-default {
-  margin-bottom: 10%; }
 
 .container-fluid .navbar-default .collapse .navbar-nav .subbuttons {
   position: relative;
@@ -110,3 +110,99 @@ body {
 
 .nav-tabs > li > a:hover {
   border-color: transparent; }
+
+.form-style input {
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #000;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  font-style: italic; }
+
+.form-style input:focus {
+  border-color: #000;
+  border-bottom: 1px solid #000;
+  outline-offset: none;
+  outline: none; }
+
+.form-style input:active {
+  border-color: #000;
+  outline-offset: none;
+  border-bottom: 1px solid 	#000; }
+
+.form-style input::-webkit-input-placeholder {
+  color: 0, 0, 0 0.5; }
+
+.form-style input::-moz-placeholder {
+  color: 0, 0, 0 0.5; }
+
+.form-style input:-ms-input-placeholder {
+  color: 0, 0, 0 0.5; }
+
+.form-style input::-ms-input-placeholder {
+  color: 0, 0, 0 0.5; }
+
+.form-style input::placeholder {
+  color: 0, 0, 0 0.5; }
+
+.form-style input::-webkit-input-placeholder {
+  text-indent: 0px;
+  -webkit-transition: text-indent 0.3s ease;
+  -o-transition: text-indent 0.3s ease;
+  transition: text-indent 0.3s ease; }
+
+.form-style input::-moz-placeholder {
+  text-indent: 0px;
+  -webkit-transition: text-indent 0.3s ease;
+  -o-transition: text-indent 0.3s ease;
+  transition: text-indent 0.3s ease; }
+
+.form-style input:-ms-input-placeholder {
+  text-indent: 0px;
+  -webkit-transition: text-indent 0.3s ease;
+  -o-transition: text-indent 0.3s ease;
+  transition: text-indent 0.3s ease; }
+
+.form-style input::-ms-input-placeholder {
+  text-indent: 0px;
+  -webkit-transition: text-indent 0.3s ease;
+  -o-transition: text-indent 0.3s ease;
+  transition: text-indent 0.3s ease; }
+
+.form-style input::placeholder {
+  text-indent: 0px;
+  -webkit-transition: text-indent 0.3s ease;
+  -o-transition: text-indent 0.3s ease;
+  transition: text-indent 0.3s ease; }
+
+.form-style input:focus::-webkit-input-placeholder {
+  text-indent: 500px;
+  -webkit-transition: text-indent 0.3s ease;
+  -o-transition: text-indent 0.3s ease;
+  transition: text-indent 0.3s ease; }
+
+.form-style input:focus::-moz-placeholder {
+  text-indent: 500px;
+  -webkit-transition: text-indent 0.3s ease;
+  -o-transition: text-indent 0.3s ease;
+  transition: text-indent 0.3s ease; }
+
+.form-style input:focus:-ms-input-placeholder {
+  text-indent: 500px;
+  -webkit-transition: text-indent 0.3s ease;
+  -o-transition: text-indent 0.3s ease;
+  transition: text-indent 0.3s ease; }
+
+.form-style input:focus::-ms-input-placeholder {
+  text-indent: 500px;
+  -webkit-transition: text-indent 0.3s ease;
+  -o-transition: text-indent 0.3s ease;
+  transition: text-indent 0.3s ease; }
+
+.form-style input:focus::placeholder {
+  text-indent: 500px;
+  -webkit-transition: text-indent 0.3s ease;
+  -o-transition: text-indent 0.3s ease;
+  transition: text-indent 0.3s ease; }

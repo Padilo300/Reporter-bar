@@ -1577,3 +1577,20 @@
 .slideOutUp {
   animation-name: slideOutUp;
 }
+
+#ajax-conteiner{
+  animation-name: viewIn;
+  -webkit-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+@keyframes viewIn{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}

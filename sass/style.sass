@@ -22,11 +22,15 @@ $mq-desktop				: 1382px !default
 a
 	color: #000	
 a:link
-		color: #000
+	color: #000
 a:visited
-		color: #000
+	color: #000
 a:hover
-		color: #000
+	color: #000
+
+.text-black
+	color: #000
+
 
 body
 	height: 150vh
@@ -70,11 +74,6 @@ body
 		border-radius: 0 0 50px 0
 
 		box-shadow: 4px -1px 3px #999;
-
-		
-    
-.navbar-default
-	margin-bottom:  10%
 
 .container-fluid .navbar-default .collapse .navbar-nav .subbuttons 
 	position: relative
@@ -140,3 +139,34 @@ body
 
 .nav-tabs>li>a:hover
 	border-color: transparent
+
+.form-style
+		input
+			border: none
+			background: transparent
+			border-bottom: 1px solid #000
+			text-align: center
+			transition: all 0.3s ease-out
+			font-style: italic
+
+		input:focus
+			border-color  : #000
+			border-bottom : 1px solid #000
+			outline-offset: none
+			outline 	  : none
+			
+		input:active
+			border-color 	: 	#000
+			outline-offset 	: 	none
+			border-bottom 	: 1px solid 	#000
+		
+		input::placeholder
+			color: (0,0,0 0.5)
+
+		input::placeholder
+			text-indent: 0px   
+			transition: text-indent 0.3s ease
+
+		input:focus::placeholder
+			text-indent: 500px   
+			transition: text-indent 0.3s ease

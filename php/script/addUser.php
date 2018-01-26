@@ -29,21 +29,31 @@
                                     actual_address,
                                     day,
                                     mouth,
-                                    year) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)');
+                                    year,
+                                    bar_of_work_in_reporter,
+                                    cafe_schedule,
+                                    pab_schedule,
+                                    rest_schedule,
+                                    artist_schedule) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
                                 $addUser->execute(
                                     array(
-                                        htmlspecialchars($_POST['first_name'])      ,
-                                        htmlspecialchars($_POST['last_name'])       ,
-                                        htmlspecialchars($_POST['mobileNumber'])    ,
-                                        htmlspecialchars($_POST['email'])           ,
-                                        htmlspecialchars($_POST['place_of_work'])   ,
-                                        htmlspecialchars($_POST['contact_name'])    ,
-                                        htmlspecialchars($_POST['mobileNumber2'])   ,
-                                        htmlspecialchars($_POST['address_passport']),
-                                        htmlspecialchars($_POST['actual_address'])  ,
-                                        htmlspecialchars($_POST['day'])             ,
-                                        htmlspecialchars($_POST['mouth'])           ,
-                                        htmlspecialchars($_POST['year'])
+                                        htmlspecialchars($_POST['first_name'])              ,   
+                                        htmlspecialchars($_POST['last_name'])               ,   
+                                        htmlspecialchars($_POST['mobileNumber'])            ,   
+                                        htmlspecialchars($_POST['email'])                   ,   
+                                        htmlspecialchars($_POST['place_of_work'])           ,   
+                                        htmlspecialchars($_POST['contact_name'])            ,   
+                                        htmlspecialchars($_POST['mobileNumber2'])           ,   
+                                        htmlspecialchars($_POST['address_passport'])        ,   
+                                        htmlspecialchars($_POST['actual_address'])          ,   
+                                        htmlspecialchars($_POST['day'])                     ,   
+                                        htmlspecialchars($_POST['mouth'])                   ,   
+                                        htmlspecialchars($_POST['year'])                    ,   
+                                        htmlspecialchars($_POST['bar_of_work_in_reporter']) ,
+                                        htmlspecialchars($_POST['cafe_schedule'])           ,
+                                        htmlspecialchars($_POST['pab_schedule'])            ,
+                                        htmlspecialchars($_POST['rest_schedule'])           ,
+                                        htmlspecialchars($_POST['artist_schedule'])         ,
                                     )
                                 );
                                 echo "Форма отправленна, спасибо!";

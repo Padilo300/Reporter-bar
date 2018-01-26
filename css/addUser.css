@@ -1,0 +1,5 @@
+#formAddUser header > table > tbody > tr > th {
+  max-width: 300px; }
+
+#formAddUser .displayNone {
+  display: none; }

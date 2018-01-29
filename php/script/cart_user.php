@@ -1,8 +1,15 @@
+<?php $this->delete(); ?>
 <div class="col-lg-8 col-lg-offset-4 col-md-12 col-sm-12">
     <?php foreach ($users as $user): ?>
         <div class="cart-user">
           <div class="cart-user__header__fullName-users">
-              <p><a href="#"><?php echo $user['first_name'] .' '. $user['last_name'] ; ?></a> <i>24 года</i></p>
+              <p>
+                <a href="<?php echo $_SERVER['PHP_SELF'] ?>?user=<?php echo $user['id']?>" title="Перейти в анкету."><?php echo $user['first_name'] .' '. $user['last_name'] ; ?></a>
+                <i><?php echo 'Возраст '.$this->calculate_age("$user[year]-$user[mouth]-$user[day]");?></i>
+                <a href='?delete=<?php echo $user['id']?>' class="float-right delete" title="Удалить сотрудника!">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
+              </p>
             </div>
           <div class="cart-user__flex-conteiner">
           <div class="cart-user__foto-users">
@@ -29,7 +36,7 @@
               </tr>
               <tr>
                 <th><i class="fa fa-id-card-o" aria-hidden="true"></i> Дата рождения:</th>
-                <th>06.11.1994</th>
+                <th><?php echo $user['day'].'.'.$user['mouth'].'.'.$user['year']; ?></th>
               </tr>
               <tr>
                 <th><i class="fa fa-id-card-o" aria-hidden="true"></i> Адресс прописки:</th>
@@ -40,6 +47,7 @@
                 <th><?php echo $user['actual_address']; ?></th>
               </tr>
               <tr>
+                <th></th>
                 <th></th>
               </tr>
             </tbody>

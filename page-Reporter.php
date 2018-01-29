@@ -35,9 +35,9 @@
                                     
                                   </div>
                                   <div class="grid_days">
-                                    <div class="wrapDay">
+                                    <table class="wrapDay">
                                     
-                                    </div>
+                                    </table>
                                   </div>
                                 </div>    
                               </div>

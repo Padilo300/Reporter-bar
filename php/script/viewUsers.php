@@ -38,11 +38,34 @@ class viewUsers extends conectdb{
                         <br> - или скопируйте текст ошибки</div>';
 		}
 	}
+
 	public function imgSRC($adress){
 		$SRC = 'http://'.$_SERVER['SERVER_NAME'].'/img/foto-users/'.$adress;
 		echo $SRC;
 	}
 
+	function calculate_age($birthday) {
+      $birthday_timestamp = strtotime($birthday);
+      $age = date('Y') - date('Y', $birthday_timestamp);
+      if (date('md', $birthday_timestamp) > date('md')) {
+        $age--;
+      }
+      return $age;
+    }
+
+	function delete(){
+	  $id = null;
+	  if (!empty($_GET['delete'])) {
+	    $id = $_GET['delete'];
+	  }
+
+	    if (!empty($id)) {
+	    	$this->params[] = $id;
+	    	$this->query = $this->db->prepare('DELETE FROM users WHERE id = ?');
+	    	$this->query->execute($this->params);
+	    }
+
 	
+	}
 }
  ?>

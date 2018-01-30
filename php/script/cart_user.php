@@ -1,14 +1,41 @@
+
 <?php $this->delete(); ?>
 <div class="col-lg-8 col-lg-offset-4 col-md-12 col-sm-12">
     <?php foreach ($users as $user): ?>
+      <!--................ Модальное окно ..........-->
+      <div class="modal fade bs-example-modal-lg" id="<?php echo $user['id']?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <br>
+            <h2 class=" no-margin text-center text-danger">Вы точно намерены удалить сотрудника?</h4>
+              <br>
+            <p class="text-center">
+              Это действие нельзя будет отменить!
+              <br>
+              Вы удаляете сотрудника <i class="text-warning"><?php echo $user['first_name'] .' '. $user['last_name'] ; ?></i>.
+
+            </p>
+            <table  align="center" cellpadding="10">
+              <tr>
+                <td>
+                  <button  data-dismiss="modal" type="button" class="btn btn-success">Не удалять</button>
+                </td>
+                <td> &nbsp;</td>
+                <td>
+                  <a href='?delete=<?php echo $user['id']?>' class="btn btn-danger">Удалить!</a>
+                </td>
+              </tr>
+            </table>
+            <br>
+          </div>
+        </div>
+      </div>
+      <!--.................... Конец Модальное окно ..............-->
         <div class="cart-user">
           <div class="cart-user__header__fullName-users">
               <p>
                 <a href="<?php echo $_SERVER['PHP_SELF'] ?>?user=<?php echo $user['id']?>" title="Перейти в анкету."><?php echo $user['first_name'] .' '. $user['last_name'] ; ?></a>
                 <i><?php echo 'Возраст '.$this->calculate_age("$user[year]-$user[mouth]-$user[day]");?></i>
-                <a href='?delete=<?php echo $user['id']?>' class="float-right delete" title="Удалить сотрудника!">
-                  <i class="fa fa-times" aria-hidden="true"></i>
-                </a>
               </p>
             </div>
           <div class="cart-user__flex-conteiner">
@@ -23,7 +50,15 @@
                 <th><a href="#"><?php echo $user['place_of_work']; ?></a> <br> Кафе</th>
               </tr>
               <tr>
-                <th><i class="fa fa-phone" aria-hidden="true"></i> Номер телефона:</th>
+                <th>Ставка:</th>
+                <td><?php echo $user['money']; ?>грн</td>
+              </tr>
+              <tr>
+                <th>
+                  <i class="fa fa-phone" aria-hidden="true"></i> Номер телефона:
+                  <br>
+                   <i class="fa fa-phone" aria-hidden="true"></i>  <?php echo $user['contact_name']; ?>
+                </th>
                 <th>
                   <a href="tel"><?php echo $user['mobileNumber']; ?></a>
                     <br>
@@ -46,12 +81,41 @@
                 <th><i class="fa fa-map-marker" aria-hidden="true"></i> Фактический адресс проживания:</th>
                 <th><?php echo $user['actual_address']; ?></th>
               </tr>
+            </tbody>
+          </table>
+          <table class="social_b" >
+            <tbody>
               <tr>
-                <th></th>
-                <th></th>
+                <td>
+                  <a href="">
+                    <img src="/img/social_b/vk.png"       class="max-w50px" alt="vk">         
+                  </a>
+                </td>
+                <td>
+                  <a href="">
+                    <img src="/img/social_b/facebook.png" class="max-w50px" alt="facebook">   
+                  </a>
+                </td>
+                <td>
+                  <a href="">
+                    <img src="/img/social_b/skype.png"    class="max-w50px" alt="skype">      
+                  </a>
+                </td>
+                <td>
+                  <a href="">
+                    <img src="/img/social_b/twitter.png"  class="max-w50px" alt="twitter">    
+                  </a>
+                </td>
+                <td>
+                  <a href="">
+                    <img src="/img/social_b/pinterest.png" class="max-w50px" alt="pinterest">  
+                  </a>
+                </td>
               </tr>
             </tbody>
           </table>
+          <br>
+            <button class="btn btn-danger" data-toggle="modal" data-target="#<?php echo $user['id']?>" title="Навсегда удалить сотрудника из базы. ">Удалить сотрудника</button>
           </header>
         </div>
         </div>

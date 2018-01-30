@@ -16,6 +16,15 @@ a:hover {
 .float-right {
   float: right; }
 
+.text-align-right {
+  text-align: right; }
+
+.no-margin {
+  margin: 0 0 0 0; }
+
+.max-w50px {
+  max-width: 30px; }
+
 body {
   height: 150vh; }
 

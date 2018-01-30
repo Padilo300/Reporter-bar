@@ -25,12 +25,7 @@ class viewUsers extends conectdb{
 			for ($i=0; $row = $this->query->fetch(); $i++) { 
 				$users[] = $row;
 			}
-			for ($i=0,$num_dishes=count($users);/*кол-во элементов в массиве*/
-			 	 $i < $num_dishes;
-			 	 $i++) 
-			{ 
-				// echo $users[$i];
- 			}
+			
  			require_once 'cart_user.php';
 		} catch (PDOException $e) {
 			  echo '<div class=\'error\'>Произошла ошибка при подключении к базе ебаной, PDO говорит что:<p class=\'sqlerror\'>'.$e.'</p><br>Если Вы видите это сообщение, пожалуста немедленно сообщите адинистратору, или вашему программисту. 
@@ -44,7 +39,7 @@ class viewUsers extends conectdb{
 		echo $SRC;
 	}
 
-	function calculate_age($birthday) {
+	public function calculate_age($birthday) {
       $birthday_timestamp = strtotime($birthday);
       $age = date('Y') - date('Y', $birthday_timestamp);
       if (date('md', $birthday_timestamp) > date('md')) {
@@ -53,19 +48,33 @@ class viewUsers extends conectdb{
       return $age;
     }
 
-	function delete(){
+	public function delete(){
 	  $id = null;
 	  if (!empty($_GET['delete'])) {
 	    $id = $_GET['delete'];
 	  }
-
 	    if (!empty($id)) {
 	    	$this->params[] = $id;
 	    	$this->query = $this->db->prepare('DELETE FROM users WHERE id = ?');
 	    	$this->query->execute($this->params);
 	    }
+	}
 
-	
+	public function userNameCafe($point,$workPoint)
+	{
+		try {
+			$this->query = $this->db->prepare("SELECT * FROM users WHERE $point = ?");
+	    	$this->query->execute(array($workPoint));//отпрвили запрос
+			$workPoint = null;
+		} catch (PDOException $e) {
+			echo '<div class=\'error\'>Произошла ошибка при подключении к базе ебаной, PDO говорит что:<p class=\'sqlerror\'>'.$e.'</p><br>Если Вы видите это сообщение, пожалуста немедленно сообщите адинистратору, или вашему программисту. 
+                        <br> - сделайте скриншот ошибки
+                        <br> - или скопируйте текст ошибки</div>';
+		}
+    	for ($i=0; $row = $this->query->fetch(); $i++) { 
+				$users[] = $row;
+			}	
+     	echo $users[0]['last_name'].' '.$users[0]['first_name'];
 	}
 }
  ?>

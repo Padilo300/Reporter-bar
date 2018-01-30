@@ -34,7 +34,9 @@
                                     cafe_schedule,
                                     pab_schedule,
                                     rest_schedule,
-                                    artist_schedule) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
+                                    artist_schedule,
+                                    money,
+                                    admin) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
                                 $addUser->execute(
                                     array(
                                         htmlspecialchars($_POST['first_name'])              ,   
@@ -54,6 +56,9 @@
                                         htmlspecialchars($_POST['pab_schedule'])            ,
                                         htmlspecialchars($_POST['rest_schedule'])           ,
                                         htmlspecialchars($_POST['artist_schedule'])         ,
+                                        htmlspecialchars($_POST['money'])                   ,
+                                        htmlspecialchars($_POST['admin-rights'])            ,
+
                                     )
                                 );
                                 echo "Форма отправленна, спасибо!";

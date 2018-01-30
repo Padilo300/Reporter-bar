@@ -15,19 +15,23 @@ require_once 'connect_db.php';
 				{
 					if (!empty($get_email) && !empty($get_password) ) 
 					{
-						$query		=	$this->db->prepare("SELECT first_name,password FROM users WHERE email = ?");
+						$query		=	$this->db->prepare("SELECT * FROM users WHERE email = ?");
 						try 
 						{
 							$query->execute(array($get_email));
 							$row 		= $query->fetch();
 							$password 	= $row['password'];
-							$userName	= $row['first_name'];
+							$first_name	= $row['first_name'];
 
-							if (!empty($get_password) && !empty($userName)) {
+							if (!empty($get_password) && !empty($first_name)) {
 								# code...
 							}
 							if (password_verify($get_password, $password)) {
-								$_SESSION['nameUser']= $userName;
+								$_SESSION['nameUser'] 	= 	$first_name			;
+								$_SESSION['first_name']	=	$row['first_name'] 	;
+								$_SESSION['last_name']	=	$row['last_name']	;
+								$_SESSION['admin']		=	$row['admin']		;
+								$_SESSION['id']			=	$row['id']			;
 						 	    header("Location: index.php");
 							} else {
 							    return false;

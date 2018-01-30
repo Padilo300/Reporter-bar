@@ -1,6 +1,6 @@
 <div class="panel panel-primary ">
                   <div class="panel-body text-center">
-                    Падило Константин
+                    <?php echo  $_SESSION['first_name'].' '.$_SESSION['last_name'] ?>
                   </div>
                   <div class="panel-footer">
                     <ul class="list-group">

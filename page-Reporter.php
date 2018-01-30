@@ -1,3 +1,23 @@
+<?php 
+  require_once 'php/script/viewUsers.php'; 
+  $viewUsers = new viewUsers;
+
+  $cafe         = 'cafe_schedule' ;
+  $pab          = 'pab_schedule'  ;
+  $rest         = 'rest_schedule' ;
+
+  $Barmen1      = 'бармен1'       ;
+  $Barmen2      = 'бармен2'       ;
+  $Barmen3      = 'бармен3'       ;
+  $Barmen4      = 'бармен4'       ;
+  $Barmen5      = 'бармен5'       ;
+  $Barmen6      = 'бармен6'       ;
+
+  $cafeCAKE1    = 'кондитер1'     ;
+  $cafeCAKE2    = 'кондитер2'     ;
+  
+
+?>
 <div class="tab-pane active" id="reporter">
             <img src="img/shaker.png" width="100px"  alt="shaker" class="shake-slow fixed">
             <div class="panel-group" id="accordion">
@@ -28,10 +48,18 @@
                                   <div class="bartender" id="bar">
                                     <div class="name space">Кафе Репортер</div>
                                     <div class="name space"></div>
-                                    <div class="name"><p>Падило Константин</p></div>
-                                    <div class="name"><p>Попов Роман</p></div>
-                                    <div class="name"><p>Даценко Александр</p></div>
-                                    <div class="name"><p>Коваленко Александр</p></div>
+                                    <div class="name">
+                                      <p>
+                                       <?php $viewUsers->userNameCafe($cafe, $Barmen1);?>    
+                                      </p>
+                                    </div>
+                                    <div class="name">
+                                      <p>
+                                         <?php $viewUsers->userNameCafe($cafe,$cafeCAKE1);?>    
+                                      </p>
+                                    </div>
+                                    <div class="name"><p><?php $viewUsers->userNameCafe($cafe,$Barmen2);?></p></div>
+                                    <div class="name"><p><?php $viewUsers->userNameCafe($cafe,$cafeCAKE2);?>    </p></div>
                                     
                                   </div>
                                   <div class="grid_days">
@@ -71,11 +99,31 @@
                                 <div class="bartender" id="bar">
                                   <div class="name space">Паб Репортер</div>
                                   <div class="name space"></div>
-                                  <div class="name"><p>Ковальчук Алена</p></div>
-                                  <div class="name"><p>Червонящий Дмитрий</p></div>
-                                  <div class="name"><p>Билецкий Роман</p></div>
-                                  <div class="name"><p>Швец Денис</p></div>
-                                  <div class="name"><p>Дыхтенко Анатолий</p></div>
+                                  <div class="name">
+                                    <p>
+                                      <?php $viewUsers->userNameCafe($pab, $Barmen1);?>    
+                                    </p>
+                                  </div>
+                                  <div class="name">
+                                    <p>
+                                      <?php $viewUsers->userNameCafe($pab, $Barmen2);?>    
+                                    </p>
+                                  </div>
+                                  <div class="name">
+                                    <p>
+                                      <?php $viewUsers->userNameCafe($pab, $Barmen3);?>    
+                                    </p>
+                                  </div>
+                                  <div class="name">
+                                    <p>
+                                      <?php $viewUsers->userNameCafe($pab, $Barmen4);?>
+                                    </p>
+                                  </div>
+                                  <div class="name">
+                                    <p>
+                                      <?php $viewUsers->userNameCafe($pab, $Barmen5);?>
+                                    </p>
+                                  </div>
                                   
                                 </div>
                                 <div class="grid_days">
@@ -115,8 +163,16 @@
                                 <div class="bartender" id="bar">
                                   <div class="name space">Ресторан Репортер</div>
                                   <div class="name space"></div>
-                                  <div class="name"><p>Левкович Сергей</p></div>
-                                  <div class="name"><p>Дьяченко Стас</p></div>                              
+                                  <div class="name">
+                                    <p>
+                                      <?php $viewUsers->userNameCafe($rest, $Barmen1);?>
+                                    </p>
+                                  </div>
+                                  <div class="name">
+                                    <p>
+                                      <?php $viewUsers->userNameCafe($rest, $Barmen2);?>
+                                    </p>
+                                  </div>                              
                                 </div>
                                 <div class="grid_days">
                                   <div class="wrapDay">

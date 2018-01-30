@@ -1,4 +1,23 @@
-    <div class="col-lg-7  col-md-12 col-sm-12">
+<?php 
+  require_once 'viewUsers.php';  
+  $viewUsers = new viewUsers; 
+
+  $cafe         = 'cafe_schedule'   ;
+  $pab          = 'pab_schedule'    ;
+  $rest         = 'rest_schedule'   ;
+  $artist       = 'artist_schedule' ;
+
+  $Barmen1      = 'бармен1'       ;
+  $Barmen2      = 'бармен2'       ;
+  $Barmen3      = 'бармен3'       ;
+  $Barmen4      = 'бармен4'       ;
+  $Barmen5      = 'бармен5'       ;
+  $Barmen6      = 'бармен6'       ;
+
+  $cafeCAKE1    = 'кондитер1'     ;
+  $cafeCAKE2    = 'кондитер2'     ;
+?>
+    <div class="col-lg-8  col-md-12 col-sm-12">
         <form   method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" 
                 class="form-style" id="formAddUser" >
         <div class="cart-user">
@@ -43,10 +62,18 @@
                 <th>
                     <select name="cafe_schedule" >
                       <option selected disabled value="null">Сделайте выбор</option>
-                      <option value="кондитер1">Кондитер смена(1)</option>
-                      <option value="кондитер2">Кондитер смена(2)</option>
-                      <option value="бармен1">Бармен смена(1)</option>
-                      <option value="бармен2">Бармен смена(2)</option>
+                      <option value="кондитер1">
+                        Кондитер смена(1) <?php $viewUsers->userNameCafe($cafe, $cafeCAKE1);?>
+                      </option>
+                      <option value="кондитер2">
+                        Кондитер смена(2) <?php $viewUsers->userNameCafe($cafe, $cafeCAKE2);?>
+                      </option>
+                      <option value="бармен1">
+                        Бармен смена(1)   <?php $viewUsers->userNameCafe($cafe, $Barmen1);?>
+                      </option>
+                      <option value="бармен2">
+                        Бармен смена(2)   <?php $viewUsers->userNameCafe($cafe,$Barmen2);?>
+                      </option>
                     </select>
                 </th>
               </tr>
@@ -55,11 +82,21 @@
                 <th>
                     <select name="pab_schedule" >
                       <option selected disabled value="null">Сделайте выбор</option>
-                      <option value="бармен1">бармен1</option>
-                      <option value="бармен2">бармен2</option>
-                      <option value="бармен3">бармен3</option>
-                      <option value="бармен4">бармен4</option>
-                      <option value="бармен5">бармен5</option>
+                      <option value="бармен1">
+                        бармен1 <?php $viewUsers->userNameCafe($pab,$Barmen1);?>
+                      </option>
+                      <option value="бармен2">
+                        бармен2 <?php $viewUsers->userNameCafe($pab,$Barmen2);?>
+                      </option>
+                      <option value="бармен3">
+                        бармен3 <?php $viewUsers->userNameCafe($pab,$Barmen3);?>
+                      </option>
+                      <option value="бармен4">
+                        бармен4 <?php $viewUsers->userNameCafe($pab,$Barmen4);?> 
+                      </option>
+                      <option value="бармен5">
+                        бармен5 <?php $viewUsers->userNameCafe($pab,$Barmen5);?>
+                      </option>
                     </select>
                 </th>
               </tr>
@@ -68,12 +105,24 @@
                 <th>
                     <select name="artist_schedule" >
                       <option selected disabled value="null">Сделайте выбор</option>
-                      <option value="бармен1">бармен1</option>
-                      <option value="бармен2">бармен2</option>
-                      <option value="бармен3">бармен3</option>
-                      <option value="бармен4">бармен4</option>
-                      <option value="бармен5">бармен5</option>
-                      <option value="бармен6">бармен6</option>
+                      <option value="бармен1">
+                        бармен1 <?php $viewUsers->userNameCafe($artist,$Barmen1);?>
+                      </option>
+                      <option value="бармен2">
+                        бармен2 <?php $viewUsers->userNameCafe($artist,$Barmen2);?>
+                      </option>
+                      <option value="бармен3">
+                        бармен3 <?php $viewUsers->userNameCafe($artist,$Barmen3);?>
+                      </option>
+                      <option value="бармен4">
+                        бармен4 <?php $viewUsers->userNameCafe($artist,$Barmen4);?>
+                      </option>
+                      <option value="бармен5">
+                        бармен5 <?php $viewUsers->userNameCafe($artist,$Barmen5);?>
+                      </option>
+                      <option value="бармен6">
+                        бармен6 <?php $viewUsers->userNameCafe($artist,$Barmen6);?>
+                      </option>
                     </select>
                 </th>
               </tr>
@@ -96,35 +145,43 @@
                 <th>
                     <select name="rest_schedule" >
                       <option selected disabled value="null">Сделайте выбор</option>
-                      <option value="бармен1">бармен1</option>
-                      <option value="бармен2">бармен2</option>
+                      <option value="бармен1">
+                        бармен1 <?php $viewUsers->userNameCafe($rest,$Barmen1);?>
+                      </option>
+                      <option value="бармен2">
+                        бармен2 <?php $viewUsers->userNameCafe($rest,$Barmen2);?>
+                      </option>
                     </select>
                 </th>
               </tr>
               <tr>
+                <th><i class="fa fa-money" aria-hidden="true"></i> Ставка</th>
+                <td><input type="number" name="money" placeholder="10000" title="Вводить только цифры."></td>
+              </tr>
+              <tr>
                 <th><i class="fa fa-phone" aria-hidden="true"></i> Номер телефона:</th>
                 <th>
-                    <input type="text" name="mobileNumber" placeholder="Основной номер">
+                    <input type="text" name="mobileNumber" placeholder="Основной номер" title="Основной мобильный номер, по которому можно связаться с сотрудником.">
                     <br>
                 </th>
                 <tr>
                     <th>
-                        <input type="text" name="contact_name" placeholder="Имя контакта(жена,мать)">
+                       <i class="fa fa-address-book-o" aria-hidden="true"></i> <input type="text" name="contact_name" placeholder="Имя контакта(жена,мать)" title="Имя родственника, или близкого человека, через которого всегда можно связаться с сотрудником."  >
                     </th>
                     <th>
-                        <input type="text" name="mobileNumber2" placeholder="Дополнительный номер">
+                        <input type="text" name="mobileNumber2" placeholder="Дополнительный номер" title="Номер родственника, или близкого человека, через которого всегда можно связаться с сотрудником.">
                     </th>
                 </tr>
               </tr>
               <tr>
                 <th><i class="fa fa-at" aria-hidden="true"></i> Почта:</th>
-                <th><input type="email" name="email" required placeholder="email@gmail.com"></th>
+                <th><input type="email" name="email" required placeholder="email@gmail.com" title="Электронная почта сотрудникика."></th>
               </tr>
               <tr>
                 <th><i class="fa fa-id-card-o" aria-hidden="true"></i> Дата рождения:</th>
                 <th>
-                    <input type="number" name="day"   placeholder="день">
-                    <select name="mouth" id="" required>
+                    <input type="number" name="day"   placeholder="день" title="Выберите число месяца когда родился сотрудник.">
+                    <select name="mouth" id="" required title="Выберите месяц в который родился сотрудник.">
                         <option disabled>Выберите месяц рождения</option>
                         <option value="1">январь</option>
                         <option value="2">февраль</option>
@@ -139,12 +196,16 @@
                         <option value="11">ноябрь</option>
                         <option value="12">декабрь</option>
                     </select> 
-                    <input type="number" name="year"  placeholder="год">
+                    <input type="number" name="year"  placeholder="год" title="Введите год, когда родился сотрудник.">
                 </th>
               </tr>
               <tr>
-                <th><i class="fa fa-id-card-o" aria-hidden="true"></i> Адресс прописки:</th>
-                <th> <input type="text" name="address_passport" placeholder="пр.Пушкина 13"l> </th>
+                <th>
+                  <i class="fa fa-id-card-o" aria-hidden="true"></i> Адресс прописки:
+                </th>
+                <th> 
+                  <input type="text" name="address_passport" placeholder="пр.Пушкина 13" title="Введите адрес сотрудника, который указан у него в паспорте."> 
+                </th>
               </tr>
               <tr>
                 <th>
@@ -152,7 +213,21 @@
                     Фактический адресс проживания:
                 </th>
                 <th>
-                    <input type="text" name="actual_address" placeholder="ул.Баррикадная 2">
+                    <input type="text" name="actual_address" placeholder="ул.Баррикадная 2" title="Введите фактический адрес проживания сотрудника. ">
+                </th>
+              </tr>
+              <tr>
+                <th>Дать привелегии админстратора:</th>
+                <th>
+                  <label for="adminYES">
+                    <input type="radio" name="admin-rights" value="true" id="adminYES">
+                    Да
+                  </label>
+                  <br>
+                  <label for="adminNO">
+                    <input type="radio" name="admin-rights" value="false" id="adminNO">
+                    Нет
+                  </label>
                 </th>
               </tr>
               <tr>
@@ -213,3 +288,4 @@
           }
         }
       </script>
+

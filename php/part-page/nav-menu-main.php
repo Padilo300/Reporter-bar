@@ -34,10 +34,11 @@
                   </ul>
                 </li> -->
                 <li><a href="#coast">Coast</a></li>
-                <li class="subbuttons"><a data-toggle="tab" href="#">Информация</a></li>
+                <li class="subbuttons">
+                  <a  href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/page-info.php">Информация</a></li>
                   <li class="subbuttons"><a   href="page-db_people.php">База сотрудников</a></li>
-                  <li class="subbuttons"><a data-toggle="tab"  href="#">Для новичков</a></li>
-                  <li class="subbuttons"><a data-toggle="tab"  href="#">Новости<sup style='color: green; font-weight: bold;'>+3</sup></a></li>
+                  <li class="subbuttons"><a   href="#">Для новичков</a></li>
+                  <li class="subbuttons"><a   href="#">Новости<sup style='color: green; font-weight: bold;'>+3</sup></a></li>
               </ul>
               <!-- <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
@@ -48,11 +49,17 @@
               <ul class="nav navbar-nav navbar-right">
                 <!-- <li><a href="#">Ссылка</a></li> -->
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-cog fa-spin" aria-hidden="true"></i> Eще <b class="caret"></b>
+                  </a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Действие</a></li>
-                    <li><a href="page-Admin.php">Кабинет Администратора</a></li>
-                    <li><a href="#">Что-то еще</a></li>
+                    <?php 
+                      if ($_SESSION['admin'] == 'true') {
+                       echo "<li><a href='page-Admin.php'>Кабинет Администратора</a></li>";  
+                      }else{
+                        echo "<li><a href='#'>Моя анкета</a></li>";
+                      }
+                     ?>
                     <li class="divider"></li>
                     <li><a href="page-exit.php">Выход</a></li>
                   </ul>
@@ -60,5 +67,5 @@
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
-          <?php echo "Добрый вечер " . $_SESSION['nameUser'] . "<br> Вы посетили эту страницу $_SESSION[count] раз"; ?>
+          <?php echo "Добрый вечер " . $_SESSION['first_name'] . "<br> Вы посетили эту страницу $_SESSION[count] раз"; ?>
         </nav>

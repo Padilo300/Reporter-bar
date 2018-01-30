@@ -1,7 +1,7 @@
 .cart-user {
   -webkit-border-radius: 8px;
           border-radius: 8px;
-  padding: 5px 0 5px 20px;
+  padding: 5px 0 15px 20px;
   border: 2px solid #ddd;
   margin: 0 0 20px 0; }
 
@@ -24,10 +24,22 @@
 .cart-user__header__fullName-users {
   text-align: left;
   font-size: 1.8em; }
-  .cart-user__header__fullName-users a.delete {
-    padding-right: 10px; }
-    .cart-user__header__fullName-users a.delete i {
-      color: #bf0d0d; }
 
 .cart-user__header__fullName-users p i {
   font-size: 0.7em; }
+
+a.delete {
+  padding-right: 10px;
+  color: #bf0d0d;
+  text-decoration: none; }
+  a.delete i {
+    color: #bf0d0d;
+    font-size: 1.5em; }
+
+.modal-dialog {
+  font-size: 1.2em; }
+  .modal-dialog a {
+    color: #fff; }
+
+.social_b > tbody > tr > td {
+  padding: 0 5px; }

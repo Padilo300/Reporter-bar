@@ -34,6 +34,26 @@ class viewUsers extends conectdb{
 		}
 	}
 
+	public function viewThisUsers(){
+		try {
+			//строка запроса SQL
+			$this->querySTR 	=	'SELECT * FROM users WHERE id = ?';
+			//подготовить запрос SQL 
+			$this->query = $this->db->prepare($this->querySTR);
+			//отправить запрос
+			$this->query->execute(array($_SESSION['id']));
+			for ($i=0; $row = $this->query->fetch(); $i++) { 
+				$users[] = $row;
+			}
+			
+ 			require_once 'cart_user.php';
+		} catch (PDOException $e) {
+			  echo '<div class=\'error\'>Произошла ошибка при подключении к базе ебаной, PDO говорит что:<p class=\'sqlerror\'>'.$e.'</p><br>Если Вы видите это сообщение, пожалуста немедленно сообщите адинистратору, или вашему программисту. 
+                        <br> - сделайте скриншот ошибки
+                        <br> - или скопируйте текст ошибки</div>';
+		}
+	}
+
 	public function imgSRC($adress){
 		$SRC = 'http://'.$_SERVER['SERVER_NAME'].'/img/foto-users/'.$adress;
 		echo $SRC;

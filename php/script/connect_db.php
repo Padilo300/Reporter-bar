@@ -19,7 +19,7 @@ class conectdb{
 		try {
 			$this->db 	=	new PDO("mysql:host=$this->dbserver;dbname=$this->database", $this->dbUserName, $this->dbPassword);
 			$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		} catch (Exception $e) {
+		} catch (PDOException $e) {
 			   echo '<div class=\'error\'>Произошла ошибка при подключении к базе ебаной, PDO говорит что:<p class=\'sqlerror\'>'.$e.'</p><br>Если Вы видите это сообщение, пожалуста немедленно сообщите адинистратору, или вашему программисту. 
                         <br> - сделайте скриншот ошибки
                         <br> - или скопируйте текст ошибки</div>';

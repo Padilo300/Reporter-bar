@@ -1,6 +1,13 @@
 
-<?php $this->delete(); ?>
-<div class="col-lg-8 col-lg-offset-4 col-md-12 col-sm-12">
+<?php 
+  $this->delete(); 
+  function positioning_of_the_bar()
+  {
+    if ($_SERVER['PHP_SELF'] !== '/page-editUser.php') { echo "col-lg-offset-4";}
+  }
+  
+?>
+<div class="col-lg-8 <?php positioning_of_the_bar(); ?>  col-md-12 col-sm-12">
     <?php foreach ($users as $user): ?>
       <!--................ Модальное окно ..........-->
       <div class="modal fade bs-example-modal-lg" id="<?php echo $user['id']?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -49,10 +56,14 @@
                 <th>Работает в:</th>
                 <th><a href="#"><?php echo $user['place_of_work']; ?></a> <br> Кафе</th>
               </tr>
-              <tr>
-                <th>Ставка:</th>
-                <td><?php echo $user['money']; ?>грн</td>
-              </tr>
+              <?php 
+                if ($_SESSION['admin'] == 'true' || ($_SESSION['id'] == $user['id'])) {
+                echo "<tr>
+                      <th>Ставка:</th>
+                      <td>$user[money] грн</td>
+                      </tr>"  ;
+               }
+              ?>
               <tr>
                 <th>
                   <i class="fa fa-phone" aria-hidden="true"></i> Номер телефона:
@@ -60,9 +71,11 @@
                    <i class="fa fa-phone" aria-hidden="true"></i>  <?php echo $user['contact_name']; ?>
                 </th>
                 <th>
-                  <a href="tel"><?php echo $user['mobileNumber']; ?></a>
+                  <a href="tel:<?php echo $user['mobileNumber']; ?>">
+                    <?php echo $user['mobileNumber']; ?></a>
                     <br>
-                  <a href="tel"><?php echo $user['mobileNumber2']; ?></a>
+                  <a href="tel:<?php echo $user['mobileNumber2']; ?>">
+                    <?php echo $user['mobileNumber2']; ?></a>
                 </th>
               </tr>
               <tr>
@@ -73,14 +86,19 @@
                 <th><i class="fa fa-id-card-o" aria-hidden="true"></i> Дата рождения:</th>
                 <th><?php echo $user['day'].'.'.$user['mouth'].'.'.$user['year']; ?></th>
               </tr>
-              <tr>
-                <th><i class="fa fa-id-card-o" aria-hidden="true"></i> Адресс прописки:</th>
-                <th><?php echo $user['address_passport']; ?></th>
-              </tr>
-              <tr>
-                <th><i class="fa fa-map-marker" aria-hidden="true"></i> Фактический адресс проживания:</th>
-                <th><?php echo $user['actual_address']; ?></th>
-              </tr>
+              <?php 
+                if ($_SESSION['admin'] == 'true') {
+                  echo "<tr>
+                  <th><i class=\"fa fa-id-card-o\" aria-hidden=\"true\"></i> Адресс прописки:</th>
+                  <th>$user[address_passport]</th>
+                </tr>
+                <tr>
+                  <th><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i> Фактический адресс проживания:</th>
+                  <th>$user[actual_address]</th>
+                </tr>";
+               }
+              ?>
+              
             </tbody>
           </table>
           <table class="social_b" >
@@ -115,7 +133,11 @@
             </tbody>
           </table>
           <br>
-            <button class="btn btn-danger" data-toggle="modal" data-target="#<?php echo $user['id']?>" title="Навсегда удалить сотрудника из базы. ">Удалить сотрудника</button>
+          <?php 
+            if ($_SESSION['admin'] == 'true' && $_SESSION['id'] !== $user['id']) {
+              echo "<button class='btn btn-danger' data-toggle='modal' data-target='#$user[id]' title='Навсегда удалить сотрудника из базы. '>Удалить сотрудника</button>" ;
+           }
+          ?>
           </header>
         </div>
         </div>

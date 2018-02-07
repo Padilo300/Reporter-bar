@@ -184,320 +184,290 @@ $( document ).ready(function() {
 
 	/*-------------------------------------------выбор следующего месяца----------------------------------------------------*/
     $("#WrapR_pab #nextMonth").click(function(e){
-    	
-    	if (Month==12) {
-    		Year++
-    		Month = 0;
-    	}//eсли наступил довый год то добавить год и перейти на январь
+        
+        if (Month==12) {
+            Year++
+            Month = 0;
+        }//eсли наступил довый год то добавить год и перейти на январь
 
-    	var preLastArr 					= 	$('body #WrapR_pab .row1 .dayGrid'); //узнаем сколько элементов есть
-		var preLastElementL2			=	preLastArr[preLastArr.length-2];//выберем предпоследний HTML элемент
-		var preLastElementL3			=	preLastArr[preLastArr.length-3];//выберем третий с конца HTML элемент
-		var preLastElementL4			=	preLastArr[preLastArr.length-4];//выберем четвертый с конца HTML элемент
+        var preLastArr                  =   $('body #WrapR_pab .row1 .dayGrid'); //узнаем сколько элементов есть
+        var preLastElementL2            =   preLastArr[preLastArr.length-2];//выберем предпоследний HTML элемент
+        var preLastElementL3            =   preLastArr[preLastArr.length-3];//выберем третий с конца HTML элемент
+        var preLastElementL4            =   preLastArr[preLastArr.length-4];//выберем четвертый с конца HTML элемент
 
-		var preLastArr2 				= 	$('body #WrapR_pab .row2 .dayGrid'); //узнаем сколько элементов есть
-		var preLastElement2				=	preLastArr2[preLastArr2.length-2];//выберем предпоследний HTML элемент
+        var preLastArr2                 =   $('body #WrapR_pab .row2 .dayGrid'); //узнаем сколько элементов есть
+        var preLastElement2             =   preLastArr2[preLastArr2.length-2];//выберем предпоследний HTML элемент
 
-		var preLastArr3	 				= 	$('body #WrapR_pab .row3 .dayGrid'); //узнаем сколько элементов есть
-		var preLastElement3				=	preLastArr3[preLastArr3.length-2];//выберем предпоследний HTML элемент
+        var preLastArr3                 =   $('body #WrapR_pab .row3 .dayGrid'); //узнаем сколько элементов есть
+        var preLastElement3             =   preLastArr3[preLastArr3.length-2];//выберем предпоследний HTML элемент
 
-		var preLastArr4 				= 	$('body #WrapR_pab .row4 .dayGrid'); //узнаем сколько элементов есть
-		var preLastElement4				=	preLastArr4[preLastArr4.length-2];//выберем предпоследний HTML элемент
+        var preLastArr4                 =   $('body #WrapR_pab .row4 .dayGrid'); //узнаем сколько элементов есть
+        var preLastElement4             =   preLastArr4[preLastArr4.length-2];//выберем предпоследний HTML элемент
 
-		/*------------------------------------условия для работы графика --------------------------------------------------------*/
+        /*------------------------------------условия для работы графика --------------------------------------------------------*/
 
-        switch (1) {            
-            case 
-                $('body #WrapR_pab .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
-                $(preLastElementL2).hasClass('black')=== false &&
-                $(preLastElementL3).hasClass('black')=== false &&
-                $(preLastElementL4).hasClass('black')=== false:
-                    scoreR1 = 4;
-                    break;
-
-            case
-                $('body #WrapR_pab .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
-                $(preLastElementL2).hasClass('black')=== false &&
-                $(preLastElementL3).hasClass('black')=== false &&
-                $(preLastElementL4).hasClass('black')=== true:
-                    scoreR1 = 3;
-                    break;
-
-            case
-                $('body #WrapR_pab .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
-                $(preLastElementL2).hasClass('black')=== false &&
-                $(preLastElementL3).hasClass('black')=== true &&
-                $(preLastElementL4).hasClass('black')=== true:
-                    scoreR1 = 2;
-                    break;
-            case
-                $('body #WrapR_pab .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
-                $(preLastElementL2).hasClass('black')=== true &&
-                $(preLastElementL3).hasClass('black')=== true &&
-                $(preLastElementL4).hasClass('black')=== true:
-                    scoreR1 = 1;
-                    break;
-
-        }
-    	
-    	/*------------------------------------end row1--------------------------------------------*/
-
-        switch (2){
-            case
-                $('body #WrapR_pab  .collum:last-child .row2 .dayGrid').hasClass('black')=== false  &&  
-                $(preLastElement2).hasClass('black')=== false:
-                    scoreR2 = 2;
-                    break;
-            case    
-                $('body #WrapR_pab  .collum:last-child .row2 .dayGrid').hasClass('black')=== true   &&  
-                $(preLastElement2).hasClass('balck')=== false:
-                    scoreR2 = 3;
-                    break;
-
-            case
-                $('body #WrapR_pab  .collum:last-child .row2 .dayGrid').hasClass('black')=== true   &&  
-                $(preLastElement2).hasClass('black')=== true:
-                    scoreR2 = 0;
-                    break;
-
-            case
-                $('body #WrapR_pab .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
-                $(preLastElement2).hasClass('black')=== true:
-                    scoreR2 = 1;
-                    break;
-
+        if ($('body #WrapR_pab .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElementL2).hasClass('black')=== false &&
+            $(preLastElementL3).hasClass('black')=== false &&
+            $(preLastElementL4).hasClass('black')=== false)
+             {
+            scoreR1 = 4;
         }
 
-    	/*------------------------------------end row2--------------------------------------------*/
-
-        switch (3){
-            case
-                $('body #WrapR_pab  .collum:last-child .row2 .dayGrid').hasClass('black')=== false  &&  
-                $(preLastElement2).hasClass('black')=== false:
-                    scoreR3 = 2;
-                    break;
-            case    
-                $('body #WrapR_pab  .collum:last-child .row2 .dayGrid').hasClass('black')=== true   &&  
-                $(preLastElement2).hasClass('balck')=== false:
-                    scoreR3 = 3;
-                    break;
-
-            case
-                $('body #WrapR_pab  .collum:last-child .row2 .dayGrid').hasClass('black')=== true   &&  
-                $(preLastElement2).hasClass('black')=== true:
-                    scoreR3 = 0;
-                    break;
-
-            case
-                $('body #WrapR_pab .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
-                $(preLastElement2).hasClass('black')=== true:
-                    scoreR3 = 1;
-                    break;
-
+        if ($('body #WrapR_pab .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElementL2).hasClass('black')=== false &&
+            $(preLastElementL3).hasClass('black')=== false &&
+            $(preLastElementL4).hasClass('black')=== true)
+             {
+            scoreR1 = 3;
         }
 
-    	/*------------------------------------end row3--------------------------------------------*/
-
-        switch (4){
-            case
-                $('body #WrapR_pab  .collum:last-child .row4 .dayGrid').hasClass('black')=== false  &&  
-                $(preLastElement2).hasClass('black')=== false:
-                    scoreR4 = 2;
-                    break;
-            case    
-                $('body #WrapR_pab  .collum:last-child .row4 .dayGrid').hasClass('black')=== true   &&  
-                $(preLastElement2).hasClass('balck')=== false:
-                    scoreR4 = 3;
-                    break;
-
-            case
-                $('body #WrapR_pab  .collum:last-child .row4 .dayGrid').hasClass('black')=== true   &&  
-                $(preLastElement2).hasClass('black')=== true:
-                    scoreR4 = 0;
-                    break;
-
-            case
-                $('body #WrapR_pab .collum:last-child .row4 .dayGrid').hasClass('black')=== false   &&  
-                $(preLastElement2).hasClass('black')=== true:
-                    scoreR4 = 1;
-                    break;
-
+        if ($('body #WrapR_pab .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElementL2).hasClass('black')=== false &&
+            $(preLastElementL3).hasClass('black')=== true &&
+            $(preLastElementL4).hasClass('black')=== true)
+             {
+            scoreR1 = 2;
         }
 
-    	/*------------------------------------end row4--------------------------------------------*/
+        if ($('body #WrapR_pab .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElementL2).hasClass('black')=== true &&
+            $(preLastElementL3).hasClass('black')=== true &&
+            $(preLastElementL4).hasClass('black')=== true)
+             {
+            scoreR1 = 1;
+        }
+        
+        /*------------------------------------end row1--------------------------------------------*/
 
 
-    	e.preventDefault();//отмеа перехода
-    	Month++; // переход на следующий месяц
-    	$('#WrapR_pab .month p').text(nameMonth[Month-1]);//Печать названия нового месяца
+        if ($('body #WrapR_pab  .collum:last-child .row2 .dayGrid').hasClass('black')=== false  &&  
+            $(preLastElement2).hasClass('black')=== false) {
+            scoreR2 = 2;
+        }
+        if ($('body #WrapR_pab  .collum:last-child .row2 .dayGrid').hasClass('black')=== true   &&  
+            $(preLastElement2).hasClass('balck')=== false) {
+            scoreR2 = 3;
+        }
+        if ($('body #WrapR_pab  .collum:last-child .row2 .dayGrid').hasClass('black')=== true   &&  
+            $(preLastElement2).hasClass('black')=== true) {
+            scoreR2 = 0;
+        }
+        if ($('body #WrapR_pab .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElement2).hasClass('black')=== true) {
+            scoreR2 = 1;
+        }
+
+        /*------------------------------------end row2--------------------------------------------*/
+
+        if ($('body #WrapR_pab .collum:last-child .row3 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElement3).hasClass('black')=== false) {
+            scoreR3 = 2;
+        }
+        if ($('body #WrapR_pab .collum:last-child .row3 .dayGrid').hasClass('black')=== true    &&  
+            $(preLastElement3).hasClass('balck')=== false) {
+            scoreR3 = 3;
+        }
+        if ($('body #WrapR_pab .collum:last-child .row3 .dayGrid').hasClass('black')=== true    &&  
+            $(preLastElement3).hasClass('black')=== true) {
+            scoreR3 = 0;
+        }
+        if ($('body #WrapR_pab .collum:last-child .row3 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElement3).hasClass('black')=== true) {
+            scoreR3 = 1;
+        }
+
+        /*------------------------------------end row3--------------------------------------------*/
+
+
+        if ($('body #WrapR_pab .collum:last-child .row4 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElement4).hasClass('black')=== false) {
+            scoreR4 = 2;
+        }
+        if ($('body #WrapR_pab .collum:last-child .row4 .dayGrid').hasClass('black')=== true    &&  
+            $(preLastElement4).hasClass('balck')=== false) {
+            scoreR4 = 3;
+        }
+        if ($('body #WrapR_pab .collum:last-child .row4 .dayGrid').hasClass('black')=== true    &&  
+            $(preLastElement4).hasClass('black')=== true) {
+            scoreR4 = 0;
+        }
+        if ($('body #WrapR_pab .collum:last-child .row4 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElement4).hasClass('black')=== true) {
+            scoreR4 = 1;
+        }
+
+        /*------------------------------------end row4--------------------------------------------*/
+
+
+        e.preventDefault();//отмеа перехода
+        Month++; // переход на следующий месяц
+        $('#WrapR_pab .month p').text(nameMonth[Month-1]);//Печать названия нового месяца
         $('#WrapR_pab .month p').append('<br><sub>' + Year +'</sub>');
-       	$('#WrapR_pab .wrapDay .collum').remove();//удалить старый месяц
+        $('#WrapR_pab .wrapDay .collum').remove();//удалить старый месяц
 
-       	prinMonthDayGrid();//Печатаем общую сетку графика
-		//end for
+        prinMonthDayGrid();//Печатаем общую сетку графика
+        //end for
 
-		cycleWorkDay();//циклы для расписания наступившего нового месяца
+        cycleWorkDay();//циклы для расписания наступившего нового месяца
         calculateMoney();//Рабоота калькулятора оплаты труда
-    });//end click	
+    });//end click  
 	
     	
-    $(" #WrapR_pab #backMonth").click(function(e){
-    	if (Month==1) {
-    		Year--;
-    		Month = 13;
-    	}
-
-        switch (1) {
-            case
-                $('body #WrapR_pab .collum:nth-child(1) .row1 .dayGrid').hasClass('black')=== false &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row1 .dayGrid').hasClass('black')=== false &&
-                $('body #WrapR_pab .collum:nth-child(3) .row1 .dayGrid').hasClass('black')=== false &&
-                $('body #WrapR_pab .collum:nth-child(4) .row1 .dayGrid').hasClass('black')=== false:
-                    scoreR1 = 4;
-                    break;
-
-            case 
-                $('body #WrapR_pab .collum:nth-child(1) .row1 .dayGrid').hasClass('black')=== false &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row1 .dayGrid').hasClass('black')=== false &&
-                $('body #WrapR_pab .collum:nth-child(3) .row1 .dayGrid').hasClass('black')=== false &&
-                $('body #WrapR_pab .collum:nth-child(4) .row1 .dayGrid').hasClass('black')=== true:
-                    scoreR1 = 3;
-                    break;
-
-            case    
-                $('body #WrapR_pab .collum:nth-child(1) .row1 .dayGrid').hasClass('black')=== false &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row1 .dayGrid').hasClass('black')=== false &&
-                $('body #WrapR_pab .collum:nth-child(3) .row1 .dayGrid').hasClass('black')=== true &&
-                $('body #WrapR_pab .collum:nth-child(4) .row1 .dayGrid').hasClass('black')=== true:
-                    scoreR1 = 2;
-                    break;
-            case
-                $('body #WrapR_pab .collum:nth-child(1) .row1 .dayGrid').hasClass('black')=== false &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row1 .dayGrid').hasClass('black')=== true &&
-                $('body #WrapR_pab .collum:nth-child(3) .row1 .dayGrid').hasClass('black')=== true &&
-                $('body #WrapR_pab .collum:nth-child(4) .row1 .dayGrid').hasClass('black')=== true:
-                    scoreR1 = 1;
-                    break;
-
-            case
-                $('body #WrapR_pab .collum:nth-child(1) .row1 .dayGrid').hasClass('black')=== true  &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row1 .dayGrid').hasClass('black')=== false &&
-                $('body #WrapR_pab .collum:nth-child(3) .row1 .dayGrid').hasClass('black')=== false &&
-                $('body #WrapR_pab .collum:nth-child(4) .row1 .dayGrid').hasClass('black')=== false:
-                    scoreR1 = 5;
-                    break;
-
-            case
-                $('body #WrapR_pab .collum:nth-child(1) .row1 .dayGrid').hasClass('black')=== true  &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row1 .dayGrid').hasClass('black')=== true  &&
-                $('body #WrapR_pab .collum:nth-child(3) .row1 .dayGrid').hasClass('black')=== false &&
-                $('body #WrapR_pab .collum:nth-child(4) .row1 .dayGrid').hasClass('black')=== false:
-                   scoreR1 = 6;
-                   break;
-
-            case
-                $('body #WrapR_pab .collum:nth-child(1) .row1 .dayGrid').hasClass('black')=== true  &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row1 .dayGrid').hasClass('black')=== true  &&
-                $('body #WrapR_pab .collum:nth-child(3) .row1 .dayGrid').hasClass('black')=== true  &&
-                $('body #WrapR_pab .collum:nth-child(4) .row1 .dayGrid').hasClass('black')=== false:
-                    scoreR1 = 0;
-                    break;
+ $(" #WrapR_pab #backMonth").click(function(e){
+        if (Month==1) {
+            Year--;
+            Month = 13;
         }
 
-    	/*------------------------------------end row1--------------------------------------------*/
-
-        switch (2){
-            case
-                $('body #WrapR_pab .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === false &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === false:
-                    scoreR2 = 2;
-                    break;
-
-            case 
-                $('body #WrapR_pab .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === true &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === false:
-                    scoreR2 = 3;
-                    break;
-            case 
-                $('body #WrapR_pab .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === true &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === true:
-                    scoreR2 = 0;    
-                    break;
-        
-
-            case 
-                $('body #WrapR_pab .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === false &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === true:
-                    scoreR2 = 1;
-                    break;
-    	}
-
-    	
-		/*------------------------------------end row2--------------------------------------------*/    	
-
-        switch (3){
-            case
-                $('body #WrapR_pab .collum:nth-child(1) .row3 .dayGrid').hasClass('black') === false &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row3 .dayGrid').hasClass('black') === false:
-                    scoreR3 = 2;
-                    break;
-
-            case 
-                $('body #WrapR_pab .collum:nth-child(1) .row3 .dayGrid').hasClass('black') === true &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row3 .dayGrid').hasClass('black') === false:
-                    scoreR3 = 3;
-                    break;
-            case 
-                $('body #WrapR_pab .collum:nth-child(1) .row3 .dayGrid').hasClass('black') === true &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row3 .dayGrid').hasClass('black') === true:
-                    scoreR3 = 0;    
-                    break;
-        
-
-            case 
-                $('body #WrapR_pab .collum:nth-child(1) .row3 .dayGrid').hasClass('black') === false &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row3 .dayGrid').hasClass('black') === true:
-                    scoreR3 = 1;
-                    break;
+        if ($('body #WrapR_pab .collum:nth-child(1) .row1 .dayGrid').hasClass('black')=== false &&  
+            $('body #WrapR_pab .collum:nth-child(2) .row1 .dayGrid').hasClass('black')=== false &&
+            $('body #WrapR_pab .collum:nth-child(3) .row1 .dayGrid').hasClass('black')=== false &&
+            $('body #WrapR_pab .collum:nth-child(4) .row1 .dayGrid').hasClass('black')=== false)
+             {
+            scoreR1 = 4;
         }
-    	/*------------------------------------end row3--------------------------------------------*/
 
-        switch (4){
-            case
-                $('body #WrapR_pab .collum:nth-child(1) .row4 .dayGrid').hasClass('black') === false &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row4 .dayGrid').hasClass('black') === false:
-                    scoreR4 = 2;
-                    break;
-
-            case 
-                $('body #WrapR_pab .collum:nth-child(1) .row4 .dayGrid').hasClass('black') === true &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row4 .dayGrid').hasClass('black') === false:
-                    scoreR4 = 3;
-                    break;
-            case 
-                $('body #WrapR_pab .collum:nth-child(1) .row4 .dayGrid').hasClass('black') === true &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row4 .dayGrid').hasClass('black') === true:
-                    scoreR4 = 0;    
-                    break;
-        
-
-            case 
-                $('body #WrapR_pab .collum:nth-child(1) .row4 .dayGrid').hasClass('black') === false &&  
-                $('body #WrapR_pab .collum:nth-child(2) .row4 .dayGrid').hasClass('black') === true:
-                    scoreR4 = 1;
-                    break;
+        if ($('body #WrapR_pab .collum:nth-child(1) .row1 .dayGrid').hasClass('black')=== false &&  
+            $('body #WrapR_pab .collum:nth-child(2) .row1 .dayGrid').hasClass('black')=== false &&
+            $('body #WrapR_pab .collum:nth-child(3) .row1 .dayGrid').hasClass('black')=== false &&
+            $('body #WrapR_pab .collum:nth-child(4) .row1 .dayGrid').hasClass('black')=== true)
+             {
+            scoreR1 = 3;
         }
-    	/*------------------------------------end row4--------------------------------------------*/
-    	e.preventDefault();//отмена перехода
-    	Month--;
 
-    	$('#WrapR_pab .month p').text(nameMonth[Month-1]);//Печать названия нового месяца
+        if ($('body #WrapR_pab .collum:nth-child(1) .row1 .dayGrid').hasClass('black')=== false &&  
+            $('body #WrapR_pab .collum:nth-child(2) .row1 .dayGrid').hasClass('black')=== false &&
+            $('body #WrapR_pab .collum:nth-child(3) .row1 .dayGrid').hasClass('black')=== true &&
+            $('body #WrapR_pab .collum:nth-child(4) .row1 .dayGrid').hasClass('black')=== true)
+             {
+            scoreR1 = 2;
+        }
+
+        if ($('body #WrapR_pab .collum:nth-child(1) .row1 .dayGrid').hasClass('black')=== false &&  
+            $('body #WrapR_pab .collum:nth-child(2) .row1 .dayGrid').hasClass('black')=== true &&
+            $('body #WrapR_pab .collum:nth-child(3) .row1 .dayGrid').hasClass('black')=== true &&
+            $('body #WrapR_pab .collum:nth-child(4) .row1 .dayGrid').hasClass('black')=== true)
+             {
+            scoreR1 = 1;
+        }
+
+
+        if ($('body #WrapR_pab .collum:nth-child(1) .row1 .dayGrid').hasClass('black')=== true  &&  
+            $('body #WrapR_pab .collum:nth-child(2) .row1 .dayGrid').hasClass('black')=== false &&
+            $('body #WrapR_pab .collum:nth-child(3) .row1 .dayGrid').hasClass('black')=== false &&
+            $('body #WrapR_pab .collum:nth-child(4) .row1 .dayGrid').hasClass('black')=== false)
+             {
+            scoreR1 = 5;
+        }
+
+        if ($('body #WrapR_pab .collum:nth-child(1) .row1 .dayGrid').hasClass('black')=== true  &&  
+            $('body #WrapR_pab .collum:nth-child(2) .row1 .dayGrid').hasClass('black')=== true  &&
+            $('body #WrapR_pab .collum:nth-child(3) .row1 .dayGrid').hasClass('black')=== false &&
+            $('body #WrapR_pab .collum:nth-child(4) .row1 .dayGrid').hasClass('black')=== false )
+             {
+            scoreR1 = 6;
+        }
+
+        if ($('body #WrapR_pab .collum:nth-child(1) .row1 .dayGrid').hasClass('black')=== true  &&  
+            $('body #WrapR_pab .collum:nth-child(2) .row1 .dayGrid').hasClass('black')=== true  &&
+            $('body #WrapR_pab .collum:nth-child(3) .row1 .dayGrid').hasClass('black')=== true  &&
+            $('body #WrapR_pab .collum:nth-child(4) .row1 .dayGrid').hasClass('black')=== false )
+             {
+            scoreR1 = 0;
+        }
+
+        /*------------------------------------end row1--------------------------------------------*/
+
+
+        if ($('body #WrapR_pab .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === false    &&  
+            $('body #WrapR_pab .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === false) {
+
+            scoreR2 = 2;
+        }
+
+        if ($('body #WrapR_pab .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === true &&  
+            $('body #WrapR_pab .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === false) {
+
+            scoreR2 = 3;
+        }
+
+        if ($('body #WrapR_pab .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === true &&  
+            $('body #WrapR_pab .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === true) {
+
+            scoreR2 = 0;
+        }
+
+        if ($('body #WrapR_pab .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === false    &&  
+            $('body #WrapR_pab .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === true) {
+
+            scoreR2 = 1 ;
+        }
+
+        /*------------------------------------end row2--------------------------------------------*/        
+
+
+        if ($('body  #WrapR_pab .collum:nth-child(1) .row3 .dayGrid').hasClass('black') === false   &&  
+            $('body  #WrapR_pab .collum:nth-child(2) .row3 .dayGrid').hasClass('black') === false) {
+
+            scoreR3 = 2;
+        }
+
+        if ($('body  #WrapR_pab .collum:nth-child(1) .row3 .dayGrid').hasClass('black') === true    &&  
+            $('body  #WrapR_pab .collum:nth-child(2) .row3 .dayGrid').hasClass('black') === false) {
+
+            scoreR3 = 3;
+        }
+
+        if ($('body  #WrapR_pab .collum:nth-child(1) .row3 .dayGrid').hasClass('black') === true    &&  
+            $('body  #WrapR_pab .collum:nth-child(2) .row3 .dayGrid').hasClass('black') === true) {
+
+            scoreR3 = 0;
+        }
+
+        if ($('body  #WrapR_pab .collum:nth-child(1) .row3 .dayGrid').hasClass('black') === false   &&  
+            $('body  #WrapR_pab .collum:nth-child(2) .row3 .dayGrid').hasClass('black') === true) {
+
+            scoreR3 = 1 ;
+        }
+
+        /*------------------------------------end row3--------------------------------------------*/
+
+
+        if ($('body #WrapR_pab .collum:nth-child(1) .row4 .dayGrid').hasClass('black') === false    &&  
+            $('body #WrapR_pab .collum:nth-child(2) .row4 .dayGrid').hasClass('black') === false) {
+
+            scoreR4 = 2;
+        }
+
+        if ($('body #WrapR_pab .collum:nth-child(1) .row4 .dayGrid').hasClass('black') === true &&  
+            $('body #WrapR_pab .collum:nth-child(2) .row4 .dayGrid').hasClass('black') === false) {
+
+            scoreR4 = 3;
+        }
+
+        if ($('body #WrapR_pab .collum:nth-child(1) .row4 .dayGrid').hasClass('black') === true &&  
+            $('body #WrapR_pab .collum:nth-child(2) .row4 .dayGrid').hasClass('black') === true) {
+
+            scoreR4 = 0;
+        }
+
+        if ($('body #WrapR_pab .collum:nth-child(1) .row4 .dayGrid').hasClass('black') === false    &&  
+            $('body #WrapR_pab .collum:nth-child(2) .row4 .dayGrid').hasClass('black') === true) {
+
+            scoreR4 = 1 ;
+        }
+        /*------------------------------------end row4--------------------------------------------*/
+        e.preventDefault();//отмена перехода
+        Month--;
+
+        $('#WrapR_pab .month p').text(nameMonth[Month-1]);//Печать названия нового месяца
         $('#WrapR_pab .month p').append('<br><sub>' + Year +'</sub>');
-       	$('#WrapR_pab .wrapDay .collum').remove();
+        $('#WrapR_pab .wrapDay .collum').remove();
 
         reverseEachWorkDay();//печатаем раочие дни
         calculateMoney();//расчет оплаты заработной платы
-    });//end click	
+    });//end click  
 
 	// var	nowDate		=	new Date(),
  //        newYear     =   nowDate.getFullYear(),

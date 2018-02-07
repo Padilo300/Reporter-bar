@@ -119,5 +119,3 @@
     height: 20px;
     line-height: 5px;
     width: 45%; }
-  .login-page .form input:-webkit-autofill, .login-page .form textarea:-webkit-autofill, .login-page .form select:-webkit-autofill {
-    background-color: transparent; }

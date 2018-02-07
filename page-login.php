@@ -2,6 +2,7 @@
 <?php require_once 'php/script/login.php'; 
     $login = new login;
 ?>
+</style>
 <body class="login-page">
   <div class="container-fluid">
     <div class="row" id="ajax-conteiner">
@@ -17,13 +18,23 @@
                                 <!-- Tab panes -->
                 <div class="tab-content">
                   <div class="tab-pane active fade in col-lg-5 col-xs-12" id="input">
-                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="form1" method="POST" class="form">
+                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="form1" method="POST" class="form" autocomplete="off">
                         <br>
                           <?php
                         //Если validForm вернет false, formError выведет ошибку.
                          $login->formError($login->validForm($_POST['email'],$_POST['password'])); ?>
-                        <input type="text" name="email" placeholder="введите email" value="" class="form__input center-block">
-                        <input  type="password" name="password"  placeholder="введите пароль" value="" class="form__input center-block">
+                        <input type="text" name="email" placeholder="введите email" value="" class="form__input center-block"
+                        style="
+                              -webkit-text-fill-color: #ссс;
+                              -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+                              transition: width 0.3s, background-color 5000s ease-in-out 1s;
+                              background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,174,255,0.04) 50%,rgba(255,255,255,0) 51%,rgba(0,174,255,0.03) 100%);  ">
+
+                        <input  type="password" name="password"  placeholder="введите пароль" value="" class="form__input center-block" style="
+                                      -webkit-text-fill-color: #ссс;
+                                      -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+                                      transition: width 0.3s, background-color 5000s ease-in-out 0s;
+                                      background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,174,255,0.04) 50%,rgba(255,255,255,0) 51%,rgba(0,174,255,0.03) 100%);  ">
                         <a href="#" type="sumbit" 
                             onclick="document.getElementById('form1').submit();" return false; 
                             class="center-block  animated-button sandy-three">Войти</a>

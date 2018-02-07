@@ -57,7 +57,7 @@
                       if ($_SESSION['admin'] == 'true') {
                        echo "<li><a href='page-Admin.php'>Кабинет Администратора</a></li>";  
                       }else{
-                        echo "<li><a href='#'>Моя анкета</a></li>";
+                        echo "<li><a href='http://$_SERVER[HTTP_HOST]/page-editUser.php'>Моя анкета</a></li>";
                       }
                      ?>
                     <li class="divider"></li>

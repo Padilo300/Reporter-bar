@@ -409,11 +409,11 @@ $( document ).ready(function() {
         calculateMoney();//расчет оплаты заработной платы
     });//end click	
 
-	var	nowDate		=	new Date(),
-        newYear     =   nowDate.getFullYear(),
-        Year        =   newYear,
-		nowMonth	=	nowDate.getMonth();
-	for (var i = 0; i < nowMonth; i++) {$('#nextMonth').trigger('click'); console.log(Year + ' ' + newYear)}
+	// var	nowDate		=	new Date(),
+ //        newYear     =   nowDate.getFullYear(),
+ //        Year        =   newYear,
+	// 	nowMonth	=	nowDate.getMonth();
+	// for (var i = 0; i < nowMonth; i++) {$('#nextMonth').trigger('click'); console.log(Year + ' ' + newYear)}
 	
 	// widthWD		=	(Math.floor((widthWD / daysInMonth)))-1;/*ширину сетики делим на кол-во дней месяца	что-бы заполнить*/
 	// $('.collum').height(heightGD).width(widthWD);

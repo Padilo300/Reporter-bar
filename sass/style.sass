@@ -42,9 +42,21 @@ a:hover
 
 .max-w50px
 	max-width: 30px
-	
+
+.flex-center
+	display: flex
+	justify-content: center
+
+.width-100
+	width: 100%
+
+.flex-center-column
+	display: flex
+	justify-content: center
+	flex-direction: column
+
 body
-	height: 150vh
+	min-height: 100vh
 
 .navbar-default
 	background-image: none
@@ -181,3 +193,6 @@ body
 		input:focus::placeholder
 			text-indent: 500px   
 			transition: text-indent 0.3s ease
+
+.nav>li>a
+	transition: all 0.3s ease-out

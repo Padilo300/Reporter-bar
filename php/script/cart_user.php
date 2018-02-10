@@ -1,8 +1,11 @@
 
 <?php 
+  //удалить пользователя
   $this->delete(); 
+
   function positioning_of_the_bar()
   {
+    //если открыта страница кабинеа, выровнять под правую сторону
     if ($_SERVER['PHP_SELF'] !== '/page-editUser.php') { echo "col-lg-offset-4";}
   }
   
@@ -105,37 +108,53 @@
             <tbody>
               <tr>
                 <td>
-                  <a href="">
-                    <img src="/img/social_b/vk.png"       class="max-w50px" alt="vk">         
-                  </a>
+                  <?php if ($user['vkontakte'] !== 'false') {
+                    echo "<a href='$user[vkontakte]'>
+                    <img src='/img/social_b/vk.png' class='max-w50px' alt='vk'>         
+                  </a>";
+                  } ?>
                 </td>
+
                 <td>
-                  <a href="">
-                    <img src="/img/social_b/facebook.png" class="max-w50px" alt="facebook">   
-                  </a>
+                  <?php if ($user['fecebook'] !== 'false') {
+                    echo "<a href='$user[fecebook]'>
+                    <img src='/img/social_b/facebook.png' class='max-w50px' alt='facebook'>   
+                  </a>";
+                  } ?>
                 </td>
+
                 <td>
-                  <a href="">
-                    <img src="/img/social_b/skype.png"    class="max-w50px" alt="skype">      
-                  </a>
+                  <?php if ($user['skype'] !== 'false') {
+                    echo "<a href='$user[skype]'>
+                    <img src='/img/social_b/skype.png'    class='max-w50px' alt='skype'>      
+                  </a>";
+                  } ?>
+                  
                 </td>
+
                 <td>
-                  <a href="">
-                    <img src="/img/social_b/twitter.png"  class="max-w50px" alt="twitter">    
-                  </a>
+                  <?php if ($user['twitter'] !== 'false') {
+                    echo "<a href='$user[twitter]'>
+                    <img src='/img/social_b/twitter.png'  class='max-w50px' alt='twitter'>    
+                  </a>";
+                  } ?>
                 </td>
+
                 <td>
-                  <a href="">
-                    <img src="/img/social_b/pinterest.png" class="max-w50px" alt="pinterest">  
-                  </a>
+                  <?php if ($user['pinterest'] !== 'false') {
+                    echo "<a href='$user[pinterest]'>
+                    <img src='/img/social_b/pinterest.png' class='max-w50px' alt='pinterest'>  
+                  </a>";
+                  } ?>
                 </td>
+
               </tr>
             </tbody>
           </table>
           <br>
           <?php 
             if ($_SESSION['admin'] == 'true' && $_SESSION['id'] !== $user['id']) {
-              echo "<button class='btn btn-danger' data-toggle='modal' data-target='#$user[id]' title='Навсегда удалить сотрудника из базы. '>Удалить сотрудника</button>" ;
+              echo "<button class='btn btn-danger' data-toggle='modal' data-target='#$user[id]' title='Навсегда удалить сотрудника из базы. '><i class='fa fa-user-times' aria-hidden='true'></i> Удалить сотрудника</button>" ;
            }
           ?>
           </header>

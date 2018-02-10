@@ -36,6 +36,26 @@
         </div>
         <div id="collapseOne" class="panel-collapse collapse in">
           <div class="panel-body">
+            <table>
+              <tr border="1">
+                <td>имя бармена</td>
+              </tr>
+              <tr border="1">
+                <td>имя бармена</td>
+              </tr>
+              <tr border="1">
+                <td>имя бармена</td>
+              </tr>
+              <tr border="1">
+                <td>имя бармена</td>
+              </tr>
+              <tr border="1">
+                <td>имя бармена</td>
+              </tr>
+              <tr border="1">
+                <td>имя бармена</td>
+              </tr>
+            </table>
               <div id="calendarMainWrap">
                               <div class="month">
                                 <a href="#" id="backMonth" class="no-print control-month" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a> 

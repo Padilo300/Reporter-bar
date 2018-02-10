@@ -1,5 +1,4 @@
 @import 'csshake.min.css';
-@import 'animate.css';
 @import 'bootstrap.min.css';
 @import 'button.css';
 @import 'font-awesome.min.css';
@@ -7,6 +6,7 @@
 @import 'cart_user.css';
 @import 'login.css';
 @import 'addUser.css';
+@import 'animate.css';
 /*@import url('https://fonts.googleapis.com/css?family=El+Messiri:400,700&subset=cyrillic');*/
 /*----------------------------------стили календаря--------------------------------------*/
 

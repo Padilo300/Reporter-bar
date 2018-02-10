@@ -15,7 +15,12 @@
                 public function addUser()
                 {
                     require_once 'ViewAddUser.php';
-                    if (!empty($_POST)) {
+                    if (
+                        $_SERVER['REQUEST_METHOD'] == 'POST' && 
+                        !empty($_POST['first_name']) &&
+                        !empty($_POST['last_name'])  &&
+                        !empty($_POST['email'])
+                    ) {
                      try { 
                                 $addUser = $this->db->prepare('INSERT INTO users (
                                     first_name,

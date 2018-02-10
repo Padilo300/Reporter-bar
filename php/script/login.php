@@ -120,5 +120,79 @@ require_once 'connect_db.php';
 				      }
 				  }
 				}
+
+				public function addFacebook($facebook,$id)
+				{
+					if (
+						$_SERVER['REQUEST_METHOD'] === "POST" && (strlen($facebook) > 0)) {
+						try {
+								$query	=	$this->db->prepare("UPDATE users SET fecebook=? WHERE id=?"); 	
+								$query->execute(array($facebook, $id));
+								return "Адресс fecebook успешно изменен!";
+							 } catch (Exception $e) {
+							 	 echo '<div class=\'error\'>Произошла ошибка при подключении к базе ебаной, PDO говорит что:<p class=\'sqlerror\'>'.$e.'</p><br>Если Вы видите это сообщение, пожалуста немедленно сообщите адинистратору, или вашему программисту. 
+				                        <br> - сделайте скриншот ошибки
+				                        <br> - или скопируйте текст ошибки</div>';
+							 } 
+					}
+				}	
+				public function addVkontakte($vkontakte,$id)
+				{
+					if ($_SERVER['REQUEST_METHOD'] === "POST" && (strlen($vkontakte) > 0)) {
+						try {
+								$query	=	$this->db->prepare("UPDATE users SET vkontakte=? WHERE id=?"); 	
+								$query->execute(array($vkontakte, $id));
+								return "Адресс vkontakte успешно изменен!";
+							 } catch (Exception $e) {
+							 	 echo '<div class=\'error\'>Произошла ошибка при подключении к базе ебаной, PDO говорит что:<p class=\'sqlerror\'>'.$e.'</p><br>Если Вы видите это сообщение, пожалуста немедленно сообщите адинистратору, или вашему программисту. 
+				                        <br> - сделайте скриншот ошибки
+				                        <br> - или скопируйте текст ошибки</div>';
+							 } 
+					}
+				}			
+				public function addPinterest($pinterest,$id)
+				{
+					if ($_SERVER['REQUEST_METHOD'] === "POST" && (strlen($pinterest) > 0)) {
+						try {
+								$query	=	$this->db->prepare("UPDATE users SET pinterest=? WHERE id=?"); 	
+								$query->execute(array($pinterest, $id));
+								return "Адресс Pinterest успешно изменен!";
+							 } catch (Exception $e) {
+							 	 echo '<div class=\'error\'>Произошла ошибка при подключении к базе ебаной, PDO говорит что:<p class=\'sqlerror\'>'.$e.'</p><br>Если Вы видите это сообщение, пожалуста немедленно сообщите адинистратору, или вашему программисту. 
+				                        <br> - сделайте скриншот ошибки
+				                        <br> - или скопируйте текст ошибки</div>';
+							 } 
+					}
+				}
+				public function addSkype($skype,$id)
+				{
+					if ($_SERVER['REQUEST_METHOD'] === "POST" && (strlen($skype) > 0)) {
+						try {
+								$query	=	$this->db->prepare("UPDATE users SET skype=? WHERE id=?"); 	
+								$query->execute(array($skype, $id));
+								return "Логин Skype успешно изменен!";
+							 } catch (Exception $e) {
+							 	 echo '<div class=\'error\'>Произошла ошибка при подключении к базе ебаной, PDO говорит что:<p class=\'sqlerror\'>'.$e.'</p><br>Если Вы видите это сообщение, пожалуста немедленно сообщите адинистратору, или вашему программисту. 
+				                        <br> - сделайте скриншот ошибки
+				                        <br> - или скопируйте текст ошибки</div>';
+							 } 
+					}
+				}
+
+				public function addTwitter($twitter,$id)
+				{
+					if ($_SERVER['REQUEST_METHOD'] === "POST" && (strlen($twitter) > 0)) {
+						try {
+								$query	=	$this->db->prepare("UPDATE users SET twitter=? WHERE id=?"); 	
+								$query->execute(array($twitter, $id));
+								return "Адресс twitter успешно изменен!";
+							 } catch (Exception $e) {
+							 	 echo '<div class=\'error\'>Произошла ошибка при подключении к базе ебаной, PDO говорит что:<p class=\'sqlerror\'>'.$e.'</p><br>Если Вы видите это сообщение, пожалуста немедленно сообщите адинистратору, или вашему программисту. 
+				                        <br> - сделайте скриншот ошибки
+				                        <br> - или скопируйте текст ошибки</div>';
+							 } 
+					}
+				}
+
 			}
 			?>			

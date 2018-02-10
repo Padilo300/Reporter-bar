@@ -55,17 +55,22 @@
                   <ul class="dropdown-menu">
                     <?php 
                       if ($_SESSION['admin'] == 'true') {
-                       echo "<li><a href='page-Admin.php'>Кабинет Администратора</a></li>";  
+                       echo "<li><a href='page-Admin.php'><i class='fa fa-home' aria-hidden='true'></i> Кабинет Администратора</a></li>";  
                       }else{
                         echo "<li><a href='http://$_SERVER[HTTP_HOST]/page-editUser.php'>Моя анкета</a></li>";
                       }
                      ?>
                     <li class="divider"></li>
-                    <li><a href="page-exit.php">Выход</a></li>
+                    <li>
+                      <a href="page-exit.php">
+                        <i class="fa fa-power-off" aria-hidden="true"></i> 
+                        Выход
+                      </a>
+                    </li>
                   </ul>
                 </li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
-          <?php echo "Добрый вечер " . $_SESSION['first_name'] . "<br> Вы посетили эту страницу $_SESSION[count] раз"; ?>
+          <?php echo "Добрый вечер " . $_SESSION['first_name'] ?>
         </nav>

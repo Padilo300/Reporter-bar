@@ -15,6 +15,7 @@ $( document ).ready(function() {
         $('.visits').text('Выходов по факту: ' + workingDayR1Fact);
         $('.payment').text('Оплата: ' + count + 'грн');
 
+        //Щелчек по клеточке (выбор рабочий или выходной)
         $('#calendarMainWrap .row1 .dayGrid').click(function(){
             if ($(this).hasClass('black') || $(this).hasClass('addBlack') === true) { //проверям на рабочий день
 
@@ -104,6 +105,39 @@ $( document ).ready(function() {
 
     function cycleWorkDay() {
 
+        $.each($('#table-schedule-reporter .row-1 .dayGrid'), function() { 
+            scoreR1++;
+                if(scoreR1==5){scoreR1=1}
+                if(scoreR1==3 || scoreR1==4){
+                    $(this).attr('bgcolor','#000');
+                }
+        });//end R1
+
+        $.each($('#table-schedule-reporter .row-2 .dayGrid'), function() { 
+            scoreR2++;
+                if(scoreR2==5){scoreR2=1}
+                if(scoreR2==3 || scoreR2==4){
+                    $(this).attr('bgcolor','#000');
+                }
+        }); //end R2
+
+        $.each($('#table-schedule-reporter .row-3 .dayGrid'), function() { 
+            scoreR3++;
+                if(scoreR3==5){scoreR3=1}
+                if(scoreR3==3 || scoreR3==4){
+                    $(this).attr('bgcolor','#000');
+                }
+        }); //end R3
+
+        $.each($('#table-schedule-reporter .row-4 .dayGrid'), function() { 
+            scoreR4++;
+                if(scoreR4==5){scoreR4=1}
+                if(scoreR4==3 || scoreR4==4){
+                    $(this).attr('bgcolor','#000');
+                }
+        });//end R4 
+        ///////////////////////////-end new table-//////////////////////////////////
+
         $.each($('#calendarMainWrap .row1 .dayGrid'), function() { 
             scoreR1++;
                 if(scoreR1==5){scoreR1=1}
@@ -112,7 +146,7 @@ $( document ).ready(function() {
                 }
         });//end R1
 
-            $.each($('#calendarMainWrap .row2 .dayGrid'), function() { 
+        $.each($('#calendarMainWrap .row2 .dayGrid'), function() { 
             scoreR2++;
                 if(scoreR2==5){scoreR2=1}
                 if(scoreR2==3 || scoreR2==4){
@@ -152,14 +186,41 @@ $( document ).ready(function() {
 		scoreR4		=	2,
         count       =   7000;
 
-	$('#calendarMainWrap .month p').append(nameMonth[Month-1]);//имя месяца
-    $('#calendarMainWrap .month p').append('<br><sub>' + Year +'</sub>');
+	$('#calendarMainWrap .month p,.month p').append(nameMonth[Month-1]);//имя месяца
+    $('#calendarMainWrap .month p,.month p').append('<br><sub>' + Year +'</sub>');//год
 
+    //печатаем ячейки \день недели\число месяца\смены
 	for (var i = 1; i < dInMonth(Month,Year)+1; i++) {
 		$('#calendarMainWrap .wrapDay').append(
 			'<div class="collum"><div class="dayOfWeak">' + nameDayW[dow(Month-1,i)] + '</div><div class="numberOfWeak">' + i + '</div><div id="one" class="row1"><div class="dayGrid"></div></div><div class="row2"><div class="dayGrid"></div></div><div class="row3"><div class="dayGrid"></div></div><div class="row4"><div class="dayGrid"></div></div></div>');
-	};//печатаем ячейки \день недели\число месяца\смены
+	};
 	
+    //в этом цикле заполняется сетка графика (дни, числа, сетка)
+    for (var i = 1; i < dInMonth(Month,Year)+1; i++) {
+        //тут печатаются дни недели
+        $('.table-schedule-reporter #day-of-the-week').append(
+                '<td class="table-schedule_border1 table-schedule__day-of-the-week">'+nameDayW[dow(Month-1,i)]+'</td>');
+
+        //тут печатаются числа месяца
+        $('.table-schedule-reporter #number-day').append(
+                     '<td class="table-schedule_border1">'+i+'</td>'
+            );
+
+        //тут создаются ячейки для графика
+        $('.table-schedule-reporter .row-1').append(
+            '<td class="table-schedule_border1 dayGrid"></td>'
+            );
+        $('.table-schedule-reporter .row-2').append(
+            '<td class="table-schedule_border1 dayGrid"></td>'
+            );
+        $('.table-schedule-reporter .row-3').append(
+            '<td class="table-schedule_border1 dayGrid"></td>'
+            );
+        $('.table-schedule-reporter .row-4').append(
+            '<td class="table-schedule_border1 dayGrid"></td>'
+            );
+        
+    }
 	cycleWorkDay();//вызываем циклы расчета рабочих дней
     calculateMoney();//вызываем расчет зароботной платы
 

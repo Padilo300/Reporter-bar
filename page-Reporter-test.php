@@ -36,26 +36,52 @@
         </div>
         <div id="collapseOne" class="panel-collapse collapse in">
           <div class="panel-body">
-            <table>
-              <tr border="1">
-                <td>имя бармена</td>
+
+            <table class="table-schedule-reporter"  id="table-schedule-reporter" >
+              <div class="month">
+                                <a 
+                                  href="#" 
+                                  id="backMonth" 
+                                  class="no-print control-month" >
+                                    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                                </a> 
+                                <p> </p>
+                                <a 
+                                  href="#" 
+                                  id="nextMonth" 
+                                  class="no-print control-month" >
+                                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                </a>
+              </div>
+              <tr class="table-schedule__row" id="day-of-the-week">
+                <th class="table-schedule__th" bgcolor="#999">Кафе Репортер</th>
               </tr>
-              <tr border="1">
-                <td>имя бармена</td>
+              <tr class="table-schedule__row" id="number-day">
+                <th class="table-schedule_border1 table-schedule__th"></th>
+       
+       
               </tr>
-              <tr border="1">
-                <td>имя бармена</td>
+              <tr class="table-schedule__row row-1">
+               <td class="table-schedule_border1 table-schedule__th" >Бобров Тихон</td>
+
               </tr>
-              <tr border="1">
-                <td>имя бармена</td>
+              <tr class="table-schedule__row row-2">
+                <td class="table-schedule_border1 table-schedule__th">Падило Константин</t>
+               
               </tr>
-              <tr border="1">
-                <td>имя бармена</td>
+              <tr class="table-schedule__row row-3">
+                <td class="table-schedule_border1 table-schedule__th">Даценко Александр</td>
               </tr>
-              <tr border="1">
-                <td>имя бармена</td>
+              <tr class="table-schedule__row row-4">
+                <td class="table-schedule_border1 table-schedule__th">Коваленко Александр</td>
               </tr>
             </table>
+            <br>
+            <input 
+              type="button" 
+              onclick="tableToExcel('table-schedule-reporter', 'W3C Example Table')" 
+              value="Скачать в XLS">
+
               <div id="calendarMainWrap">
                               <div class="month">
                                 <a href="#" id="backMonth" class="no-print control-month" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a> 
@@ -90,7 +116,7 @@
                                 </div>    
                               </div>
                             </div>
-            }
+            
           </div>
         </div>
       </div>

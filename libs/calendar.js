@@ -1,10 +1,30 @@
 $( document ).ready(function() {
+    /*------------------------------------установки календаря------------------------------------------------------*/
+    var
+        nameMonth   =   ['Январь','Февраль','Март','Апрель','Ласковый Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+        nameDayW    =   ['вс','пн','вт','ср','чт','пт','сб'],
+        tempDay     =   new Date(2018,0,1), //получаем  дату с которой ведем отсчет календаря
+        Month       =   tempDay.getMonth()+1,//получаем месяц (от 0 до 11)
+        Year        =   tempDay.getFullYear(),// получаем год
+        Day         =   tempDay.getDate(), //получаем число
+        daysInMonth =   dInMonth(Month-1,Year),//Количество дней в месяц
+        scoreR1     =   1,
+        scoreR2     =   4,  
+        scoreR3     =   3,  
+        scoreR4     =   2,
+        count       =   7000,
+        m           =   ['january','february','march','april','may','june','july','august','september','october','november','december'];
+
+    $('.table-rep__nameMonth').text(nameMonth[Month-1]);//имя месяца
+    $('.table-rep__numberYear').text(Year);//имя месяца
+
+    /*------------------------------------ Закончились установки календаря------------------------------------------------------*/
 	function dInMonth(month,year){return new Date(year, month, 0).getDate(); console.log(year + month)};//узнаем сколько дней в месяце
 	function dow(Month,Day) {return new Date(Year,Month,Day).getDay();}//узнаем день недели
     function countMoney(dayWork){ return Math.floor(7000/dayWork)}    
     function prinGrid() {
         //в этом цикле заполняется сетка графика (дни, числа, сетка)
-        for (var i = 1; i < dInMonth(Month,Year)+1; i++) {
+        for (var i = 1, d = 1; i < dInMonth(Month,Year)+1; i++) {
         //тут печатаются дни недели
         $('.table-schedule-reporter #day-of-the-week').append(
                 '<td class="table-schedule_border1 table-schedule__day-of-the-week">'+nameDayW[dow(Month-1,i)]+'</td>');
@@ -27,7 +47,23 @@ $( document ).ready(function() {
         $('.table-schedule-reporter .row-4').append(
             '<td class="table-schedule_border1 dayGrid collum'+i+'"></td>'
             );
-        
+
+        $.get("/php/script/changeDay.php", { day: i, year: Year, month: m[Month-1]}, function(data) {
+            if (data == 'true') {   
+                $('.fact-row-1').append(
+                '<td class="table-schedule_border1 dayGrid  black" data-day="'+d+'"></td>'
+                );        
+            }else{
+                $('.fact-row-1').append(
+                '<td class="table-schedule_border1 dayGrid" data-day="'+d+'"></td>'
+                );        
+            }
+            d++;
+        });
+
+        if (i >= dInMonth(Month,Year)+1 ) { 
+            d = 1;
+        }
         }
     }
     function calculateMoney(){
@@ -174,30 +210,17 @@ $( document ).ready(function() {
     }//end cycleWorkDay
     /*--------------------GET запросы-----------------*/
     $('#table-schedule-reporter .table-schedule__row').on('click','.dayGrid',function(){
-        var dayNumber   =   $(this).attr('id');
-        $.get("/php/script/sctipt.php", { day: dayNumber}, function(data) {
+        var dayNumber   =   $(this).attr('data-day')
+            year        =   $('.table-rep__numberYear');
+            console.log(year);
+
+        $.get("/php/script/changeDay.php", {day: dayNumber}, function(data) {
             alert(data);
         });
     });
     /*--------------------Закончились GET запросы-----------------*/
 	
-	/*------------------------------------установки календаря------------------------------------------------------*/
-	var
-		nameMonth	=	['Январь','Февраль','Март','Апрель','Ласковый Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
-		nameDayW	=	['вс','пн','вт','ср','чт','пт','сб'],
-		tempDay		=	new	Date(2018,0,1), //получаем  дату с которой ведем отсчет календаря
-		Month 		=	tempDay.getMonth()+1,//получаем месяц (от 0 до 11)
-		Year 		= 	tempDay.getFullYear(),// получаем год
-		Day 		=	tempDay.getDate(), //получаем число
-		daysInMonth	=	dInMonth(Month-1,Year),//Количество дней в месяц
-		scoreR1		=	1,
-		scoreR2		=	4,	
-		scoreR3		=	3,	
-		scoreR4		=	2,
-        count       =   7000;
-
-	$('.table-rep__nameMonth').text(nameMonth[Month-1]);//имя месяца
-    $('.table-rep__numberYear').text(Year);//имя месяца
+	
     
     prinGrid();//вызываем печать сетки
 	cycleWorkDay();//вызываем циклы расчета рабочих дней
@@ -447,10 +470,10 @@ $( document ).ready(function() {
         calculateMoney();//Рабоота калькулятора оплаты труда
     });//end click  
 
-	var	nowDate		=	new Date(),
-        newYear     =   nowDate.getFullYear(),
-        Year        =   newYear,
-		nowMonth	=	nowDate.getMonth();
-	for (var i = 0; i < nowMonth; ++i) {$('#Table-Rep-next_Month').trigger('click');}
-		
+	// var	nowDate		=	new Date(),
+ //        newYear     =   nowDate.getFullYear(),
+ //        Year        =   newYear,
+	// 	nowMonth	=	nowDate.getMonth();
+	// for (var i = 0; i < nowMonth; ++i) {$('#Table-Rep-next_Month').trigger('click');}
+
 });

@@ -86,7 +86,7 @@
                   <?php $viewUsers->userNameCafe($cafe,$cafeCAKE2);?>
                 </td>
               </tr>
-              <tr class="table-schedule__row">
+              <tr class="table-schedule__row fact-row-1" >
                <td class="table-schedule_border1 table-schedule__th" >
                  <?php $viewUsers->userNameCafe($cafe, $Barmen1);?>
                </td>

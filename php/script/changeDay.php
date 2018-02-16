@@ -1,5 +1,6 @@
 <?php 
-	require_once 'change-schedule.php';
+	require_once 'schedule_Day.php';
 	$changeSchedule 	= 	new chengeSchedule;
- 	$changeSchedule->chengeDay($_GET['day'],$_GET['month'],$_GET['year']);
+	echo $changeSchedule->chengeDay($_GET['day'],$_GET['value'],$_GET['month'],$_GET['year']);
+
  ?>

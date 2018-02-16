@@ -113,22 +113,26 @@ body {
           animation-duration: 1000ms;
   background: #000; }
 
-.dayGrid {
-  cursor: not-allowed; }
-
-.row1 .dayGrid {
-  cursor: cell; }
-
 .col-wrap-calendar {
   overflow-y: auto; }
 
 @media print {
   .black {
-    background: #000;
+    background: #000 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact; }
   .no-print {
-    display: none; } }
+    display: none; }
+  * {
+    display: block; }
+  table {
+    display: table; }
+  tr {
+    display: table-row; }
+  td {
+    display: table-cell; }
+  .black {
+    background-color: #000; } }
 
 .lostMoney {
   color: #F00; }

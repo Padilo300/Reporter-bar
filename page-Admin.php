@@ -78,7 +78,7 @@
         <br>
       <!-- Tab panes -->
       <div class="tab-content">
-        <div class="tab-pane fade" id="home">
+        <div class="tab-pane fade active in" id="home">
           <?php $addUser->addUser(); ?>
         </div>
         <div class="tab-pane" id="profile">
@@ -116,7 +116,7 @@
           </form>
         </div>
 
-        <div class="tab-pane active fade in" id="social">
+        <div class="tab-pane fade" id="social">
           <!-- Nav tabs -->
           <ul class="nav nav-tabs flex-center">
 

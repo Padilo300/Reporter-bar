@@ -1,6 +1,8 @@
 <?php 
   require_once 'php/script/viewUsers.php'; 
-  $viewUsers = new viewUsers;
+  require_once 'php/script/change-schedule.php';
+  $viewUsers        =   new viewUsers;
+  $changeSchedule   =   new chengeSchedule;
 
   $cafe         = 'cafe_schedule' ;
   $pab          = 'pab_schedule'  ;
@@ -69,6 +71,7 @@
                <td class="table-schedule_border1 table-schedule__th" >
                   <?php $viewUsers->userNameCafe($cafe, $Barmen1);?>
                </td>
+
               </tr>
               <tr class="table-schedule__row row-2">
                 <td class="table-schedule_border1 table-schedule__th">
@@ -90,18 +93,19 @@
                <td class="table-schedule_border1 table-schedule__th" >
                  <?php $viewUsers->userNameCafe($cafe, $Barmen1);?>
                </td>
+               <?php $changeSchedule->prinGridFactWork(); ?>
               </tr>
-              <tr class="table-schedule__row">
+              <tr class="table-schedule__row fact-row-2">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($cafe,$cafeCAKE1);?>
                 </t>
               </tr>
-              <tr class="table-schedule__row">
+              <tr class="table-schedule__row fact-row-3">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($cafe,$Barmen2);?>
                 </td>
               </tr>
-              <tr class="table-schedule__row">
+              <tr class="table-schedule__row fact-row-4">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($cafe,$cafeCAKE2);?>
                 </td>

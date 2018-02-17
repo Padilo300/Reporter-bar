@@ -1,3 +1,15 @@
+//ПЕРЕд коммиом не знал куда деть.
+//этот скрипт возаращает на текущий месяц рабочие дни
+    $.get("/php/script/schedule_Day.php",{ 
+            month: m[Month-1], 
+            year: Year, 
+            bar: 'rep-cafe', 
+            userNumber: 1 
+            }, function(data) {
+             data = $.parseJSON(data);
+             alert(data);
+        });
+
 $( document ).ready(function() {
     /*------------------------------------установки календаря------------------------------------------------------*/
     var
@@ -24,7 +36,7 @@ $( document ).ready(function() {
     function countMoney(dayWork){ return Math.floor(7000/dayWork)}    
     function prinGrid() {
         //в этом цикле заполняется сетка графика (дни, числа, сетка)
-        for (var i = 1, d = 1; i < dInMonth(Month,Year)+1; i++) {
+        for (var i = 1, d = 1, a = 1; i < dInMonth(Month,Year)+1; i++) {
         //тут печатаются дни недели
         $('.table-schedule-reporter #day-of-the-week').append(
                 '<td class="table-schedule_border1 table-schedule__day-of-the-week">'+nameDayW[dow(Month-1,i)]+'</td>');
@@ -47,32 +59,68 @@ $( document ).ready(function() {
         $('.table-schedule-reporter .row-4').append(
             '<td class="table-schedule_border1 dayGrid collum'+i+'"></td>'
             );
+        /*-------------------------фактические дни fact-row-1 --------------------*/
 
-        $.get("/php/script/schedule_Day.php", { day: i,month: m[Month-1], year: Year }, function(data) {
-            if (data == 'true') {   
-                $('.fact-row-1').append(
-                '<td class="table-schedule_border1 dayGrid  black" data-day="'+d+'"></td>'
-                );        
-            }else{
-                $('.fact-row-1').append(
-                '<td class="table-schedule_border1 dayGrid" data-day="'+d+'"></td>'
-                );        
-            }
+        $.get("/php/script/schedule_Day.php", { 
+            day: i,
+            month: m[Month-1], 
+            year: Year, 
+            bar: 'rep-cafe', 
+            userNumber: 1 
+            }, 
+            function(data) {
+                    if (data === 'true') {   
+                        $('.fact-row-1').append(
+                        '<td class="table-schedule_border1 dayGrid  black" data-day="'+d+'" bgcolor="#000"></td>'
+                        );        
+                    }else if(data === 'false'){
+                        $('.fact-row-1').append(
+                        '<td class="table-schedule_border1 dayGrid" data-day="'+d+'"></td>'
+                        );        
+                    }
+                 
             d++;
         });
+        /*------------------------- конец фактические дни fact-row-1 --------------------*/
+
+        /*------------------------- фактические дни fact-row-2       --------------------*/
+        $.get("/php/script/schedule_Day.php", { 
+            day: i,
+            month: m[Month-1], 
+            year: Year, 
+            bar: 'rep-cafe', 
+            userNumber: 2 
+            }, function(data) {
+                    if (data === 'true') {   
+                        $('.fact-row-2').append(
+                        '<td class="table-schedule_border1 dayGrid  black" data-day="'+a+'" bgcolor="#000"></td>'
+                        );        
+                    }else if(data === 'false'){
+                        $('.fact-row-2').append(
+                        '<td class="table-schedule_border1 dayGrid" data-day="'+a+'"></td>'
+                        );        
+                    }
+            a++;
+        });
+        /*------------------------- закончились фактические дни fact-row-2       --------------------*/
 
         if (i >= dInMonth(Month,Year)+1 ) { 
             d = 1;
+            a = 1;
         }
         }
     }
     function calculateMoney(){
-        var workingDayR1 = $('#table-schedule-reporter .fact-row-1 .black').length;// Кол-во выходов по графику
+        var workingDayR1 = $('#table-schedule-reporter .row-1 .black').length;// Кол-во выходов по графику
         var workingDayR2 = $('#table-schedule-reporter .row-2 .black').length;// Кол-во выходов по графику
         var workingDayR3 = $('#table-schedule-reporter .row-3 .black').length;// Кол-во выходов по графику
         var workingDayR4 = $('#table-schedule-reporter .row-4 .black').length;// Кол-во выходов по графику
 
-        var workingDayR1Fact = workingDayR1; //Кол-во выходов по факту
+        var workingDayR1Fact = $('#table-schedule-reporter .fact-row-1 .black').length;// Кол-во выходов по факту
+        // var workingDayR2 = $('#table-schedule-reporter .fact-row-2 .black').length;// Кол-во выходов по факту
+        // var workingDayR3 = $('#table-schedule-reporter .fact-row-3 .black').length;// Кол-во выходов по факту
+        // var workingDayR4 = $('#table-schedule-reporter .fact-row-4 .black').length;// Кол-во выходов по факту
+
         $('.workingDay').text('Количество смен по графику: ' + workingDayR1);
         $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн');
         $('.visits').text('Выходов по факту: ' + workingDayR1Fact);
@@ -80,31 +128,31 @@ $( document ).ready(function() {
 
         //Щелчек по клеточке (выбор рабочий или выходной)
         $('#table-schedule-reporter .fact-row-1 .dayGrid').click(function(){
-            if ($(this).hasClass('black') || $(this).hasClass('addBlack') === true) { //проверям на рабочий день
+            // if ($(this).hasClass('black') || $(this).hasClass('addBlack') === true) { //проверям на рабочий день
 
-                    $(this).removeClass('black addBlack'); //eсли рабочий то снять класс (черный)
-                    $(this).attr('bgcolor','#fff');
-                    count-= countMoney(workingDayR1); //отнять с оплаты цену за выход на работу
-                    workingDayR1Fact--;//Снять один выход по факту
+            //         $(this).removeClass('black addBlack'); //eсли рабочий то снять класс (черный)
+            //         $(this).attr('bgcolor','#fff');
+            //         count-= countMoney(workingDayR1); //отнять с оплаты цену за выход на работу
+            //         workingDayR1Fact--;//Снять один выход по факту
 
-                    $('.workingDay').text('Количество смен по графику: ' + workingDayR1);  
-                    $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн');
-                    $('.visits').html('Выходов по факту: ' + '<span>' + workingDayR1Fact + '</span>');
-                    $('.payment').html('Оплата: ' + '<span>' + count + 'грн' + '</span>');
+            //         $('.workingDay').text('Количество смен по графику: ' + workingDayR1);  
+            //         $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн');
+            //         $('.visits').html('Выходов по факту: ' + '<span>' + workingDayR1Fact + '</span>');
+            //         $('.payment').html('Оплата: ' + '<span>' + count + 'грн' + '</span>');
 
-            }else{ //если класс не стоит (выходной) тогда добавить класс (вырабрать рабочую смену)
+            // }else{ //если класс не стоит (выходной) тогда добавить класс (вырабрать рабочую смену)
 
-                $(this).addClass('addBlack');
-                $(this).attr('bgcolor','#000');
+            //     $(this).addClass('addBlack');
+            //     $(this).attr('bgcolor','#000');
 
-                count+= countMoney(workingDayR1); // добавить к оплате цену за выход на работу
-                workingDayR1Fact++;//Добавить один выход по факту
+            //     count+= countMoney(workingDayR1); // добавить к оплате цену за выход на работу
+            //     workingDayR1Fact++;//Добавить один выход по факту
 
-                $('.workingDay').text('Количество смен по графику: ' + workingDayR1);
-                $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн');
-                $('.visits').html('Выходов по факту: ' + '<span>' + workingDayR1Fact + '</span>');
-                $('.payment').html('Оплата: ' + '<span>' + count + 'грн' + ' ' + '</span>');
-            }
+            //     $('.workingDay').text('Количество смен по графику: ' + workingDayR1);
+            //     $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн');
+            //     $('.visits').html('Выходов по факту: ' + '<span>' + workingDayR1Fact + '</span>');
+            //     $('.payment').html('Оплата: ' + '<span>' + count + 'грн' + ' ' + '</span>');
+            // }
 
             if (count<7000) {
 
@@ -130,7 +178,6 @@ $( document ).ready(function() {
         });// end click
     }//end function calculateMoney
     function reverseEachWorkDay(){
-            prinGrid();     
             $($("#table-schedule-reporter .row-1 .dayGrid").get().reverse()).each(function() {
                 scoreR1++;
                 if(scoreR1==5){scoreR1=1}
@@ -166,6 +213,7 @@ $( document ).ready(function() {
                     $(this).attr('bgcolor','#000');
                 
                 }});//end reverse.each
+
     }
 
     function cycleWorkDay() {
@@ -215,11 +263,13 @@ $( document ).ready(function() {
 
         /* переключить рабочий/выходной день */
         if ($(this).hasClass('black')) {
-            $.get("/php/script/changeDay.php", {day: dayNumber, value:'false', month: m[Month-1], year: Year}, function(data) {alert(data)});
+            $.get("/php/script/changeDay.php", {day: dayNumber, value:'false', month: m[Month-1], year: Year}, function(data) {});
             $(this).removeClass('black')
+            $(this).attr('bgcolor','#fff');
         }else{
-            $.get("/php/script/changeDay.php", {day: dayNumber, value:'true', month: m[Month-1], year: Year}, function(data) {alert(data)});
+            $.get("/php/script/changeDay.php", {day: dayNumber, value:'true' , month: m[Month-1], year: Year}, function(data) {});
             $(this).addClass('black')
+            $(this).attr('bgcolor','#000');
         }
 
         
@@ -347,6 +397,15 @@ $( document ).ready(function() {
         prinGrid();//Печатаем всю сетку
         cycleWorkDay();//циклы для расписания наступившего нового месяца
         calculateMoney();//Рабоота калькулятора оплаты труда
+        $.get("/php/script/schedule_Day.php",{ 
+            month: m[Month-1], 
+            year: Year, 
+            bar: 'rep-cafe', 
+            userNumber: 1 
+            }, function(data) {
+             data = $.parseJSON(data);
+             alert(data);
+        });
     });//end click  
 	
     	
@@ -472,8 +531,10 @@ $( document ).ready(function() {
         $('#table-schedule-reporter .numder-day').remove()//удалить числа месяца
         $('#table-schedule-reporter .table-schedule__day-of-the-week').remove()//удалить дни недели
         
+        prinGrid();             
         reverseEachWorkDay();
         calculateMoney();//Рабоота калькулятора оплаты труда
+
     });//end click  
 
 	// var	nowDate		=	new Date(),

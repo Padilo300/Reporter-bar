@@ -93,7 +93,6 @@
                <td class="table-schedule_border1 table-schedule__th" >
                  <?php $viewUsers->userNameCafe($cafe, $Barmen1);?>
                </td>
-               <?php $changeSchedule->prinGridFactWork(); ?>
               </tr>
               <tr class="table-schedule__row fact-row-2">
                 <td class="table-schedule_border1 table-schedule__th">

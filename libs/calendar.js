@@ -1,15 +1,21 @@
-//ПЕРЕд коммиом не знал куда деть.
-//этот скрипт возаращает на текущий месяц рабочие дни
-    $.get("/php/script/schedule_Day.php",{ 
-            month: m[Month-1], 
-            year: Year, 
-            bar: 'rep-cafe', 
-            userNumber: 1 
-            }, function(data) {
-             data = $.parseJSON(data);
-             alert(data);
-        });
-
+// for (var i = 1, d = 1, a = 1; i < dInMonth(Month,Year)+1; i++) {
+//                     if (data === 'true') {   
+//                         $('#table-schedule-reporter .fact-row-1').append(
+//                         '<td class="table-schedule_border1 dayGrid  black" data-day="'+d+'" bgcolor="#000"></td>'
+//                         );        
+//                         console.log(i);
+//                     }else if(data === 'false'){
+//                         $('.fact-row-1').append(
+//                         '<td class="table-schedule_border1 dayGrid" data-day="'+d+'"></td>'
+//                         );        
+//                     }
+//                     //сброс счетчика
+//                     d++; a++;
+//                     if (i >= dInMonth(Month,Year)+1 ) { 
+//                         d = 1;
+//                         a = 1;
+//                     }
+//                 }
 $( document ).ready(function() {
     /*------------------------------------установки календаря------------------------------------------------------*/
     var
@@ -31,6 +37,24 @@ $( document ).ready(function() {
     $('.table-rep__numberYear').text(Year);//имя месяца
 
     /*------------------------------------ Закончились установки календаря------------------------------------------------------*/
+    //эта функция печатает график фактических выходов
+    function getSchedule(userNumber) {
+        var aaa = '';
+        //посылает запрос с текущим месяцем
+        $.get("/php/script/schedule_Day.php",{ 
+        month: m[Month-1], 
+        year: Year, 
+        bar: 'rep-cafe', 
+        userNumber: userNumber 
+        }, 
+        function(data) {
+            //получает ответ JSON массив true для рабочих ней и false для выходных
+            data = $.parseJSON(data);
+            aaa = data;
+            aaa;
+        });
+    }
+    alert(getSchedule(1));
 	function dInMonth(month,year){return new Date(year, month, 0).getDate(); console.log(year + month)};//узнаем сколько дней в месяце
 	function dow(Month,Day) {return new Date(Year,Month,Day).getDay();}//узнаем день недели
     function countMoney(dayWork){ return Math.floor(7000/dayWork)}    
@@ -61,53 +85,48 @@ $( document ).ready(function() {
             );
         /*-------------------------фактические дни fact-row-1 --------------------*/
 
-        $.get("/php/script/schedule_Day.php", { 
-            day: i,
-            month: m[Month-1], 
-            year: Year, 
-            bar: 'rep-cafe', 
-            userNumber: 1 
-            }, 
-            function(data) {
-                    if (data === 'true') {   
-                        $('.fact-row-1').append(
-                        '<td class="table-schedule_border1 dayGrid  black" data-day="'+d+'" bgcolor="#000"></td>'
-                        );        
-                    }else if(data === 'false'){
-                        $('.fact-row-1').append(
-                        '<td class="table-schedule_border1 dayGrid" data-day="'+d+'"></td>'
-                        );        
-                    }
+        // $.get("/php/script/schedule_Day.php", { 
+        //     day: i,
+        //     month: m[Month-1], 
+        //     year: Year, 
+        //     bar: 'rep-cafe', 
+        //     userNumber: 1 
+        //     }, 
+        //     function(data) {
+        //             if (data === 'true') {   
+        //                 $('.fact-row-1').append(
+        //                 '<td class="table-schedule_border1 dayGrid  black" data-day="'+d+'" bgcolor="#000"></td>'
+        //                 );        
+        //             }else if(data === 'false'){
+        //                 $('.fact-row-1').append(
+        //                 '<td class="table-schedule_border1 dayGrid" data-day="'+d+'"></td>'
+        //                 );        
+        //             }
                  
-            d++;
-        });
-        /*------------------------- конец фактические дни fact-row-1 --------------------*/
+        //     d++;
+        // });
+        // ------------------------- конец фактические дни fact-row-1 --------------------
 
-        /*------------------------- фактические дни fact-row-2       --------------------*/
-        $.get("/php/script/schedule_Day.php", { 
-            day: i,
-            month: m[Month-1], 
-            year: Year, 
-            bar: 'rep-cafe', 
-            userNumber: 2 
-            }, function(data) {
-                    if (data === 'true') {   
-                        $('.fact-row-2').append(
-                        '<td class="table-schedule_border1 dayGrid  black" data-day="'+a+'" bgcolor="#000"></td>'
-                        );        
-                    }else if(data === 'false'){
-                        $('.fact-row-2').append(
-                        '<td class="table-schedule_border1 dayGrid" data-day="'+a+'"></td>'
-                        );        
-                    }
-            a++;
-        });
+        // /*------------------------- фактические дни fact-row-2       --------------------*/
+        // $.get("/php/script/schedule_Day.php", { 
+        //     day: i,
+        //     month: m[Month-1], 
+        //     year: Year, 
+        //     bar: 'rep-cafe', 
+        //     userNumber: 2 
+        //     }, function(data) {
+        //             if (data === 'true') {   
+        //                 $('.fact-row-2').append(
+        //                 '<td class="table-schedule_border1 dayGrid  black" data-day="'+a+'" bgcolor="#000"></td>'
+        //                 );        
+        //             }else if(data === 'false'){
+        //                 $('.fact-row-2').append(
+        //                 '<td class="table-schedule_border1 dayGrid" data-day="'+a+'"></td>'
+        //                 );        
+        //             }
+        //     a++;
+        // });
         /*------------------------- закончились фактические дни fact-row-2       --------------------*/
-
-        if (i >= dInMonth(Month,Year)+1 ) { 
-            d = 1;
-            a = 1;
-        }
         }
     }
     function calculateMoney(){

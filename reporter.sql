@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Фев 16 2018 г., 19:32
+-- Время создания: Фев 19 2018 г., 13:15
 -- Версия сервера: 10.1.26-MariaDB-0+deb9u1
 -- Версия PHP: 7.0.27-0+deb9u1
 
@@ -23,44 +23,115 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `february`
+--
+
+CREATE TABLE `february` (
+  `id` int(11) NOT NULL,
+  `bar` varchar(50) NOT NULL,
+  `userNumber` int(2) NOT NULL,
+  `year` int(4) NOT NULL,
+  `day1` varchar(10) NOT NULL DEFAULT 'false',
+  `day2` varchar(10) NOT NULL DEFAULT 'false',
+  `day3` varchar(10) NOT NULL DEFAULT 'false',
+  `day4` varchar(10) NOT NULL DEFAULT 'false',
+  `day5` varchar(10) NOT NULL DEFAULT 'false',
+  `day6` varchar(10) NOT NULL DEFAULT 'false',
+  `day7` varchar(10) NOT NULL DEFAULT 'false',
+  `day8` varchar(10) NOT NULL DEFAULT 'false',
+  `day9` varchar(10) NOT NULL DEFAULT 'false',
+  `day10` varchar(10) NOT NULL DEFAULT 'false',
+  `day11` varchar(10) NOT NULL DEFAULT 'false',
+  `day12` varchar(10) NOT NULL DEFAULT 'false',
+  `day13` varchar(10) NOT NULL DEFAULT 'false',
+  `day14` varchar(10) NOT NULL DEFAULT 'false',
+  `day15` varchar(10) NOT NULL DEFAULT 'false',
+  `day16` varchar(10) NOT NULL DEFAULT 'false',
+  `day17` varchar(10) NOT NULL DEFAULT 'false',
+  `day18` varchar(10) NOT NULL DEFAULT 'false',
+  `day19` varchar(10) NOT NULL DEFAULT 'false',
+  `day20` varchar(10) NOT NULL DEFAULT 'false',
+  `day21` varchar(10) NOT NULL DEFAULT 'false',
+  `day22` varchar(10) NOT NULL DEFAULT 'false',
+  `day23` varchar(10) NOT NULL DEFAULT 'false',
+  `day24` varchar(10) NOT NULL DEFAULT 'false',
+  `day25` varchar(10) NOT NULL DEFAULT 'false',
+  `day26` varchar(10) NOT NULL DEFAULT 'false',
+  `day27` varchar(10) NOT NULL DEFAULT 'false',
+  `day28` varchar(10) NOT NULL DEFAULT 'false',
+  `day29` varchar(10) NOT NULL DEFAULT 'false',
+  `day30` varchar(10) NOT NULL DEFAULT 'false',
+  `day31` varchar(10) NOT NULL DEFAULT 'false'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `february`
+--
+
+INSERT INTO `february` (`id`, `bar`, `userNumber`, `year`, `day1`, `day2`, `day3`, `day4`, `day5`, `day6`, `day7`, `day8`, `day9`, `day10`, `day11`, `day12`, `day13`, `day14`, `day15`, `day16`, `day17`, `day18`, `day19`, `day20`, `day21`, `day22`, `day23`, `day24`, `day25`, `day26`, `day27`, `day28`, `day29`, `day30`, `day31`) VALUES
+(1, 'rep-cafe', 1, 2018, 'false', 'false', 'true', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false'),
+(2, 'rep-cafe', 2, 2018, 'false', 'false', 'true', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false'),
+(3, 'rep-cafe', 3, 2018, 'false', 'false', 'true', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false'),
+(4, 'rep-cafe', 4, 2018, 'false', 'false', 'true', 'true', 'false', 'false', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `january`
 --
 
 CREATE TABLE `january` (
   `id` int(11) NOT NULL,
+  `bar` varchar(50) NOT NULL,
+  `userNumber` int(2) NOT NULL,
   `year` int(4) NOT NULL,
-  `1` varchar(10) NOT NULL DEFAULT 'false',
-  `2` varchar(10) NOT NULL DEFAULT 'false',
-  `3` varchar(10) NOT NULL DEFAULT 'false',
-  `4` varchar(10) NOT NULL DEFAULT 'false',
-  `5` varchar(10) NOT NULL DEFAULT 'false',
-  `6` varchar(10) NOT NULL DEFAULT 'false',
-  `7` varchar(10) NOT NULL DEFAULT 'false',
-  `8` varchar(10) NOT NULL DEFAULT 'false',
-  `9` varchar(10) NOT NULL DEFAULT 'false',
-  `10` varchar(10) NOT NULL DEFAULT 'false',
-  `11` varchar(10) NOT NULL DEFAULT 'false',
-  `12` varchar(10) NOT NULL DEFAULT 'false',
-  `13` varchar(10) NOT NULL DEFAULT 'false',
-  `14` varchar(10) NOT NULL DEFAULT 'false',
-  `15` varchar(10) NOT NULL DEFAULT 'false',
-  `16` varchar(10) NOT NULL DEFAULT 'false',
-  `17` varchar(10) NOT NULL DEFAULT 'false',
-  `18` varchar(10) NOT NULL DEFAULT 'false',
-  `19` varchar(10) NOT NULL DEFAULT 'false',
-  `20` varchar(10) NOT NULL DEFAULT 'false',
-  `21` varchar(10) NOT NULL DEFAULT 'false',
-  `22` varchar(10) NOT NULL DEFAULT 'false',
-  `23` varchar(10) NOT NULL DEFAULT 'false',
-  `24` varchar(10) NOT NULL DEFAULT 'false',
-  `25` varchar(10) NOT NULL DEFAULT 'false',
-  `26` varchar(10) NOT NULL DEFAULT 'false',
-  `27` varchar(10) NOT NULL DEFAULT 'false',
-  `28` varchar(10) NOT NULL DEFAULT 'false',
-  `29` varchar(10) NOT NULL DEFAULT 'false',
-  `30` varchar(10) NOT NULL DEFAULT 'false',
-  `31` varchar(10) NOT NULL DEFAULT 'false'
+  `day1` varchar(10) NOT NULL DEFAULT 'false',
+  `day2` varchar(10) NOT NULL DEFAULT 'false',
+  `day3` varchar(10) NOT NULL DEFAULT 'false',
+  `day4` varchar(10) NOT NULL DEFAULT 'false',
+  `day5` varchar(10) NOT NULL DEFAULT 'false',
+  `day6` varchar(10) NOT NULL DEFAULT 'false',
+  `day7` varchar(10) NOT NULL DEFAULT 'false',
+  `day8` varchar(10) NOT NULL DEFAULT 'false',
+  `day9` varchar(10) NOT NULL DEFAULT 'false',
+  `day10` varchar(10) NOT NULL DEFAULT 'false',
+  `day11` varchar(10) NOT NULL DEFAULT 'false',
+  `day12` varchar(10) NOT NULL DEFAULT 'false',
+  `day13` varchar(10) NOT NULL DEFAULT 'false',
+  `day14` varchar(10) NOT NULL DEFAULT 'false',
+  `day15` varchar(10) NOT NULL DEFAULT 'false',
+  `day16` varchar(10) NOT NULL DEFAULT 'false',
+  `day17` varchar(10) NOT NULL DEFAULT 'false',
+  `day18` varchar(10) NOT NULL DEFAULT 'false',
+  `day19` varchar(10) NOT NULL DEFAULT 'false',
+  `day20` varchar(10) NOT NULL DEFAULT 'false',
+  `day21` varchar(10) NOT NULL DEFAULT 'false',
+  `day22` varchar(10) NOT NULL DEFAULT 'false',
+  `day23` varchar(10) NOT NULL DEFAULT 'false',
+  `day24` varchar(10) NOT NULL DEFAULT 'false',
+  `day25` varchar(10) NOT NULL DEFAULT 'false',
+  `day26` varchar(10) NOT NULL DEFAULT 'false',
+  `day27` varchar(10) NOT NULL DEFAULT 'false',
+  `day28` varchar(10) NOT NULL DEFAULT 'false',
+  `day29` varchar(10) NOT NULL DEFAULT 'false',
+  `day30` varchar(10) NOT NULL DEFAULT 'false',
+  `day31` varchar(10) NOT NULL DEFAULT 'false'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `january`
+--
+
+INSERT INTO `january` (`id`, `bar`, `userNumber`, `year`, `day1`, `day2`, `day3`, `day4`, `day5`, `day6`, `day7`, `day8`, `day9`, `day10`, `day11`, `day12`, `day13`, `day14`, `day15`, `day16`, `day17`, `day18`, `day19`, `day20`, `day21`, `day22`, `day23`, `day24`, `day25`, `day26`, `day27`, `day28`, `day29`, `day30`, `day31`) VALUES
+(1, 'rep-cafe', 1, 2018, 'true', 'false', 'false', 'true', 'true', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false'),
+(2, 'rep-cafe', 2, 2018, 'false', 'false', 'true', 'true', 'true', 'true', 'false', 'true', 'false', 'true', 'false', 'true', 'false', 'false', 'false', 'true', 'false', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false'),
+(3, 'rep-cafe', 3, 2018, 'false', 'false', 'false', 'false', 'true', 'true', 'true', 'true', 'false', 'false', 'true', 'true', 'false', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false'),
+(4, 'rep-cafe', 4, 2018, 'false', 'false', 'true', 'true', 'true', 'false', 'true', 'true', 'true', 'true', 'true', 'false', 'false', 'false', 'false', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false'),
+(5, 'pab', 1, 2018, 'false', 'false', 'false', 'true', 'true', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false'),
+(6, 'pab', 2, 2018, 'false', 'false', 'false', 'false', 'true', 'true', 'false', 'true', 'false', 'true', 'false', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false'),
+(7, 'pab', 3, 2018, 'false', 'false', 'false', 'false', 'false', 'false', 'true', 'true', 'false', 'false', 'true', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false'),
+(8, 'pab', 4, 2018, 'false', 'false', 'true', 'true', 'true', 'false', 'false', 'false', 'true', 'true', 'true', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false'),
+(9, 'pab', 5, 2018, 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false');
 
 -- --------------------------------------------------------
 
@@ -129,6 +200,12 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `password`, `email`, `day`
 --
 
 --
+-- Индексы таблицы `february`
+--
+ALTER TABLE `february`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `january`
 --
 ALTER TABLE `january`
@@ -145,10 +222,15 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `february`
+--
+ALTER TABLE `february`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT для таблицы `january`
 --
 ALTER TABLE `january`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --

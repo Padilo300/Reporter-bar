@@ -37,33 +37,26 @@
             Кофейня
           </h4>
         </div>
-        <div id="collapseOne" class="panel-collapse collapse in">
+        <div id="collapseOne" class="panel-collapse collapse ">
           <div class="panel-body">
 
             <table class="table-schedule-reporter"  id="table-schedule-reporter" >
               <div class="month">
-                                <a 
-                                  href="#" 
-                                  id="Table-Rep-backMonth" 
-                                  class="no-print control-month" >
-                                    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
-                                </a> 
-                                <p class="table-rep__numberYear"></p>
-                                <br>
-                                <p class="table-rep__nameMonth"></p>
-                                <a 
-                                  href="#" 
-                                  id="Table-Rep-next_Month" 
-                                  class="no-print control-month" 
-                                  >
-                                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                                </a>
+                <a href="#" id="Table-Rep-backMonth" class="no-print control-month" >
+                  <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                </a> 
+                <p class="table-rep__numberYear"></p>
+                <br>
+                <p class="table-rep__nameMonth"></p>
+                <a href="#" id="Table-Rep-next_Month" class="no-print control-month" >
+                  <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                </a>
               </div>
               <tr class="table-schedule__row" id="day-of-the-week">
-                <th class="table-schedule__th" bgcolor="#999">Кафе Репортер</th>
+                <td class="table-schedule__th" bgcolor="#999">Кафе Репортер</td>
               </tr>
               <tr class="table-schedule__row" id="number-day">
-                <th class="table-schedule_border1 table-schedule__th"></th>
+                <td class="table-schedule_border1 table-schedule__th"></td>
        
        
               </tr>
@@ -89,22 +82,22 @@
                   <?php $viewUsers->userNameCafe($cafe,$cafeCAKE2);?>
                 </td>
               </tr>
-              <tr class="table-schedule__row fact-row-1" >
+              <tr class="table-schedule__row fact-row-1 fact" >
                <td class="table-schedule_border1 table-schedule__th" >
                  <?php $viewUsers->userNameCafe($cafe, $Barmen1);?>
                </td>
               </tr>
-              <tr class="table-schedule__row fact-row-2">
+              <tr class="table-schedule__row fact-row-2 fact">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($cafe,$cafeCAKE1);?>
                 </t>
               </tr>
-              <tr class="table-schedule__row fact-row-3">
+              <tr class="table-schedule__row fact-row-3 fact">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($cafe,$Barmen2);?>
                 </td>
               </tr>
-              <tr class="table-schedule__row fact-row-4">
+              <tr class="table-schedule__row fact-row-4 fact">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($cafe,$cafeCAKE2);?>
                 </td>
@@ -119,8 +112,9 @@
                     onclick="tableToExcel('table-schedule-reporter', 'W3C Example Table')" 
                     value="Скачать в XLS">
                 </td>
+                <td>&#160;</td>
                 <td>
-                  <a href="page-quickly-print.php"><button>Быстрая печать</button></a>
+                  <a href="page-quickly-print-cafe.php"><button>Быстрая печать</button></a>
                 </td>
               </tr>
             </table>
@@ -141,55 +135,92 @@
             Паб
           </h4>
         </div>
-        <div id="collapseTwo" class="panel-collapse collapse">
-          <div class="panel-body">
-            <div id="WrapR_pab">
-                            <div class="month">
-                              <a href="#" id="backMonth" class="no-print control-month" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a> 
-                              <p> </p>
-                              <a href="#" id="nextMonth" class="no-print control-month" ><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                            </div>
-                            
-                            <div class="table_wrap">
-                              <div class="table">
-                                <div class="bartender" id="bar">
-                                  <div class="name space">Паб Репортер</div>
-                                  <div class="name space"></div>
-                                  <div class="name">
-                                    <p>
-                                      <?php $viewUsers->userNameCafe($pab, $Barmen1);?>    
-                                    </p>
-                                  </div>
-                                  <div class="name">
-                                    <p>
-                                      <?php $viewUsers->userNameCafe($pab, $Barmen2);?>    
-                                    </p>
-                                  </div>
-                                  <div class="name">
-                                    <p>
-                                      <?php $viewUsers->userNameCafe($pab, $Barmen3);?>    
-                                    </p>
-                                  </div>
-                                  <div class="name">
-                                    <p>
-                                      <?php $viewUsers->userNameCafe($pab, $Barmen4);?>
-                                    </p>
-                                  </div>
-                                  <div class="name">
-                                    <p>
-                                      <?php $viewUsers->userNameCafe($pab, $Barmen5);?>
-                                    </p>
-                                  </div>
-                                  
-                                </div>
-                                <div class="grid_days">
-                                  <div class="wrapDay">
-                                  
-                                  </div>
-                                </div>
-                              </div>    
-                            </div>
-                          </div>
+<div id="collapseTwo" class="panel-collapse collapse in">
+  <div class="panel-body">
+    <table class="table-schedule-reporter_pab"  id="WrapR_pab" >
+      <div class="month">
+        <a href="#" id="Table-Rep-pab-backMonth" class="no-print control-month">
+          <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+        </a> 
+        <p class="table-rep-pab__numberYear"></p>
+        <br>
+        <p class="table-rep-pab__nameMonth"></p>
+        <a href="#" id="Table-Rep-pab-next_Month" class="no-print control-month" >
+          <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+        </a>
+      </div><!--end month-->
+      <tr class="table-schedule__row" id="day-of-the-week-pab">
+        <td class="table-schedule__th" bgcolor="#999">Паб Репортер</td>
+      </tr>
+      <tr class="table-schedule__row" id="number-day-pab">
+        <td class="table-schedule_border1 table-schedule__th"></td>
+      </tr>
+      <tr class="table-schedule__row row-1">
+       <td class="table-schedule_border1 table-schedule__th" >
+          <?php $viewUsers->userNameCafe($pab, $Barmen1);?>    
+       </td>
+      </tr>
+      <tr class="table-schedule__row row-2">
+        <td class="table-schedule_border1 table-schedule__th">
+          <?php $viewUsers->userNameCafe($pab, $Barmen2);?>    
+        </td>
+      </tr>
+      <tr class="table-schedule__row row-3">
+        <td class="table-schedule_border1 table-schedule__th">
+          <?php $viewUsers->userNameCafe($pab, $Barmen3);?>    
+          </td>
+      </tr>
+      <tr class="table-schedule__row row-4">
+        <td class="table-schedule_border1 table-schedule__th">
+          <?php $viewUsers->userNameCafe($pab, $Barmen4);?>
+        </td>
+      </tr>
+      <tr class="table-schedule__row row-5">
+        <td class="table-schedule_border1 table-schedule__th">
+          <?php $viewUsers->userNameCafe($pab, $Barmen5);?>
+        </td>
+      </tr>
+      <tr class="table-schedule__row fact-row-1 fact" >
+       <td class="table-schedule_border1 table-schedule__th" >
+         <?php $viewUsers->userNameCafe($pab, $Barmen1);?>    
+       </td>
+      </tr>
+      <tr class="table-schedule__row fact-row-2 fact">
+        <td class="table-schedule_border1 table-schedule__th">
+          <?php $viewUsers->userNameCafe($pab, $Barmen2);?>    
+        </t>
+      </tr>
+      <tr class="table-schedule__row fact-row-3 fact">
+        <td class="table-schedule_border1 table-schedule__th">
+          <?php $viewUsers->userNameCafe($pab, $Barmen3);?>    
+        </td>
+      </tr>
+      <tr class="table-schedule__row fact-row-4 fact">
+        <td class="table-schedule_border1 table-schedule__th">
+          <?php $viewUsers->userNameCafe($pab, $Barmen4);?>
+        </td>
+      </tr>
+      <tr class="table-schedule__row fact-row-5 fact">
+        <td class="table-schedule_border1 table-schedule__th">
+          <?php $viewUsers->userNameCafe($pab, $Barmen5);?>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table><!--/////////////////  end WrapR_pab //////////////////--> 
+      <tr>
+        <td>
+          <input 
+            type="button" 
+            onclick="tableToExcel('WrapR_pab', 'W3C Example Table')" 
+            value="Скачать в XLS">
+        </td>
+        <td>&#160;</td>
+        <td>
+          <a href="page-quickly-print-pab.php"><button>Быстрая печать</button></a>
+        </td>
+      </tr>
+    </table>
           </div>
         </div>
       </div>

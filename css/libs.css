@@ -2,19 +2,17 @@
 @import 'bootstrap.min.css'		;
 @import 'button.css'			;
 @import 'font-awesome.min.css'	;
-@import 'style.css'				;
 @import 'cart_user.css'			;
 @import 'login.css'				;
 @import 'addUser.css'			;
 @import 'animate.css'			;
 @import 'table.css'				;
+@import 'style.css'				;
 /*@import url('https://fonts.googleapis.com/css?family=El+Messiri:400,700&subset=cyrillic');*/
 /*----------------------------------стили календаря--------------------------------------*/
 
 
 #calendarMainWrap,#WrapR_pab,#WrapR_rest{
-	min-width: 920px;
-	width: 100%;
 	background-color: #fff;	
 	padding: 3px 5px;
 }
@@ -148,6 +146,11 @@
 	-webkit-print-color-adjust: exact; !important	
     print-color-adjust: exact; !important	
     padding: auto;
+
+	#bg-gray{
+		background-color: #999 important!;
+		print-color-adjust: exact important!;
+	}
 }	
 }
 /*-----------------------------------------закончились стили календаря---------------------------------------------------*/

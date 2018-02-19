@@ -121,10 +121,10 @@ body {
     background: #000 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact; }
-  .no-print {
-    display: none; }
   * {
     display: block; }
+  .no-print {
+    display: none !important; }
   table {
     display: table; }
   tr {

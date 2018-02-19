@@ -35,7 +35,7 @@ $( document ).ready(function() {
                 );
             //-------тут создаются ячейки для графика--
             $('#WrapR_pab .row-1').append(
-                '<td class="table-schedule_border1 dayGrid collum'+i+'" id='+i+'></td>'
+                '<td class="table-schedule_border1 dayGrid collum'+i+'"></td>'
                 );
             $('#WrapR_pab .row-2').append(
                 '<td class="table-schedule_border1 dayGrid collum'+i+'"></td>'
@@ -210,11 +210,11 @@ $( document ).ready(function() {
         })
     }/*---------end getShedule_user_5---------*/
 
-   getSchedule_user_1();
-   getSchedule_user_2();
-   getSchedule_user_3();
-   getSchedule_user_4();
-   getSchedule_user_5();
+   getSchedule_user_1(); // тут из sql вытягиваем график по факту
+   getSchedule_user_2(); // тут из sql вытягиваем график по факту
+   getSchedule_user_3(); // тут из sql вытягиваем график по факту
+   getSchedule_user_4(); // тут из sql вытягиваем график по факту
+   getSchedule_user_5(); // тут из sql вытягиваем график по факту
     function calculateMoney(){
         var workingDayR1 = $('#WrapR_pab .row-1 .black').length;// Кол-во выходов по графику
         var workingDayR2 = $('#WrapR_pab .row-2 .black').length;// Кол-во выходов по графику
@@ -277,7 +277,6 @@ $( document ).ready(function() {
         });// end click
     }//end function calculateMoney
     function reverseEachWorkDay(){
-    	
 
             $($("#WrapR_pab .row-1 .dayGrid").get().reverse()).each(function() {
                 scoreR1++;
@@ -517,14 +516,20 @@ $( document ).ready(function() {
         /*------------------------------------end row4--------------------------------------------*/
 
 
-        e.preventDefault();//отмеа перехода
-        $('#WrapR_pab .dayGrid').remove();//удалить старую сетку рабочих дней
-        $('#WrapR_pab .numder-day').remove()//удалить числа месяца
-        $('#WrapR_pab .table-schedule__day-of-the-week').remove()//удалить дни недели
-        Month++; // переход на следующий месяц
-        prinGrid();
-        cycleWorkDay();//циклы для расписания наступившего нового месяца
-        calculateMoney();//Рабоота калькулятора оплаты труда
+        e.preventDefault(); //отмена перехода по ссылке
+        $('#WrapR_pab .dayGrid').remove()   ; //удалить старую сетку рабочих дней
+        $('#WrapR_pab .numder-day').remove(); //удалить числа месяца
+        $('#WrapR_pab .table-schedule__day-of-the-week').remove(); //удалить дни недели
+        Month++         ; // переход на следующий месяц
+        prinGrid()      ; // вызываем печать общей сетки графика
+        cycleWorkDay()  ; //циклы для расписания наступившего нового месяца
+        calculateMoney(); //Рабоота калькулятора оплаты труда
+
+        getSchedule_user_1() ; // тут из sql вытягиваем график по факту
+        getSchedule_user_2() ; // тут из sql вытягиваем график по факту
+        getSchedule_user_3() ; // тут из sql вытягиваем график по факту
+        getSchedule_user_4() ; // тут из sql вытягиваем график по факту
+        getSchedule_user_5() ; // тут из sql вытягиваем график по факту
     });//end click  
 	
     	
@@ -534,59 +539,59 @@ $( document ).ready(function() {
             Month = 13;
         }
 
-        if ($('body #WrapR_pab .collum:nth-child(1) .row-1 .dayGrid').hasClass('black')=== false &&  
-            $('body #WrapR_pab .collum:nth-child(2) .row-1 .dayGrid').hasClass('black')=== false &&
-            $('body #WrapR_pab .collum:nth-child(3) .row-1 .dayGrid').hasClass('black')=== false &&
-            $('body #WrapR_pab .collum:nth-child(4) .row-1 .dayGrid').hasClass('black')=== false)
+        if ($('body #WrapR_pab .row-1 .dayGrid:eq(0)').hasClass('black')=== false &&  
+            $('body #WrapR_pab .row-1 .dayGrid:eq(1)').hasClass('black')=== false &&
+            $('body #WrapR_pab .row-1 .dayGrid:eq(2)').hasClass('black')=== false &&
+            $('body #WrapR_pab .row-1 .dayGrid:eq(3)').hasClass('black')=== false)
              {
             scoreR1 = 4;
         }
 
-        if ($('body #WrapR_pab .collum:nth-child(1) .row-1 .dayGrid').hasClass('black')=== false &&  
-            $('body #WrapR_pab .collum:nth-child(2) .row-1 .dayGrid').hasClass('black')=== false &&
-            $('body #WrapR_pab .collum:nth-child(3) .row-1 .dayGrid').hasClass('black')=== false &&
-            $('body #WrapR_pab .collum:nth-child(4) .row-1 .dayGrid').hasClass('black')=== true)
+        if ($('body #WrapR_pab .row-1 .dayGrid:eq(0)').hasClass('black')=== false &&  
+            $('body #WrapR_pab .row-1 .dayGrid:eq(1)').hasClass('black')=== false &&
+            $('body #WrapR_pab .row-1 .dayGrid:eq(2)').hasClass('black')=== false &&
+            $('body #WrapR_pab .row-1 .dayGrid:eq(3)').hasClass('black')=== true)
              {
             scoreR1 = 3;
         }
 
-        if ($('body #WrapR_pab .collum:nth-child(1) .row-1 .dayGrid').hasClass('black')=== false &&  
-            $('body #WrapR_pab .collum:nth-child(2) .row-1 .dayGrid').hasClass('black')=== false &&
-            $('body #WrapR_pab .collum:nth-child(3) .row-1 .dayGrid').hasClass('black')=== true &&
-            $('body #WrapR_pab .collum:nth-child(4) .row-1 .dayGrid').hasClass('black')=== true)
+        if ($('body #WrapR_pab .row-1 .dayGrid:eq(0)').hasClass('black')=== false &&  
+            $('body #WrapR_pab .row-1 .dayGrid:eq(1)').hasClass('black')=== false &&
+            $('body #WrapR_pab .row-1 .dayGrid:eq(2)').hasClass('black')=== true &&
+            $('body #WrapR_pab .row-1 .dayGrid:eq(3)').hasClass('black')=== true)
              {
             scoreR1 = 2;
         }
 
-        if ($('body #WrapR_pab .collum:nth-child(1) .row-1 .dayGrid').hasClass('black')=== false &&  
-            $('body #WrapR_pab .collum:nth-child(2) .row-1 .dayGrid').hasClass('black')=== true &&
-            $('body #WrapR_pab .collum:nth-child(3) .row-1 .dayGrid').hasClass('black')=== true &&
-            $('body #WrapR_pab .collum:nth-child(4) .row-1 .dayGrid').hasClass('black')=== true)
+        if ($('body #WrapR_pab .row-1 .dayGrid:eq(0)').hasClass('black')=== false &&  
+            $('body #WrapR_pab .row-1 .dayGrid:eq(1)').hasClass('black')=== true &&
+            $('body #WrapR_pab .row-1 .dayGrid:eq(2)').hasClass('black')=== true &&
+            $('body #WrapR_pab .row-1 .dayGrid:eq(3)').hasClass('black')=== true)
              {
             scoreR1 = 1;
         }
 
 
-        if ($('body #WrapR_pab .collum:nth-child(1) .row-1 .dayGrid').hasClass('black')=== true  &&  
-            $('body #WrapR_pab .collum:nth-child(2) .row-1 .dayGrid').hasClass('black')=== false &&
-            $('body #WrapR_pab .collum:nth-child(3) .row-1 .dayGrid').hasClass('black')=== false &&
-            $('body #WrapR_pab .collum:nth-child(4) .row-1 .dayGrid').hasClass('black')=== false)
+        if ($('body #WrapR_pab .row-1 .dayGrid:eq(0)').hasClass('black')=== true  &&  
+            $('body #WrapR_pab .row-1 .dayGrid:eq(1)').hasClass('black')=== false &&
+            $('body #WrapR_pab .row-1 .dayGrid:eq(2)').hasClass('black')=== false &&
+            $('body #WrapR_pab .row-1 .dayGrid:eq(3)').hasClass('black')=== false)
              {
             scoreR1 = 5;
         }
 
-        if ($('body #WrapR_pab .collum:nth-child(1) .row-1 .dayGrid').hasClass('black')=== true  &&  
-            $('body #WrapR_pab .collum:nth-child(2) .row-1 .dayGrid').hasClass('black')=== true  &&
-            $('body #WrapR_pab .collum:nth-child(3) .row-1 .dayGrid').hasClass('black')=== false &&
-            $('body #WrapR_pab .collum:nth-child(4) .row-1 .dayGrid').hasClass('black')=== false )
+        if ($('body #WrapR_pab .row-1 .dayGrid:eq(0)').hasClass('black')=== true  &&  
+            $('body #WrapR_pab .row-1 .dayGrid:eq(1)').hasClass('black')=== true  &&
+            $('body #WrapR_pab .row-1 .dayGrid:eq(2)').hasClass('black')=== false &&
+            $('body #WrapR_pab .row-1 .dayGrid:eq(3)').hasClass('black')=== false )
              {
             scoreR1 = 6;
         }
 
-        if ($('body #WrapR_pab .collum:nth-child(1) .row-1 .dayGrid').hasClass('black')=== true  &&  
-            $('body #WrapR_pab .collum:nth-child(2) .row-1 .dayGrid').hasClass('black')=== true  &&
-            $('body #WrapR_pab .collum:nth-child(3) .row-1 .dayGrid').hasClass('black')=== true  &&
-            $('body #WrapR_pab .collum:nth-child(4) .row-1 .dayGrid').hasClass('black')=== false )
+        if ($('body #WrapR_pab .row-1 .dayGrid:eq(0)').hasClass('black')=== true  &&  
+            $('body #WrapR_pab .row-1 .dayGrid:eq(1)').hasClass('black')=== true  &&
+            $('body #WrapR_pab .row-1 .dayGrid:eq(2)').hasClass('black')=== true  &&
+            $('body #WrapR_pab .row-1 .dayGrid:eq(3)').hasClass('black')=== false )
              {
             scoreR1 = 0;
         }
@@ -594,26 +599,25 @@ $( document ).ready(function() {
         /*------------------------------------end row1--------------------------------------------*/
 
 
-        if ($('body #WrapR_pab .collum:nth-child(1) .row-2 .dayGrid').hasClass('black') === false    &&  
-            $('body #WrapR_pab .collum:nth-child(2) .row-2 .dayGrid').hasClass('black') === false) {
+        if ($('body #WrapR_pab .row-2 .dayGrid:eq(0)').hasClass('black') === false    &&  
+            $('body #WrapR_pab .row-2 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR2 = 2;
         }
 
-        if ($('body #WrapR_pab .collum:nth-child(1) .row-2 .dayGrid').hasClass('black') === true &&  
-            $('body #WrapR_pab .collum:nth-child(2) .row-2 .dayGrid').hasClass('black') === false) {
-
+        if ($('body #WrapR_pab .row-2 .dayGrid:eq(0)').hasClass('black') === true &&  
+            $('body #WrapR_pab .row-2 .dayGrid:eq(1)').hasClass('black') === false) {
             scoreR2 = 3;
         }
 
-        if ($('body #WrapR_pab .collum:nth-child(1) .row-2 .dayGrid').hasClass('black') === true &&  
-            $('body #WrapR_pab .collum:nth-child(2) .row-2 .dayGrid').hasClass('black') === true) {
+        if ($('body #WrapR_pab .row-2 .dayGrid:eq(0)').hasClass('black') === true &&  
+            $('body #WrapR_pab .row-2 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR2 = 0;
         }
 
-        if ($('body #WrapR_pab .collum:nth-child(1) .row-2 .dayGrid').hasClass('black') === false    &&  
-            $('body #WrapR_pab .collum:nth-child(2) .row-2 .dayGrid').hasClass('black') === true) {
+        if ($('body #WrapR_pab .row-2 .dayGrid:eq(0)').hasClass('black') === false    &&  
+            $('body #WrapR_pab .row-2 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR2 = 1 ;
         }
@@ -621,26 +625,26 @@ $( document ).ready(function() {
         /*------------------------------------end row2--------------------------------------------*/        
 
 
-        if ($('body  #WrapR_pab .collum:nth-child(1) .row-3 .dayGrid').hasClass('black') === false   &&  
-            $('body  #WrapR_pab .collum:nth-child(2) .row-3 .dayGrid').hasClass('black') === false) {
+        if ($('body  #WrapR_pab .row-3 .dayGrid:eq(0)').hasClass('black') === false   &&  
+            $('body  #WrapR_pab .row-3 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR3 = 2;
         }
 
-        if ($('body  #WrapR_pab .collum:nth-child(1) .row-3 .dayGrid').hasClass('black') === true    &&  
-            $('body  #WrapR_pab .collum:nth-child(2) .row-3 .dayGrid').hasClass('black') === false) {
+        if ($('body  #WrapR_pab .row-3 .dayGrid:eq(0)').hasClass('black') === true    &&  
+            $('body  #WrapR_pab .row-3 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR3 = 3;
         }
 
-        if ($('body  #WrapR_pab .collum:nth-child(1) .row-3 .dayGrid').hasClass('black') === true    &&  
-            $('body  #WrapR_pab .collum:nth-child(2) .row-3 .dayGrid').hasClass('black') === true) {
+        if ($('body  #WrapR_pab .row-3 .dayGrid:eq(0)').hasClass('black') === true    &&  
+            $('body  #WrapR_pab .row-3 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR3 = 0;
         }
 
-        if ($('body  #WrapR_pab .collum:nth-child(1) .row-3 .dayGrid').hasClass('black') === false   &&  
-            $('body  #WrapR_pab .collum:nth-child(2) .row-3 .dayGrid').hasClass('black') === true) {
+        if ($('body  #WrapR_pab .row-3 .dayGrid:eq(0)').hasClass('black') === false   &&  
+            $('body  #WrapR_pab .row-3 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR3 = 1 ;
         }
@@ -648,39 +652,71 @@ $( document ).ready(function() {
         /*------------------------------------end row3--------------------------------------------*/
 
 
-        if ($('body #WrapR_pab .collum:nth-child(1) .row-4 .dayGrid').hasClass('black') === false    &&  
-            $('body #WrapR_pab .collum:nth-child(2) .row-4 .dayGrid').hasClass('black') === false) {
+        if ($('body #WrapR_pab .row-4 .dayGrid:eq(0)').hasClass('black') === false    &&  
+            $('body #WrapR_pab .row-4 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR4 = 2;
         }
 
-        if ($('body #WrapR_pab .collum:nth-child(1) .row-4 .dayGrid').hasClass('black') === true &&  
-            $('body #WrapR_pab .collum:nth-child(2) .row-4 .dayGrid').hasClass('black') === false) {
+        if ($('body #WrapR_pab .row-4 .dayGrid:eq(0)').hasClass('black') === true &&  
+            $('body #WrapR_pab .row-4 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR4 = 3;
         }
 
-        if ($('body #WrapR_pab .collum:nth-child(1) .row-4 .dayGrid').hasClass('black') === true &&  
-            $('body #WrapR_pab .collum:nth-child(2) .row-4 .dayGrid').hasClass('black') === true) {
+        if ($('body #WrapR_pab .row-4 .dayGrid:eq(0)').hasClass('black') === true &&  
+            $('body #WrapR_pab .row-4 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR4 = 0;
         }
 
-        if ($('body #WrapR_pab .collum:nth-child(1) .row-4 .dayGrid').hasClass('black') === false    &&  
-            $('body #WrapR_pab .collum:nth-child(2) .row-4 .dayGrid').hasClass('black') === true) {
+        if ($('body #WrapR_pab .row-4 .dayGrid:eq(0)').hasClass('black') === false    &&  
+            $('body #WrapR_pab .row-4 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR4 = 1 ;
         }
         /*------------------------------------end row4--------------------------------------------*/
+        if ($('body #WrapR_pab .row-5 .dayGrid:eq(0)').hasClass('black') === false    &&  
+            $('body #WrapR_pab .row-5 .dayGrid:eq(1)').hasClass('black') === false) {
+
+            scoreR5 = 2;
+        }
+
+        if ($('body #WrapR_pab .row-5 .dayGrid:eq(0)').hasClass('black') === true &&  
+            $('body #WrapR_pab .row-5 .dayGrid:eq(1)').hasClass('black') === false) {
+
+            scoreR5 = 3;
+        }
+
+        if ($('body #WrapR_pab .row-5 .dayGrid:eq(0)').hasClass('black') === true &&  
+            $('body #WrapR_pab .row-5 .dayGrid:eq(1)').hasClass('black') === true) {
+
+            scoreR5 = 0;
+        }
+
+        if ($('body #WrapR_pab .row-5 .dayGrid:eq(0)').hasClass('black') === false    &&  
+            $('body #WrapR_pab .row-5 .dayGrid:eq(1)').hasClass('black') === true) {
+
+            scoreR5 = 1 ;
+        }
+        /*------------------------------------end row5--------------------------------------------*/
         e.preventDefault();//отмена перехода
         Month--;
 
-        $('#WrapR_pab .month p').text(nameMonth[Month-1]);//Печать названия нового месяца
-        $('#WrapR_pab .month p').append('<br><sub>' + Year +'</sub>');
-        $('#WrapR_pab .wrapDay .collum').remove();
+        $('#WrapR_pab .month p').text(nameMonth[Month-1]) ;//Печать названия нового месяца
+        $('#WrapR_pab .month p').text(Year)  ; //печатаем номер года
+        $('#WrapR_pab .dayGrid').remove()    ; //удалить старую сетку рабочих дней
+        $('#WrapR_pab .numder-day').remove() ; //удалить числа месяца
+        $('#WrapR_pab .table-schedule__day-of-the-week').remove() ; //удалить дни недели
+        prinGrid()           ; //вызываем печать сетки дней 
+        reverseEachWorkDay() ; //печатаем раочие дни
+        calculateMoney()     ; //расчет оплаты заработной платы
 
-        reverseEachWorkDay();//печатаем раочие дни
-        calculateMoney();//расчет оплаты заработной платы
+        getSchedule_user_1() ;// тут из sql вытягиваем график по факту
+        getSchedule_user_2() ;// тут из sql вытягиваем график по факту
+        getSchedule_user_3() ;// тут из sql вытягиваем график по факту
+        getSchedule_user_4() ;// тут из sql вытягиваем график по факту
+        getSchedule_user_5() ;// тут из sql вытягиваем график по факту
     });//end click  
 
 	// var	nowDate		=	new Date(),

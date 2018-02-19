@@ -37,7 +37,7 @@
             Кофейня
           </h4>
         </div>
-        <div id="collapseOne" class="panel-collapse collapse ">
+        <div id="collapseOne" class="panel-collapse collapse in">
           <div class="panel-body">
 
             <table class="table-schedule-reporter"  id="table-schedule-reporter" >
@@ -135,7 +135,7 @@
             Паб
           </h4>
         </div>
-<div id="collapseTwo" class="panel-collapse collapse in">
+<div id="collapseTwo" class="panel-collapse collapse">
   <div class="panel-body">
     <table class="table-schedule-reporter_pab"  id="WrapR_pab" >
       <div class="month">
@@ -188,7 +188,7 @@
       <tr class="table-schedule__row fact-row-2 fact">
         <td class="table-schedule_border1 table-schedule__th">
           <?php $viewUsers->userNameCafe($pab, $Barmen2);?>    
-        </t>
+        </td>
       </tr>
       <tr class="table-schedule__row fact-row-3 fact">
         <td class="table-schedule_border1 table-schedule__th">
@@ -238,37 +238,60 @@
         </div>
         <div id="collapseThree" class="panel-collapse collapse">
           <div class="panel-body">
-             <div id="WrapR_rest">
-                            <div class="month">
-                              <a href="#" id="backMonth" class="no-print control-month" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a> 
-                              <p> </p>
-                              <a href="#" id="nextMonth" class="no-print control-month" ><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                            </div>
-                            
-                            <div class="table_wrap">
-                              <div class="table">
-                                <div class="bartender" id="bar">
-                                  <div class="name space">Ресторан Репортер</div>
-                                  <div class="name space"></div>
-                                  <div class="name">
-                                    <p>
-                                      <?php $viewUsers->userNameCafe($rest, $Barmen1);?>
-                                    </p>
-                                  </div>
-                                  <div class="name">
-                                    <p>
-                                      <?php $viewUsers->userNameCafe($rest, $Barmen2);?>
-                                    </p>
-                                  </div>                              
-                                </div>
-                                <div class="grid_days">
-                                  <div class="wrapDay">
-                                  
-                                  </div>
-                                </div>
-                              </div>    
-                            </div>
-                          </div>
+            <table class="table-schedule-reporter_rest"  id="WrapR_rest" >
+              <div class="month">
+                <a href="#" id="Table-Rep-rest-backMonth" class="no-print control-month">
+                  <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                </a> 
+                <p class="table-rep-rest__numberYear"></p>
+                <br>
+                <p class="table-rep-rest__nameMonth"></p>
+                <a href="#" id="Table-Rep-rest-next_Month" class="no-print control-month" >
+                  <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                </a>
+              </div><!--end month-->
+              <tr class="table-schedule__row" id="day-of-the-week-rest">
+                <td class="table-schedule__th" bgcolor="#999">Паб Репортер</td>
+              </tr>
+              <tr class="table-schedule__row" id="number-day-rest">
+                <td class="table-schedule_border1 table-schedule__th"></td>
+              </tr>
+              <tr class="table-schedule__row row-1">
+               <td class="table-schedule_border1 table-schedule__th" >
+                  <?php $viewUsers->userNameCafe($rest, $Barmen1);?> 
+               </td>
+              </tr>
+              <tr class="table-schedule__row row-2">
+                <td class="table-schedule_border1 table-schedule__th">
+                  <?php $viewUsers->userNameCafe($rest, $Barmen2);?>    
+                </td>
+              </tr>
+              <tr class="table-schedule__row fact-row-1 fact" >
+               <td class="table-schedule_border1 table-schedule__th" >
+                 <?php $viewUsers->userNameCafe($rest, $Barmen1);?>
+               </td>
+              </tr>
+              <tr class="table-schedule__row fact-row-2 fact">
+                <td class="table-schedule_border1 table-schedule__th">
+                  <?php $viewUsers->userNameCafe($rest, $Barmen2);?>    
+                </td>
+              </tr>     
+            </table>
+            <br>
+            <table><!--/////////////////  end WrapR_rest //////////////////--> 
+              <tr>
+                <td>
+                  <input 
+                    type="button" 
+                    onclick="tableToExcel('WrapR_rest', 'W3C Example Table')" 
+                    value="Скачать в XLS">
+                </td>
+                <td>&#160;</td>
+                <td>
+                  <a href="page-quickly-print-rest.php"><button>Быстрая печать</button></a>
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>

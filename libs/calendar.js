@@ -168,7 +168,7 @@ $( document ).ready(function() {
 
         //тут создаются ячейки для графика
         $('.table-schedule-reporter .row-1').append(
-            '<td class="table-schedule_border1 dayGrid collum'+i+'" id='+i+'></td>'
+            '<td class="table-schedule_border1 dayGrid collum'+i+'"></td>'
             );
         $('.table-schedule-reporter .row-2').append(
             '<td class="table-schedule_border1 dayGrid collum'+i+'"></td>'
@@ -461,8 +461,8 @@ $( document ).ready(function() {
         e.preventDefault();//отмеа перехода
         Month++; // переход на следующий месяц
 
-        $('#table-schedule-reporter .table-rep__nameMonth').text(nameMonth[Month-1]);//имя месяца
-        $('#table-schedule-reporter .table-rep__numberYear').text(Year);//имя месяца
+        $('.table-rep__nameMonth').text(nameMonth[Month-1]);//имя месяца
+        $('.table-rep__numberYear').text(Year);//имя месяца
         $('#table-schedule-reporter .dayGrid').remove();//удалить старую сетку рабочих дней
         $('#table-schedule-reporter .numder-day').remove()//удалить числа месяца
         $('#table-schedule-reporter .table-schedule__day-of-the-week').remove()//удалить дни недели
@@ -485,26 +485,26 @@ $( document ).ready(function() {
         }
         
 
-        if ($('body #table-schedule-reporter  .row-1 .dayGrid:nth-child(1)').hasClass('black') === false &&  
-            $('body #table-schedule-reporter  .row-1 .dayGrid:nth-child(2)').hasClass('black') === false) {
+        if ($('body #table-schedule-reporter  .row-1 .dayGrid:eq(0)').hasClass('black') === false &&  
+            $('body #table-schedule-reporter  .row-1 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR1 = 2;
         }
 
-        if ($('body #table-schedule-reporter  .row-1 .dayGrid:nth-child(1)').hasClass('black') === true  &&  
-            $('body #table-schedule-reporter  .row-1 .dayGrid:nth-child(2)').hasClass('black') === false) {
+        if ($('body #table-schedule-reporter  .row-1 .dayGrid:eq(0)').hasClass('black') === true  &&  
+            $('body #table-schedule-reporter  .row-1 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR1 = 3;
         }
 
-        if ($('body #table-schedule-reporter  .row-1 .dayGrid:nth-child(1)').hasClass('black') === true  &&  
-            $('body #table-schedule-reporter  .row-1 .dayGrid:nth-child(2)').hasClass('black') === true) {
+        if ($('body #table-schedule-reporter  .row-1 .dayGrid:eq(0)').hasClass('black') === true  &&  
+            $('body #table-schedule-reporter  .row-1 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR1 = 0;
         }
 
-        if ($('body #table-schedule-reporter  .row-1 .dayGrid:nth-child(1)').hasClass('black') === false &&  
-            $('body #table-schedule-reporter  .row-1 .dayGrid:nth-child(2)').hasClass('black') === true) {
+        if ($('body #table-schedule-reporter  .row-1 .dayGrid:eq(0)').hasClass('black') === false &&  
+            $('body #table-schedule-reporter  .row-1 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR1 = 1 ;
         }
@@ -513,26 +513,26 @@ $( document ).ready(function() {
         /*------------------------------------end row1--------------------------------------------*/
 
 
-        if ($('body #table-schedule-reporter .row-2 .dayGrid:nth-child(1)').hasClass('black') === false &&  
-            $('body #table-schedule-reporter .row-2 .dayGrid:nth-child(2)').hasClass('black') === false) {
+        if ($('body #table-schedule-reporter .row-2 .dayGrid:eq(0)').hasClass('black') === false &&  
+            $('body #table-schedule-reporter .row-2 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR2 = 2;
         }
 
-        if ($('body #table-schedule-reporter .row-2 .dayGrid:nth-child(1)').hasClass('black') === true  &&  
-            $('body #table-schedule-reporter .row-2 .dayGrid:nth-child(2)').hasClass('black') === false) {
+        if ($('body #table-schedule-reporter .row-2 .dayGrid:eq(0)').hasClass('black') === true  &&  
+            $('body #table-schedule-reporter .row-2 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR2 = 3;
         }
 
-        if ($('body #table-schedule-reporter .row-2 .dayGrid:nth-child(1)').hasClass('black') === true  &&  
-            $('body #table-schedule-reporter .row-2 .dayGrid:nth-child(2)').hasClass('black') === true) {
+        if ($('body #table-schedule-reporter .row-2 .dayGrid:eq(0)').hasClass('black') === true  &&  
+            $('body #table-schedule-reporter .row-2 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR2 = 0;
         }
 
-        if ($('body #table-schedule-reporter .row-2 .dayGrid:nth-child(1)').hasClass('black') === false &&  
-            $('body #table-schedule-reporter .row-2 .dayGrid:nth-child(2)').hasClass('black') === true) {
+        if ($('body #table-schedule-reporter .row-2 .dayGrid:eq(0)').hasClass('black') === false &&  
+            $('body #table-schedule-reporter .row-2 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR2 = 1 ;
         }
@@ -540,26 +540,26 @@ $( document ).ready(function() {
         /*------------------------------------end row2--------------------------------------------*/        
 
 
-        if ($('body  #table-schedule-reporter .row-3 .dayGrid:nth-child(1)').hasClass('black') === false    &&  
-            $('body  #table-schedule-reporter .row-3 .dayGrid:nth-child(2)').hasClass('black') === false) {
+        if ($('body  #table-schedule-reporter .row-3 .dayGrid:eq(0)').hasClass('black') === false    &&  
+            $('body  #table-schedule-reporter .row-3 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR3 = 2;
         }
 
-        if ($('body  #table-schedule-reporter .row-3 .dayGrid:nth-child(1)').hasClass('black') === true &&  
-            $('body  #table-schedule-reporter .row-3 .dayGrid:nth-child(2)').hasClass('black') === false) {
+        if ($('body  #table-schedule-reporter .row-3 .dayGrid:eq(0)').hasClass('black') === true &&  
+            $('body  #table-schedule-reporter .row-3 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR3 = 3;
         }
 
-        if ($('body  #table-schedule-reporter .row-3 .dayGrid:nth-child(1)').hasClass('black') === true &&  
-            $('body  #table-schedule-reporter .row-3 .dayGrid:nth-child(2)').hasClass('black') === true) {
+        if ($('body  #table-schedule-reporter .row-3 .dayGrid:eq(0)').hasClass('black') === true &&  
+            $('body  #table-schedule-reporter .row-3 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR3 = 0;
         }
 
-        if ($('body  #table-schedule-reporter .row-3 .dayGrid:nth-child(1)').hasClass('black') === false    &&  
-            $('body  #table-schedule-reporter .row-3 .dayGrid:nth-child(2)').hasClass('black') === true) {
+        if ($('body  #table-schedule-reporter .row-3 .dayGrid:eq(0)').hasClass('black') === false    &&  
+            $('body  #table-schedule-reporter .row-3 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR3 = 1 ;
         }
@@ -567,26 +567,26 @@ $( document ).ready(function() {
         /*------------------------------------end row3--------------------------------------------*/
 
 
-        if ($('body #table-schedule-reporter .row-4 .dayGrid:nth-child(1)').hasClass('black') === false &&  
-            $('body #table-schedule-reporter .row-4 .dayGrid:nth-child(2)').hasClass('black') === false) {
+        if ($('body #table-schedule-reporter .row-4 .dayGrid:eq(0)').hasClass('black') === false &&  
+            $('body #table-schedule-reporter .row-4 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR4 = 2;
         }
 
-        if ($('body #table-schedule-reporter .row-4 .dayGrid:nth-child(1)').hasClass('black') === true  &&  
-            $('body #table-schedule-reporter .row-4 .dayGrid:nth-child(2)').hasClass('black') === false) {
+        if ($('body #table-schedule-reporter .row-4 .dayGrid:eq(0)').hasClass('black') === true  &&  
+            $('body #table-schedule-reporter .row-4 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR4 = 3;
         }
 
-        if ($('body #table-schedule-reporter .row-4 .dayGrid:nth-child(1)').hasClass('black') === true  &&  
-            $('body #table-schedule-reporter .row-4 .dayGrid:nth-child(2)').hasClass('black') === true) {
+        if ($('body #table-schedule-reporter .row-4 .dayGrid:eq(0)').hasClass('black') === true  &&  
+            $('body #table-schedule-reporter .row-4 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR4 = 0;
         }
 
-        if ($('body #table-schedule-reporter .row-4 .dayGrid:nth-child(1)').hasClass('black') === false &&  
-            $('body #table-schedule-reporter .row-4 .dayGrid:nth-child(2)').hasClass('black') === true) {
+        if ($('body #table-schedule-reporter .row-4 .dayGrid:eq(0)').hasClass('black') === false &&  
+            $('body #table-schedule-reporter .row-4 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR4 = 1 ;
         }
@@ -594,8 +594,8 @@ $( document ).ready(function() {
         e.preventDefault();//отмена перехода
         Month--;
 
-        $('#table-schedule-reporter  .table-rep__nameMonth').text(nameMonth[Month-1]);//имя месяца
-        $('#table-schedule-reporter  .table-rep__numberYear').text(Year);//имя месяца
+        $('.table-rep__nameMonth').text(nameMonth[Month-1]);//имя месяца
+        $('.table-rep__numberYear').text(Year);//имя месяца
         $('#table-schedule-reporter  .dayGrid').remove();//удалить старую сетку рабочих дней
         $('#table-schedule-reporter  .numder-day').remove()//удалить числа месяца
         $('#table-schedule-reporter  .table-schedule__day-of-the-week').remove()//удалить дни недели
@@ -603,6 +603,10 @@ $( document ).ready(function() {
         prinGrid(); //печатаем всю сетку для нового месяца
         reverseEachWorkDay(); //печатаем рабочие смены по графику
         calculateMoney();//Рабоота калькулятора оплаты труда
+        getSchedule_user_1();
+        getSchedule_user_2();
+        getSchedule_user_3();
+        getSchedule_user_4();
     });//end click  
 
 	// var	nowDate		=	new Date(),

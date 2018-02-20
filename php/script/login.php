@@ -10,7 +10,8 @@ require_once 'connect_db.php';
 				function __construct(){
 					parent::__construct();
 				}
-
+				//авторизация на сайте
+				//тут в session попадает информация о пользователе
 				public function validForm($get_email, $get_password)
 				{
 					if (!empty($get_email) && !empty($get_password) ) 
@@ -23,9 +24,6 @@ require_once 'connect_db.php';
 							$password 	= $row['password'];
 							$first_name	= $row['first_name'];
 
-							if (!empty($get_password) && !empty($first_name)) {
-								# code...
-							}
 							if (password_verify($get_password, $password)) {
 								$_SESSION['nameUser'] 	= 	$first_name			;
 								$_SESSION['first_name']	=	$row['first_name'] 	;

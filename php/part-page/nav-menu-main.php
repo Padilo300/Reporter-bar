@@ -35,8 +35,17 @@
                 </li> -->
                 <li><a href="#coast">Coast</a></li>
                 <li class="subbuttons">
-                  <a  href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/page-info.php">Информация</a></li>
-                  <li class="subbuttons"><a   href="page-db_people.php">База сотрудников</a></li>
+                  <a  href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/page-info.php">
+                    <i class="fa fa-info" aria-hidden="true"></i>
+                    Информация
+                  </a>
+                </li>
+                <li class="subbuttons">
+                  <a   href="page-db_people.php"> 
+                    <i class="fa fa-globe" aria-hidden="true"></i> 
+                    База сотрудников
+                  </a>
+                </li>
                   <!-- <li class="subbuttons"><a   href="#">Для новичков</a></li> -->
                   <!-- <li class="subbuttons"><a   href="#">Новости<sup style='color: green; font-weight: bold;'>+3</sup></a></li> -->
               </ul>
@@ -72,5 +81,5 @@
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
-          <?php echo "Добрый вечер " . $_SESSION['first_name'] ?>
+          <p id="hellow-user" class="text-muted"><?php echo  $_SESSION['first_name'] ?></p>
         </nav>

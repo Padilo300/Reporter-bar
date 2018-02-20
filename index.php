@@ -40,4 +40,4 @@
 			<?php require_once 'php/part-page/calculator.php'; ?>
 		</div>
 	</div><!--end row-->
-	<?php require_once 'footer.php'; ?>
+<?php require_once 'footer.php'; ?>

@@ -258,7 +258,7 @@ $( document ).ready(function() {
         $('.workingDay').text('Количество смен по графику: ' + workingDayR1);
         $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн');
         $('.visits').text('Выходов по факту: ' + workingDayR1Fact);
-        $('.payment').text('Оплата: ' + count + 'грн');
+        $('.payment').text(' Оплата: ' + count + 'грн');
 
         $('body #Wrap_Calendar_ARTIST .row-1 .dayGrid').click(function(){
             // if ($(this).hasClass('black') || $(this).hasClass('addBlack') === true) { //проверям на рабочий день

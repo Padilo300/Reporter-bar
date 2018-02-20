@@ -14,7 +14,6 @@ $(document).ready(function(){
 				$('a[href="#artist"]').tab('show')
 			}
 		}
-
 	//---------------перейти на страницу index.php и выбрать соотвецвующий таб
 		function tabReporter() {
 			var url 		= document.location.href;
@@ -24,16 +23,14 @@ $(document).ready(function(){
 				 	}	
 			});
 		}
-
-
 	//----------------это скрипт открывает график по нажатию на тумблер
 		$('.trigger').click(function(){
 			$(this).next('.clickButton').trigger('click');
 		});
 
 	//----------------вызов функции табов при переходе на страницу index.php
-		tabArtist();
-		tabReporter();
+		tabArtist()   ;
+		tabReporter() ;
 
 	//----------------Валидация форм плагином validate
 		//-----проверка смены пароля пользователя.
@@ -81,15 +78,24 @@ $(document).ready(function(){
 		    })
 		}
 	});
-
 	$(function() {
 		$("#go-top").scrollToTop();
 	});
 	/*--------------- закончили с кнопкой вверх --------------------*/
 
 	/*---------Приветствующее сообщение добрый вечер/день/ночь/утро----------*/
-	var	nowDate		=	new Date(),
-        time		=   getHours();
-        alert(time);
+	var	nowDate		=	new Date()			; //получили дату
+    // var    time		=   nowDate.getHours()	; //получили текущий час
+    var time = 14;
+    console.log(time);
+    if ( time >= 6 && time < 13) {
+    	$('#hellow-user').prepend('Доброе утро, ').append('!');
+    } else if(time >= 12 && time < 18){
+    	$('#hellow-user').prepend('<i class="fa fa-sun-o" aria-hidden="true"></i> Добрый день, ').append('!');
+    } else if(time >= 18 && time < 22){
+    	$('#hellow-user').prepend('Добрый вечер, ').append('!');
+    } else {
+    	$('#hellow-user').prepend('<i class="fa fa-moon-o" aria-hidden="true"></i> Доброй ночи, ').append('!');
+    }
 	/*-------------------*/
 });

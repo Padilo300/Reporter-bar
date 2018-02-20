@@ -174,7 +174,7 @@
                       placeholder = "https:// ссылка на вашу страницу" 
                       class       = "width-100">
                     <br>
-                    <button type="submit" > Добавить</button>
+                    <button type="submit" class="btn btn-success" > Добавить</button>
                   </form>
                 </div>
               </div>
@@ -191,7 +191,7 @@
                       placeholder = "https:// ссылка на вашу страницу" 
                       class       = "width-100">
                     <br>
-                    <button type="submit" > Добавить</button>
+                    <button type="submit"  class="btn btn-success"> Добавить</button>
                   </form>
 
               </div>
@@ -208,7 +208,7 @@
                     name="pinterest" 
                     placeholder="https:// ссылка на вашу страницу">
                   <br>
-                  <button type="submit" > Добавить</button>
+                  <button type="submit" class="btn btn-success"> Добавить</button>
                 </form>
               </div>
               <div class="tab-pane fade" id="skype">
@@ -224,7 +224,7 @@
                     id    = "skype" 
                     placeholder = "Ваш логин">
                   <br>
-                  <button type="submit" > Добавить</button>
+                  <button type="submit" class="btn btn-success"> Добавить</button>
                 </form>
               </div>
               <div class="tab-pane fade" id="twitter">
@@ -240,7 +240,7 @@
                     id    = "twitter" 
                     placeholder="https:// ссылка на вашу страницу">
                   <br>
-                  <button type="submit" > Добавить</button>
+                  <button type="submit" class="btn btn-success"> Добавить</button>
                 </form>
               </div>
             </div>

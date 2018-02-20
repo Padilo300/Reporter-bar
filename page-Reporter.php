@@ -17,9 +17,34 @@
 
   $cafeCAKE1    = 'кондитер1'     ;
   $cafeCAKE2    = 'кондитер2'     ;
-  
 
+  /*---Эта функция проверяет кто авторизовался
+       и создает класс для строки пользователя  
+       который позволяет JS пересчитать зарплату
+       по факту выходов на работу.---*/
+  //кол-во выходов по факту для JS
+  function cafe_print_class_for_count_fact($position)
+  { 
+    $pw = $_SESSION['cafe_schedule'];
+    if ($pw == $position ) {
+      echo " fact-row-count ";
+    }
+  }
+
+  /*---Эта функция проверяет кто авторизовался
+       и создает класс для строки пользователя  
+       который позволяет JS пересчитать зарплату
+       по плану графика.---*/
+  //кол-во выходов по плану для JS
+  function cafe_print_class_for_count_plan($position)
+  { 
+    $pw = $_SESSION['cafe_schedule'];
+    if ($pw == $position ) {
+      echo " plan-row-count ";
+    }
+  }
 ?>
+
 
 <div class="tab-pane active" id="reporter">        
     <div class="panel-group" id="accordion">
@@ -59,44 +84,64 @@
        
        
               </tr>
-              <tr class="table-schedule__row row-1">
+              <tr class="table-schedule__row row-1 <?php cafe_print_class_for_count_plan(бармен1); ?> ">
                <td class="table-schedule_border1 table-schedule__th" >
                   <?php $viewUsers->userNameCafe($cafe, $Barmen1);?>
                </td>
 
               </tr>
-              <tr class="table-schedule__row row-2">
+              <tr class="table-schedule__row row-2 <?php cafe_print_class_for_count_plan(кондитер1); ?>">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($cafe,$cafeCAKE1);?>
                 </t>
                
               </tr>
-              <tr class="table-schedule__row row-3">
+              <tr class="table-schedule__row row-3 <?php cafe_print_class_for_count_plan(бармен2); ?>">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($cafe,$Barmen2);?>
                   </td>
               </tr>
-              <tr class="table-schedule__row row-4">
+              <tr class="table-schedule__row row-4 <?php cafe_print_class_for_count_plan(кондитер2); ?>">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($cafe,$cafeCAKE2);?>
                 </td>
               </tr>
-              <tr class="table-schedule__row fact-row-1 fact" >
+              <tr class="table-schedule__row fact-row-1 fact 
+                  <?php 
+                    if($_SESSION['bar_of_work_in_reporter'] == 'кофейня' || $_SESSION['admin'] == 'true'){
+                      echo 'true-user';
+                    }else{
+                      echo 'false-user';} 
+                    cafe_print_class_for_count_fact(бармен1);
+                  ?>
+                      " >
                <td class="table-schedule_border1 table-schedule__th" >
                  <?php $viewUsers->userNameCafe($cafe, $Barmen1);?>
                </td>
               </tr>
-              <tr class="table-schedule__row fact-row-2 fact">
+              <tr class="table-schedule__row fact-row-2 fact 
+              <?php 
+                if($_SESSION['bar_of_work_in_reporter'] == 'кофейня' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} 
+                cafe_print_class_for_count_fact(кондитер1);
+              ?>">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($cafe,$cafeCAKE1);?>
                 </t>
               </tr>
-              <tr class="table-schedule__row fact-row-3 fact">
+              <tr class="table-schedule__row fact-row-3 fact 
+              <?php 
+                if($_SESSION['bar_of_work_in_reporter'] == 'кофейня' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} 
+                  cafe_print_class_for_count_fact(бармен2);
+                ?>">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($cafe,$Barmen2);?>
                 </td>
               </tr>
-              <tr class="table-schedule__row fact-row-4 fact">
+              <tr class="table-schedule__row fact-row-4 fact 
+              <?php 
+                if($_SESSION['bar_of_work_in_reporter'] == 'кофейня' || $_SESSION['admin'] == 'true'){echo ' true-user ';}else{echo ' false-user ';} 
+                  cafe_print_class_for_count_fact(кондитер2);
+                ?>">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($cafe,$cafeCAKE2);?>
                 </td>
@@ -144,7 +189,7 @@
         <p class="table-rep-pab__numberYear"></p>
         <br>
         <p class="table-rep-pab__nameMonth"></p>
-        <a href="#" id="Table-Rep-pab-next_Month" class="no-print control-month" >
+        <a href="#" id="Table-Rep-pab-next_Month" class="no-print control-month" >  
           <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
         </a>
       </div><!--end month-->
@@ -179,27 +224,32 @@
           <?php $viewUsers->userNameCafe($pab, $Barmen5);?>
         </td>
       </tr>
-      <tr class="table-schedule__row fact-row-1 fact" >
+      <tr class="table-schedule__row fact-row-1 fact
+      <?php if($_SESSION['bar_of_work_in_reporter'] == 'паб' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} ?>" >
        <td class="table-schedule_border1 table-schedule__th" >
          <?php $viewUsers->userNameCafe($pab, $Barmen1);?>    
        </td>
       </tr>
-      <tr class="table-schedule__row fact-row-2 fact">
+      <tr class="table-schedule__row fact-row-2 fact
+      <?php if($_SESSION['bar_of_work_in_reporter'] == 'паб' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} ?>">
         <td class="table-schedule_border1 table-schedule__th">
           <?php $viewUsers->userNameCafe($pab, $Barmen2);?>    
         </td>
       </tr>
-      <tr class="table-schedule__row fact-row-3 fact">
+      <tr class="table-schedule__row fact-row-3 fact
+      <?php if($_SESSION['bar_of_work_in_reporter'] == 'паб' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} ?>">
         <td class="table-schedule_border1 table-schedule__th">
           <?php $viewUsers->userNameCafe($pab, $Barmen3);?>    
         </td>
       </tr>
-      <tr class="table-schedule__row fact-row-4 fact">
+      <tr class="table-schedule__row fact-row-4 fact
+      <?php if($_SESSION['bar_of_work_in_reporter'] == 'паб' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} ?>">
         <td class="table-schedule_border1 table-schedule__th">
           <?php $viewUsers->userNameCafe($pab, $Barmen4);?>
         </td>
       </tr>
-      <tr class="table-schedule__row fact-row-5 fact">
+      <tr class="table-schedule__row fact-row-5 fact
+      <?php if($_SESSION['bar_of_work_in_reporter'] == 'паб' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} ?>">
         <td class="table-schedule_border1 table-schedule__th">
           <?php $viewUsers->userNameCafe($pab, $Barmen5);?>
         </td>
@@ -265,12 +315,14 @@
                   <?php $viewUsers->userNameCafe($rest, $Barmen2);?>    
                 </td>
               </tr>
-              <tr class="table-schedule__row fact-row-1 fact" >
+              <tr class="table-schedule__row fact-row-1 fact 
+              <?php if($_SESSION['bar_of_work_in_reporter'] == 'ресторан' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';}?>" >
                <td class="table-schedule_border1 table-schedule__th" >
                  <?php $viewUsers->userNameCafe($rest, $Barmen1);?>
                </td>
               </tr>
-              <tr class="table-schedule__row fact-row-2 fact">
+              <tr class="table-schedule__row fact-row-2 fact 
+              <?php if($_SESSION['bar_of_work_in_reporter'] == 'ресторан' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';}?>">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($rest, $Barmen2);?>    
                 </td>

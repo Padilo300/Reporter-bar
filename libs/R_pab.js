@@ -224,29 +224,29 @@ $( document ).ready(function() {
         $('.payment').text('Оплата: ' + count + 'грн');
 
         $('#WrapR_pab .row-1 .dayGrid').click(function(){
-            if ($(this).hasClass('black') || $(this).hasClass('addBlack') === true) { //проверям на рабочий день
+            // if ($(this).hasClass('black') || $(this).hasClass('addBlack') === true) { //проверям на рабочий день
 
-                    $(this).removeClass('black addBlack'); //eсли рабочий то снять класс (черный)
-                    count-= countMoney(workingDayR1); //отнять с оплаты цену за выход на работу
-                    workingDayR1Fact--;//Снять один выход по факту
+            //         $(this).removeClass('black addBlack'); //eсли рабочий то снять класс (черный)
+            //         count-= countMoney(workingDayR1); //отнять с оплаты цену за выход на работу
+            //         workingDayR1Fact--;//Снять один выход по факту
 
-                    $('.workingDay').text('Количество смен по графику: ' + workingDayR1);  
-                    $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн');
-                    $('.visits').html('Выходов по факту: ' + '<span>' + workingDayR1Fact + '</span>');
-                    $('.payment').html('Оплата: ' + '<span>' + count + 'грн' + '</span>');
+            //         $('.workingDay').text('Количество смен по графику: ' + workingDayR1);  
+            //         $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн');
+            //         $('.visits').html('Выходов по факту: ' + '<span>' + workingDayR1Fact + '</span>');
+            //         $('.payment').html('Оплата: ' + '<span>' + count + 'грн' + '</span>');
 
-            }else{ //если класс не стоит (выходной) тогда добавить класс (вырабрать рабочую смену)
+            // }else{ //если класс не стоит (выходной) тогда добавить класс (вырабрать рабочую смену)
 
-                $(this).addClass('addBlack');
+            //     $(this).addClass('addBlack');
 
-                count+= countMoney(workingDayR1); // добавить к оплате цену за выход на работу
-                workingDayR1Fact++;//Добавить один выход по факту
+            //     count+= countMoney(workingDayR1); // добавить к оплате цену за выход на работу
+            //     workingDayR1Fact++;//Добавить один выход по факту
 
-                $('.workingDay').text('Количество смен по графику: ' + workingDayR1);
-                $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн');
-                $('.visits').html('Выходов по факту: ' + '<span>' + workingDayR1Fact + '</span>');
-                $('.payment').html('Оплата: ' + '<span>' + count + 'грн' + ' ' + '</span>');
-            }
+            //     $('.workingDay').text('Количество смен по графику: ' + workingDayR1);
+            //     $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн');
+            //     $('.visits').html('Выходов по факту: ' + '<span>' + workingDayR1Fact + '</span>');
+            //     $('.payment').html('Оплата: ' + '<span>' + count + 'грн' + ' ' + '</span>');
+            // }
 
             if (count<7000) {
 
@@ -375,23 +375,23 @@ $( document ).ready(function() {
         /*--------------------GET запросы-----------------*/
       /*----тут клик по клеточке изменяет рабочий/выходной ----*/ 
     $('#WrapR_pab .fact').on('click','.dayGrid',function(){
+        if ($('#WrapR_pab .fact').hasClass('true-user')) {
+            var dayNumber   =   $(this).attr('data-day')
+                year        =   $('.table-rep-pab__numberYear'),
+                user        =   $(this).attr('data-user'),
+                bar         =   'pab';
 
-        var dayNumber   =   $(this).attr('data-day')
-            year        =   $('.table-rep-pab__numberYear'),
-            user        =   $(this).attr('data-user');
-
-        /* переключить рабочий/выходной день */
-        if ($(this).hasClass('black')) {
-            $.get("/php/script/changeDay.php", {day: dayNumber, value:'false', month: m[Month-1], year: Year, user: user}, function(data) {});
-            $(this).removeClass('black')
-            $(this).attr('bgcolor','#fff');
-        }else{
-            $.get("/php/script/changeDay.php", {day: dayNumber, value:'true' , month: m[Month-1], year: Year, user: user}, function(data) {});
-            $(this).addClass('black')
-            $(this).attr('bgcolor','#000');
+            /* переключить рабочий/выходной день */
+            if ($(this).hasClass('black')) {
+                $.get("/php/script/changeDay.php", {day: dayNumber, value:'false', month: m[Month-1], year: Year, user: user, bar: bar}, function(data) {});
+                $(this).removeClass('black')
+                $(this).attr('bgcolor','#fff');
+            }else{
+                $.get("/php/script/changeDay.php", {day: dayNumber, value:'true' , month: m[Month-1], year: Year, user: user, bar: bar}, function(data) {});
+                $(this).addClass('black')
+                $(this).attr('bgcolor','#000');
+            }
         }
-
-        
     });
     /*--------------Закончились GET запросы-----------*/
 	/*-------------------------------------------выбор следующего месяца----------------------------------------------------*/

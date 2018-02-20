@@ -66,7 +66,8 @@
                       if ($_SESSION['admin'] == 'true') {
                        echo "<li><a href='page-Admin.php'><i class='fa fa-home' aria-hidden='true'></i> Кабинет Администратора</a></li>";  
                       }else{
-                        echo "<li><a href='http://$_SERVER[HTTP_HOST]/page-editUser.php'>Моя анкета</a></li>";
+                        echo "<li><a href='http://$_SERVER[HTTP_HOST]/page-editUser.php'>
+                              <i class='fa fa-home' aria-hidden='true'></i> Моя анкета</a></li>";
                       }
                      ?>
                     <li class="divider"></li>

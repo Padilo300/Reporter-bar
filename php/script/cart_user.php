@@ -108,7 +108,7 @@
             <tbody>
               <tr>
                 <td>
-                  <?php if ($user['vkontakte'] !== 'false') {
+                  <?php if (strlen($user['vkontakte'])  !== 0) {
                     echo "<a href='$user[vkontakte]'>
                     <img src='/img/social_b/vk.png' class='max-w50px' alt='vk'>         
                   </a>";
@@ -116,7 +116,7 @@
                 </td>
 
                 <td>
-                  <?php if ($user['fecebook'] !== 'false') {
+                  <?php if (strlen($user['fecebook']) !== 0) {
                     echo "<a href='$user[fecebook]'>
                     <img src='/img/social_b/facebook.png' class='max-w50px' alt='facebook'>   
                   </a>";
@@ -124,7 +124,7 @@
                 </td>
 
                 <td>
-                  <?php if ($user['skype'] !== 'false') {
+                  <?php if (strlen($user['skype']) !== 0) {
                     echo "<a href='$user[skype]'>
                     <img src='/img/social_b/skype.png'    class='max-w50px' alt='skype'>      
                   </a>";
@@ -133,7 +133,7 @@
                 </td>
 
                 <td>
-                  <?php if ($user['twitter'] !== 'false') {
+                  <?php if (strlen($user['twitter']) !== 0) {
                     echo "<a href='$user[twitter]'>
                     <img src='/img/social_b/twitter.png'  class='max-w50px' alt='twitter'>    
                   </a>";
@@ -141,7 +141,7 @@
                 </td>
 
                 <td>
-                  <?php if ($user['pinterest'] !== 'false') {
+                  <?php if (strlen($user['pinterest']) !== 0) {
                     echo "<a href='$user[pinterest]'>
                     <img src='/img/social_b/pinterest.png' class='max-w50px' alt='pinterest'>  
                   </a>";

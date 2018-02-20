@@ -212,26 +212,27 @@ $( document ).ready(function() {
     prinGrid()           ; //вызываем печать общей сетки
 	cycleWorkDay()       ; //вызываем циклы расчета рабочих дней
     calculateMoney()     ; //вызываем расчет зароботной платы
+
     /*--------------------GET запросы-----------------*/
     /*----тут клик по клеточке изменяет рабочий/выходной ----*/ 
     $('#WrapR_rest .fact').on('click','.dayGrid',function(){
+        if ($('#WrapR_rest .fact').hasClass('true-user')) {
+            var dayNumber   =   $(this).attr('data-day'),
+                year        =   $('.table-rep-rest__numberYear'),
+                user        =   $(this).attr('data-user'),
+                bar         =   'rest';
 
-        var dayNumber   =   $(this).attr('data-day'),
-            year        =   $('.table-rep-rest__numberYear'),
-            user        =   $(this).attr('data-user');
-
-        /* переключить рабочий/выходной день */
-        if ($(this).hasClass('black')) {
-            $.get("/php/script/changeDay.php", {day: dayNumber, value:'false', month: m[Month-1], year: Year, user: user}, function(data) {});
-            $(this).removeClass('black')
-            $(this).attr('bgcolor','#fff');
-        }else{
-            $.get("/php/script/changeDay.php", {day: dayNumber, value:'true' , month: m[Month-1], year: Year, user: user}, function(data) {});
-            $(this).addClass('black')
-            $(this).attr('bgcolor','#000');
+            /* переключить рабочий/выходной день */
+            if ($(this).hasClass('black')) {
+                $.get("/php/script/changeDay.php", {day: dayNumber, value:'false', month: m[Month-1], year: Year, user: user, bar: bar}, function(data) {});
+                $(this).removeClass('black')
+                $(this).attr('bgcolor','#fff');
+            }else{
+                $.get("/php/script/changeDay.php", {day: dayNumber, value:'true' , month: m[Month-1], year: Year, user: user, bar: bar}, function(data) {});
+                $(this).addClass('black')
+                $(this).attr('bgcolor','#000');
+            }
         }
-
-        
     });
     /*--------------Закончились GET запросы-----------*/
 

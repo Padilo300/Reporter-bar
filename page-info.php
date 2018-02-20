@@ -10,7 +10,9 @@
     				<div>
     				<table class="table-hover table table-bordered table-striped table ">
     					<tbody>
-    						<caption class="text-center"><b>Coast</b></caption>
+                            <tr>
+                                <td><h2 class="text-center">Coast</h2></td>
+                            </tr>
     						<tr>
     							<th>Номер администратора:</th>
     							<td class="text-center">
@@ -25,11 +27,9 @@
     								(набережная возле парка Шевченко)
     							</td>
     						</tr>
-    					</tbody>
-    				</table>
-    				<table class="table-hover table table-bordered table-striped table">
-    					<tbody>
-    						<caption class="text-center"><b>Репортер</b></caption>
+                            <tr>
+                                <td class="text-center"><h2>Репортер</h2></td>
+                            </tr>
     						<tr>
     							<th>Кафе: </th>
     							<td class="text-center"><a href="tel:0952337575">095-233-75-75</a></td>
@@ -56,11 +56,7 @@
 									(угол улиц Карла Маркса и Баррикадной)
     							</td>
     						</tr>
-    					</tbody>
-    				</table>
-    				<table class="table-hover table table-bordered table-striped table">
-    					<tbody>
-    						<caption class="text-center"><b>Артист</b></caption>
+                            <tr><td><h2 class="text-center">Артист</h2></td></tr>
     						<tr>
     							<th>Администратор:</th>
     							<td class="text-center">

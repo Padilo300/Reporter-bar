@@ -25,11 +25,21 @@ require_once 'connect_db.php';
 							$first_name	= $row['first_name'];
 
 							if (password_verify($get_password, $password)) {
-								$_SESSION['nameUser'] 	= 	$first_name			;
-								$_SESSION['first_name']	=	$row['first_name'] 	;
-								$_SESSION['last_name']	=	$row['last_name']	;
-								$_SESSION['admin']		=	$row['admin']		;
-								$_SESSION['id']			=	$row['id']			;
+								$_SESSION['nameUser'] 					= 	$first_name			  ;
+								$_SESSION['first_name']					=	$row['first_name'] 	  ;
+								$_SESSION['last_name']					=	$row['last_name']	  ;
+								$_SESSION['admin']						=	$row['admin']		  ;
+								$_SESSION['id']							=	$row['id']			  ;
+								$_SESSION['place_of_work']				=	$row['place_of_work'] ;
+								$_SESSION['money']						=	$row['money']		  ;
+
+								//в репортере три разных бара если зашел сотрудник из репортера
+								//тогда узнать из какого он бара и занести это в сессию	
+								if ($_SESSION['place_of_work'] == 'репортер') {
+									$_SESSION['bar_of_work_in_reporter']  = $row['bar_of_work_in_reporter'] ;
+									$_SESSION['cafe_schedule']			  = $row['cafe_schedule']			;
+ 								}
+								
 						 	    header("Location: index.php");
 							} else {
 							    return false;
@@ -52,7 +62,8 @@ require_once 'connect_db.php';
 					}
 					
 				}
-
+				
+				//тут создаем новый пароль				
 				public function changePassword($newPass1,$newPass2)
 				{
 					if (!empty($_POST['newPass1']) && !empty($_POST['newPass2']) ) {
@@ -80,6 +91,7 @@ require_once 'connect_db.php';
 					
 				}
 
+				//загружаем аватар
 				public function newAvatar()
 				{
 					$path 		= 'img/foto-users/';
@@ -118,7 +130,7 @@ require_once 'connect_db.php';
 				      }
 				  }
 				}
-
+/*------------------------- добавляем социальные сети --------------------------------*/
 				public function addFacebook($facebook,$id)
 				{
 					if (

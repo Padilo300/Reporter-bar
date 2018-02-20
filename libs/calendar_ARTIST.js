@@ -431,23 +431,23 @@ $( document ).ready(function() {
     /*--------------------GET запросы-----------------*/
     /*----тут клик по клеточке изменяет рабочий/выходной ----*/ 
     $('#Wrap_Calendar_ARTIST .fact').on('click','.dayGrid',function(){
+        if ($('#Wrap_Calendar_ARTIST .fact').hasClass('true-user')) {
+            var dayNumber   =   $(this).attr('data-day')
+                year        =   $('.table-rep__numberYear'),
+                user        =   $(this).attr('data-user'),
+                bar         =   'artist';
 
-        var dayNumber   =   $(this).attr('data-day')
-            year        =   $('.table-rep__numberYear'),
-            user        =   $(this).attr('data-user');
-
-        /* переключить рабочий/выходной день */
-        if ($(this).hasClass('black')) {
-            $.get("/php/script/changeDay.php", {day: dayNumber, value:'false', month: m[Month-1], year: Year, user: user}, function(data) {});
-            $(this).removeClass('black')
-            $(this).attr('bgcolor','#fff');
-        }else{
-            $.get("/php/script/changeDay.php", {day: dayNumber, value:'true' , month: m[Month-1], year: Year, user: user}, function(data) {});
-            $(this).addClass('black')
-            $(this).attr('bgcolor','#000');
+            /* переключить рабочий/выходной день */
+            if ($(this).hasClass('black')) {
+                $.get("/php/script/changeDay.php", {day: dayNumber, value:'false', month: m[Month-1], year: Year, user: user, bar: bar}, function(data) {});
+                $(this).removeClass('black')
+                $(this).attr('bgcolor','#fff');
+            }else{
+                $.get("/php/script/changeDay.php", {day: dayNumber, value:'true' , month: m[Month-1], year: Year, user: user, bar: bar}, function(data) {});
+                $(this).addClass('black')
+                $(this).attr('bgcolor','#000');
+            }
         }
-
-        
     });
     /*--------------Закончились GET запросы-----------*/
 

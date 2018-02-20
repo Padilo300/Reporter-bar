@@ -34,14 +34,14 @@
 			}
 			
 		}
-		public function chengeDay($numberDay,$value,$month,$year,$user)
+		public function chengeDay($numberDay,$value,$month,$year,$user,$bar)
 		{	
 			$day = 'day'; 
 			$day.= $numberDay;
 
 			try {
-				$query	=	$this->db->prepare("UPDATE $month SET $day=? WHERE year=? AND userNumber=?"); 	
-				$query->execute(array($value, $year,$user));
+				$query	=	$this->db->prepare("UPDATE $month SET $day=? WHERE year=? AND userNumber=? AND bar=?"); 	
+				$query->execute(array($value, $year,$user,$bar));
 				return 'изменено!';
 			 } catch (Exception $e) {
 			 	 echo '<div class=\'error\'>Произошла ошибка при подключении к базе ебаной, PDO говорит что:<p class=\'sqlerror\'>'.$e.'</p><br>Если Вы видите это сообщение, пожалуста немедленно сообщите адинистратору, или вашему программисту. 

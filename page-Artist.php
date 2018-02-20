@@ -62,32 +62,37 @@
         <?php $viewUsers->userNameCafe($artist,$Barmen6);?>
       </td>
     </tr>
-    <tr class="table-schedule__row fact-row-1 fact" >
+    <tr class="table-schedule__row fact-row-1 fact 
+    <?php if($_SESSION['place_of_work'] == 'артист' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} ?>" >
      <td class="table-schedule_border1 table-schedule__th" >
        <?php $viewUsers->userNameCafe($artist,$Barmen1);?>
      </td>
     </tr>
-    <tr class="table-schedule__row fact-row-2 fact">
+    <tr class="table-schedule__row fact-row-2 fact 
+    <?php if($_SESSION['place_of_work'] == 'артист' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} ?>">
       <td class="table-schedule_border1 table-schedule__th">
         <?php $viewUsers->userNameCafe($artist,$Barmen2);?>
       </t>
     </tr>
-    <tr class="table-schedule__row fact-row-3 fact">
+    <tr class="table-schedule__row fact-row-3 fact
+     <?php if($_SESSION['place_of_work'] == 'артист' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} ?>">
       <td class="table-schedule_border1 table-schedule__th">
         <?php $viewUsers->userNameCafe($artist,$Barmen3);?>
       </td>
     </tr>
-    <tr class="table-schedule__row fact-row-4 fact">
+    <tr class="table-schedule__row fact-row-4 fact 
+    <?php if($_SESSION['place_of_work'] == 'артист' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} ?>">
       <td class="table-schedule_border1 table-schedule__th">
         <?php $viewUsers->userNameCafe($artist,$Barmen4);?>
       </td>
     </tr>
-    <tr class="table-schedule__row fact-row-5 fact">
+    <tr class="table-schedule__row fact-row-5 fact <?php if($_SESSION['place_of_work'] == 'артист' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} ?>">
       <td class="table-schedule_border1 table-schedule__th">
         <?php $viewUsers->userNameCafe($artist,$Barmen5);?>
       </td>
     </tr>
-    <tr class="table-schedule__row fact-row-6 fact">
+    <tr class="table-schedule__row fact-row-6 fact 
+    <?php if($_SESSION['place_of_work'] == 'артист' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} ?>">
       <td class="table-schedule_border1 table-schedule__th">
         <?php $viewUsers->userNameCafe($artist,$Barmen6);?>
       </td>

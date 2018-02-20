@@ -21,15 +21,14 @@
 
 ?>
 
-<div class="tab-pane active" id="reporter">
-            <img src="img/shaker.png" width="100px"  alt="shaker" class="shake-slow fixed">
-            <div class="panel-group" id="accordion">
+<div class="tab-pane active" id="reporter">        
+    <div class="panel-group" id="accordion">
       <div class="panel panel-default ">
         <div class="panel-heading">
           <h4 class="panel-title">
             <span class="toggle trigger">
               <input type="checkbox" class="trigger">
-              <label data-off="UP" data-on="DWN"></label>
+              <label data-off="&#10006;" data-on="&#10004;"></label>
             </span>
             <a data-toggle="collapse"  href="#collapseOne" class="clickButton v-alignTop">
               
@@ -128,14 +127,14 @@
           <h4 class="panel-title">
             <span class="toggle trigger">
               <input type="checkbox" class="trigger">
-              <label data-off="UP" data-on="DWN"></label>
+              <label data-off="&#10006;" data-on="&#10004;"></label>
             </span>
             <a data-toggle="collapse"  href="#collapseTwo" class="clickButton v-alignTop">
             </a>
             Паб
           </h4>
         </div>
-<div id="collapseTwo" class="panel-collapse collapse">
+<div id="collapseTwo" class="panel-collapse collapse in">
   <div class="panel-body">
     <table class="table-schedule-reporter_pab"  id="WrapR_pab" >
       <div class="month">
@@ -229,14 +228,14 @@
           <h4 class="panel-title">
             <span class="toggle trigger">
               <input type="checkbox" class="trigger">
-              <label data-off="UP" data-on="DWN"></label>
+              <label data-off="&#10006;" data-on="&#10004;"></label>
             </span>
             <a data-toggle="collapse"  href="#collapseThree" class="clickButton v-alignTop">
             </a>
             Ресторан
           </h4>
         </div>
-        <div id="collapseThree" class="panel-collapse collapse">
+        <div id="collapseThree" class="panel-collapse collapse in">
           <div class="panel-body">
             <table class="table-schedule-reporter_rest"  id="WrapR_rest" >
               <div class="month">
@@ -251,7 +250,7 @@
                 </a>
               </div><!--end month-->
               <tr class="table-schedule__row" id="day-of-the-week-rest">
-                <td class="table-schedule__th" bgcolor="#999">Паб Репортер</td>
+                <td class="table-schedule__th" bgcolor="#999">Ресторан Репортер</td>
               </tr>
               <tr class="table-schedule__row" id="number-day-rest">
                 <td class="table-schedule_border1 table-schedule__th"></td>

@@ -18,7 +18,7 @@ session_start();
     <link rel="stylesheet" href="css/demo.css"            >
     <link rel="stylesheet" href="css/component.css"       >
     <link rel="stylesheet" href="css/buttonVictoria.css"  >
-  	<link rel="stylesheet" href="css/libs.min.css"        >
+  	<link rel="stylesheet" href="css/libs.css"        >
     <script src="js/jquery-3.2.1.min.js"         ></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

@@ -93,10 +93,19 @@ body
 	li:nth-child(3)
 		border:
 			right: 1px solid #999
-
 		border-radius: 0 0 50px 0
+		box-shadow: 4px -1px 3px #999
 
-		box-shadow: 4px -1px 3px #999;
+	@media (max-width: $mq-tablet-portrait)
+		display: flex
+		flex-direction: column
+
+	li:nth-child(2),li:nth-child(1)
+		@media (max-width: $mq-tablet-portrait)
+			border:
+				right: 1px solid #999
+			border-radius: 0 0 50px 0
+			box-shadow: 4px -1px 3px #999
 
 .container-fluid .navbar-default .collapse .navbar-nav .subbuttons 
 	position: relative
@@ -195,3 +204,8 @@ body
 
 .nav>li>a
 	transition: all 0.3s ease-out
+
+.mobile-flex-collumn
+	@media (max-width: $mq-tablet-portrait)
+		display: flex
+		flex-direction: column

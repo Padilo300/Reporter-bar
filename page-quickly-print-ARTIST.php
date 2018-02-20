@@ -1,5 +1,6 @@
 <?php 
   require_once 'php/script/viewUsers.php'; 
+  require_once 'head.php';
   $viewUsers = new viewUsers;
   $artist       = 'artist_schedule' ;
 
@@ -93,21 +94,4 @@
       </td>
     </tr>
     </table>
-    <br>
-  <table>
-    <tr>
-      <td>
-        <input 
-          type="button" 
-          onclick="tableToExcel('Wrap_Calendar_ARTIST', 'W3C Example Table')" 
-          value="Скачать в XLS">
-      </td>
-      <td>&#160;</td>
-      <td>
-        <a href="page-quickly-print-ARTIST.php"><button>Быстрая печать</button></a>
-      </td>
-    </tr>
-  </table>  
-</div>
-
 <?php require_once 'footer.php'; ?>

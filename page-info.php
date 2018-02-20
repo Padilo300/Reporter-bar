@@ -6,9 +6,9 @@
     	<div class="col-lg-12">
     		<h1 class="text-center" >Контактые номера</h1>
     		<div class="row">
-    			<div class="col-lg-6">
+    			<div class="col-lg-6 col-lg-offset-4">
     				<div>
-    				<table>
+    				<table class="table-hover table table-bordered table-striped table ">
     					<tbody>
     						<caption class="text-center"><b>Coast</b></caption>
     						<tr>
@@ -27,13 +27,12 @@
     						</tr>
     					</tbody>
     				</table>
-    				<table>
+    				<table class="table-hover table table-bordered table-striped table">
     					<tbody>
     						<caption class="text-center"><b>Репортер</b></caption>
     						<tr>
     							<th>Кафе: </th>
     							<td class="text-center"><a href="tel:0952337575">095-233-75-75</a></td>
-    							<td></td>
     						</tr>
     						<tr>
     							<th>Ресторан:</th>
@@ -59,7 +58,7 @@
     						</tr>
     					</tbody>
     				</table>
-    				<table>
+    				<table class="table-hover table table-bordered table-striped table">
     					<tbody>
     						<caption class="text-center"><b>Артист</b></caption>
     						<tr>
@@ -78,5 +77,8 @@
     			  </div>
     			</div>
     		</div>
+            <br>
+            <br>
+            <br>
     	</div> 
 <?php require_once 'footer.php'; ?>

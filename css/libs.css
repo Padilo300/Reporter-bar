@@ -3,10 +3,11 @@
 @import 'button.css'			;
 @import 'font-awesome.min.css'	;
 @import 'cart_user.css'			;
-@import 'login.css'				;
 @import 'addUser.css'			;
 @import 'animate.css'			;
 @import 'table.css'				;
+@import 'page-admin.css'		;
+@import 'login.css'				;
 @import 'style.css'				;
 /*----------------------------------стили календаря--------------------------------------*/
 
@@ -175,4 +176,32 @@ body::-webkit-scrollbar-thumb {
   background-image:linear-gradient(#eee 20%,#0284A8 );
  /*-webkit-box-shadow: inset 0 0 6px 1px #02BEC4;*/
   cursor: pointer;
+}
+
+#go-top {
+  position: fixed; 
+  bottom: 3%; 
+  right: 3%;
+  text-align: center;
+  cursor:pointer; 
+  display:none;
+  width: 80px;
+  height: 30px;
+  background: #c0c0c0;
+  line-height: 30px;
+  border-radius: 5px;
+}
+
+#go-top:hover {
+  background: #333;
+  color: #fff;
+}
+
+@media (max-width: 750px){
+	.control-month:first-child{
+	left: 5%;
+}
+.control-month:last-child{
+	right: 5%;
+}
 }

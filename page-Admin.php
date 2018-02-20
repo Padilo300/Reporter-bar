@@ -43,7 +43,7 @@
     <?php require_once 'php/part-page/nav-menu-main.php'  ; ?>
     <div class="row" id="ajax-conteiner">
       <div class="col-lg-12">
-        <ul class="nav nav-tabs flex-center">
+        <ul class="nav nav-tabs flex-center mobile-flex-collumn">
 
         <li class="active">
           <a href="#home" data-toggle="tab">
@@ -87,17 +87,13 @@
         <div class="tab-pane fade" id="settingsPassword">
             <div class="row">
               <div class="col-lg-12">
-                <form 
-                    action=" <?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"
-                    id='changePassword'
-                    method='POST'
-                        >
+                <form class="form-style" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id='changePassword' method='POST' >
                   <input type="password" name="newPass1" placeholder="Введите новый пароль" class="required" required title="" id="newPass1">
                   <br>
                   <input type="password" name="newPass2" placeholder="Повторите пароль" title="">
                             <?php echo $passwordsAreNotEqual; ?>
                   <br>
-                  <input type="submit">
+                  <button type="submit" class="btn btn-success">Обновить пароль!</button>
                 </form>
               </div>
             </div>
@@ -107,18 +103,19 @@
                 action  ="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" 
                 enctype ="multipart/form-data" 
                 method  ="POST"
+                class   ='form-center-collum'
                 >
 
             <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
             <input type="file" name="userIMG">
             <br>
-            <input type="submit" >
+            <button type="submit" class="btn btn-success">Обновить аватар!</button>
           </form>
         </div>
 
         <div class="tab-pane fade" id="social">
           <!-- Nav tabs -->
-          <ul class="nav nav-tabs flex-center">
+          <ul class="nav nav-tabs flex-center mobile-flex-collumn">
 
             <li class="active">
               <a href="#facebook" data-toggle="tab">

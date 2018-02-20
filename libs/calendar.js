@@ -147,10 +147,6 @@ $( document ).ready(function() {
         })
     }/*---------end getShedule_user_4---------*/
     
-    getSchedule_user_1();
-    getSchedule_user_2();
-    getSchedule_user_3();
-    getSchedule_user_4();
 	function dInMonth(month,year){return new Date(year, month, 0).getDate();};//узнаем сколько дней в месяце
 	function dow(Month,Day) {return new Date(Year,Month,Day).getDay();}//узнаем день недели
     function countMoney(dayWork){ return Math.floor(7000/dayWork)}    
@@ -331,7 +327,7 @@ $( document ).ready(function() {
       /*----тут клик по клеточке изменяет рабочий/выходной ----*/ 
     $('#table-schedule-reporter .fact').on('click','.dayGrid',function(){
 
-        var dayNumber   =   $(this).attr('data-day')
+        var dayNumber   =   $(this).attr('data-day'),
             year        =   $('.table-rep__numberYear'),
             user        =   $(this).attr('data-user');
 
@@ -352,9 +348,9 @@ $( document ).ready(function() {
 	
 	
     
-    prinGrid();//вызываем печать сетки
-	cycleWorkDay();//вызываем циклы расчета рабочих дней
-    calculateMoney();//вызываем расчет зароботной платы
+    prinGrid()           ; //вызываем печать сетки
+	cycleWorkDay()       ; //вызываем циклы расчета рабочих дней
+    calculateMoney()     ; //вызываем расчет зароботной платы
     
 	/*-------------------------------------------выбор следующего месяца----------------------------------------------------*/
 
@@ -468,13 +464,13 @@ $( document ).ready(function() {
         $('#table-schedule-reporter .table-schedule__day-of-the-week').remove()//удалить дни недели
         
 
-        prinGrid();//Печатаем всю сетку
-        cycleWorkDay();//циклы для расписания наступившего нового месяца
-        calculateMoney();//Рабоота калькулятора оплаты труда
-        getSchedule_user_1();
-        getSchedule_user_2();
-        getSchedule_user_3();
-        getSchedule_user_4();
+        prinGrid()            ; // Печатаем всю сетку
+        cycleWorkDay()        ; // циклы для расписания наступившего нового месяца
+        calculateMoney()      ; // Рабоота калькулятора оплаты труда 
+        getSchedule_user_1()  ; // тут из sql вытягиваем график по факту 
+        getSchedule_user_2()  ; // тут из sql вытягиваем график по факту 
+        getSchedule_user_3()  ; // тут из sql вытягиваем график по факту 
+        getSchedule_user_4()  ; // тут из sql вытягиваем график по факту 
     });//end click  
 	
     	
@@ -594,25 +590,34 @@ $( document ).ready(function() {
         e.preventDefault();//отмена перехода
         Month--;
 
-        $('.table-rep__nameMonth').text(nameMonth[Month-1]);//имя месяца
-        $('.table-rep__numberYear').text(Year);//имя месяца
-        $('#table-schedule-reporter  .dayGrid').remove();//удалить старую сетку рабочих дней
-        $('#table-schedule-reporter  .numder-day').remove()//удалить числа месяца
-        $('#table-schedule-reporter  .table-schedule__day-of-the-week').remove()//удалить дни недели
+        $('.table-rep__nameMonth').text(nameMonth[Month-1]) ;//имя месяца
+        $('.table-rep__numberYear').text(Year)              ;//имя месяца
+        $('#table-schedule-reporter  .dayGrid').remove()    ; //удалить старую сетку рабочих дней
+        $('#table-schedule-reporter  .numder-day').remove() ; //удалить числа месяца
+        $('#table-schedule-reporter  .table-schedule__day-of-the-week').remove(); //удалить дни недели
         
-        prinGrid(); //печатаем всю сетку для нового месяца
-        reverseEachWorkDay(); //печатаем рабочие смены по графику
-        calculateMoney();//Рабоота калькулятора оплаты труда
-        getSchedule_user_1();
-        getSchedule_user_2();
-        getSchedule_user_3();
-        getSchedule_user_4();
+        prinGrid()            ; // печатаем всю сетку для нового месяца
+        reverseEachWorkDay()  ; // печатаем рабочие смены по графику
+        calculateMoney()      ; // Рабоота калькулятора оплаты труда
+        getSchedule_user_1()  ; // тут из sql вытягиваем график по факту 
+        getSchedule_user_2()  ; // тут из sql вытягиваем график по факту 
+        getSchedule_user_3()  ; // тут из sql вытягиваем график по факту  
+        getSchedule_user_4()  ; // тут из sql вытягиваем график по факту 
     });//end click  
 
-	// var	nowDate		=	new Date(),
- //        newYear     =   nowDate.getFullYear(),
- //        Year        =   newYear,
-	// 	nowMonth	=	nowDate.getMonth();
-	// for (var i = 0; i < nowMonth; ++i) {$('#Table-Rep-next_Month').trigger('click');}
+	var	nowDate		=	new Date(),
+        newYear     =   nowDate.getFullYear(),
+        Year        =   newYear,
+		nowMonth	=	nowDate.getMonth();
+	for (var i = 0; i < nowMonth; ++i) {$('#Table-Rep-next_Month').trigger('click');}    
 
+    /*--Эти функции должны вызываться после того как перевели календарь на текущий месяц--*/ 
+    /*-- Они будут нужны только в январе когда триггер не будет срабатывать
+      -- и функции не вызовуся по событию click на стрелку следующий месяц  --*/
+    if ( (Month-1) == 0 ) {
+        getSchedule_user_1()  ; // тут из sql вытягиваем график по факту 
+        getSchedule_user_2()  ; // тут из sql вытягиваем график по факту 
+        getSchedule_user_3()  ; // тут из sql вытягиваем график по факту 
+        getSchedule_user_4()  ; // тут из sql вытягиваем график по факту 
+    }
 });

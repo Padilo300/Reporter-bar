@@ -64,4 +64,32 @@ $(document).ready(function(){
 		});
 		
 
+
+	/*--------------- тут создаем кнопку вверх --------------------*/
+	$('body').append('<a href="#" id="go-top" title="Вверх"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>');
+	$(function() {
+		$.fn.scrollToTop = function() {
+			$(this).hide().removeAttr("href");
+				if ($(window).scrollTop() >= "250") $(this).fadeIn("slow")
+				var scrollDiv = $(this);
+			$(window).scroll(function() {
+				if ($(window).scrollTop() <= "250") $(scrollDiv).fadeOut("slow")
+				else $(scrollDiv).fadeIn("slow")
+		  	});
+		    $(this).click(function() {
+		    	$("html, body").animate({scrollTop: 0}, "slow")
+		    })
+		}
+	});
+
+	$(function() {
+		$("#go-top").scrollToTop();
+	});
+	/*--------------- закончили с кнопкой вверх --------------------*/
+
+	/*---------Приветствующее сообщение добрый вечер/день/ночь/утро----------*/
+	var	nowDate		=	new Date(),
+        time		=   getHours();
+        alert(time);
+	/*-------------------*/
 });

@@ -1,16 +1,33 @@
+$mq-mobile-portrait		: 320px !default
+$mq-mobile-landscape	: 480px !default
+$mq-tablet-portrait		: 768px !default
+$mq-tablet-landscape	: 1024px !default
+$mq-desktop				: 1382px !default
+
 .cart-user
-    border-radius: 	8px
-    padding: 		5px 0 15px 20px
-    border: 		2px solid #ddd
-    margin: 		0 0 20px 0
+	@media (max-width: $mq-tablet-portrait)
+		display: flex
+		flex-direction: column
+		overflow: auto
+
+    border-radius: 8px
+    padding: 5px 0 15px 20px
+    border: 2px solid #ddd
+    margin: 0 0 20px 0
 
 .cart-user__flex-conteiner
 	justify-content: 	space-between
 	display: 			flex
-    
+	
+	@media screen and (orientation: portrait) and (max-width: $mq-tablet-portrait)
+		flex-direction: column
 
 .cart-user__foto-users
 	width: 		30%
+
+	@media (max-width: $mq-tablet-portrait)
+		margin: 0 auto
+		width: 100%
 
 .cart-user__foto-users img 
 	max-width: 	100%

@@ -37,8 +37,8 @@
                 <li class="subbuttons">
                   <a  href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/page-info.php">Информация</a></li>
                   <li class="subbuttons"><a   href="page-db_people.php">База сотрудников</a></li>
-                  <li class="subbuttons"><a   href="#">Для новичков</a></li>
-                  <li class="subbuttons"><a   href="#">Новости<sup style='color: green; font-weight: bold;'>+3</sup></a></li>
+                  <!-- <li class="subbuttons"><a   href="#">Для новичков</a></li> -->
+                  <!-- <li class="subbuttons"><a   href="#">Новости<sup style='color: green; font-weight: bold;'>+3</sup></a></li> -->
               </ul>
               <!-- <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">

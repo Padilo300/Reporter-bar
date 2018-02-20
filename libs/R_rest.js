@@ -212,8 +212,28 @@ $( document ).ready(function() {
     prinGrid()           ; //вызываем печать общей сетки
 	cycleWorkDay()       ; //вызываем циклы расчета рабочих дней
     calculateMoney()     ; //вызываем расчет зароботной платы
-    getSchedule_user_1() ; // тут из sql вытягиваем график по факту 
-    getSchedule_user_2() ; // тут из sql вытягиваем график по факту
+    /*--------------------GET запросы-----------------*/
+    /*----тут клик по клеточке изменяет рабочий/выходной ----*/ 
+    $('#WrapR_rest .fact').on('click','.dayGrid',function(){
+
+        var dayNumber   =   $(this).attr('data-day'),
+            year        =   $('.table-rep-rest__numberYear'),
+            user        =   $(this).attr('data-user');
+
+        /* переключить рабочий/выходной день */
+        if ($(this).hasClass('black')) {
+            $.get("/php/script/changeDay.php", {day: dayNumber, value:'false', month: m[Month-1], year: Year, user: user}, function(data) {});
+            $(this).removeClass('black')
+            $(this).attr('bgcolor','#fff');
+        }else{
+            $.get("/php/script/changeDay.php", {day: dayNumber, value:'true' , month: m[Month-1], year: Year, user: user}, function(data) {});
+            $(this).addClass('black')
+            $(this).attr('bgcolor','#000');
+        }
+
+        
+    });
+    /*--------------Закончились GET запросы-----------*/
 
 	/*-------------------------------------------выбор следующего месяца----------------------------------------------------*/
     $("#Table-Rep-rest-next_Month").click(function(e){
@@ -444,12 +464,19 @@ $( document ).ready(function() {
         getSchedule_user_2() ; // тут из sql вытягиваем график по факту
     });//end click	
 
-	// var	nowDate		=	new Date(),
- //        newYear     =   nowDate.getFullYear(),
- //        Year        =   newYear,
-	// 	nowMonth	=	nowDate.getMonth();
-	// for (var i = 0; i < nowMonth; i++) {$('#nextMonth').trigger('click'); console.log(Year + ' ' + newYear)}
-	
-	// widthWD		=	(Math.floor((widthWD / daysInMonth)))-1;/*ширину сетики делим на кол-во дней месяца	что-бы заполнить*/
-	// $('.collum').height(heightGD).width(widthWD);
+    /*-----переводим календарь на текущий месяц-----*/
+	var	nowDate		=	new Date(),
+        newYear     =   nowDate.getFullYear(),
+        Year        =   newYear,
+		nowMonth	=	nowDate.getMonth();
+
+	for (var i = 0; i < nowMonth; i++) {$('#Table-Rep-rest-next_Month').trigger('click');}
+
+	/*--Эти функции должны вызываться после того как перевели календарь на текущий месяц--*/ 
+    /*-- Они будут нужны только в январе когда триггер не будет срабатывать
+      -- и функции не вызовуся по событию click на стрелку следующий месяц  --*/
+    if ( (Month-1) == 0 ) {
+        getSchedule_user_1() ; // тут из sql вытягиваем график по факту 
+        getSchedule_user_2() ; // тут из sql вытягиваем график по факту
+    }
 });

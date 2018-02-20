@@ -210,11 +210,6 @@ $( document ).ready(function() {
         })
     }/*---------end getShedule_user_5---------*/
 
-   getSchedule_user_1(); // тут из sql вытягиваем график по факту
-   getSchedule_user_2(); // тут из sql вытягиваем график по факту
-   getSchedule_user_3(); // тут из sql вытягиваем график по факту
-   getSchedule_user_4(); // тут из sql вытягиваем график по факту
-   getSchedule_user_5(); // тут из sql вытягиваем график по факту
     function calculateMoney(){
         var workingDayR1 = $('#WrapR_pab .row-1 .black').length;// Кол-во выходов по графику
         var workingDayR2 = $('#WrapR_pab .row-2 .black').length;// Кол-во выходов по графику
@@ -718,10 +713,23 @@ $( document ).ready(function() {
         getSchedule_user_4() ;// тут из sql вытягиваем график по факту
         getSchedule_user_5() ;// тут из sql вытягиваем график по факту
     });//end click  
+    
+    /*-----переводим календарь на текущий месяц-----*/
+	var	nowDate		=	new Date(),
+        newYear     =   nowDate.getFullYear(),
+        Year        =   newYear,
+		nowMonth	=	nowDate.getMonth();
 
-	// var	nowDate		=	new Date(),
- //        newYear     =   nowDate.getFullYear(),
- //        Year        =   newYear,
-	// 	nowMonth	=	nowDate.getMonth();
-	// for (var i = 0; i < nowMonth; i++) {$('#nextMonth').trigger('click'); console.log(Year + ' ' + newYear)}
+	for (var i = 0; i < nowMonth; i++) {$('#Table-Rep-pab-next_Month').trigger('click');}
+
+    /*--Эти функции должны вызываться после того как перевели календарь на текущий месяц--*/ 
+    /*-- Они будут нужны только в январе когда триггер не будет срабатывать
+      -- и функции не вызовуся по событию click на стрелку следующий месяц  --*/
+    if ( (Month-1) == 0 ) {
+        getSchedule_user_1() ;// тут из sql вытягиваем график по факту
+        getSchedule_user_2() ;// тут из sql вытягиваем график по факту
+        getSchedule_user_3() ;// тут из sql вытягиваем график по факту
+        getSchedule_user_4() ;// тут из sql вытягиваем график по факту
+        getSchedule_user_5() ;// тут из sql вытягиваем график по факту
+    }
 });

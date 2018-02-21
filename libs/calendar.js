@@ -13,7 +13,6 @@ $( document ).ready(function() {
         scoreR2     =   4,  
         scoreR3     =   3,  
         scoreR4     =   2,
-        count       =   7000,
         m           =   ['january','february','march','april','may','june','july','august','september','october','november','december'];
 
     $('.table-rep__nameMonth').text(nameMonth[Month-1]);//имя месяца
@@ -182,12 +181,31 @@ $( document ).ready(function() {
 
         var workingDayR1        =    $('.plan-row-count .black').length    ; // Кол-во выходов по графику
         var workingDayR1Fact    =    $('.fact-row-count .black').length    ; // Кол-во выходов по факту        
+        var count               =    workingDayR1Fact*(countMoney(workingDayR1)); //обащая сумма насчитанная по фактам выхода
+
         $('.workingDay').text('Количество смен по графику: ' + workingDayR1)        ;
         $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн')    ;
         $('.visits').text('Выходов по факту: ' + workingDayR1Fact)                  ;
         $('.payment #money-word').text('Оплата: ')  ; 
-        $('.payment #money').text(  workingDayR1Fact*(countMoney(workingDayR1)) );                          
+        $('.payment #money').text(count);                          
         $('.payment #money-value').text('грн')      ;
+
+            if (count<7000) {
+                    $('#fa-arrow').html('<i class="fa fa-arrow-down" aria-hidden="true"></i>');
+                    $('#money , #money-value , #fa-arrow').addClass('lostMoney');
+                }
+            if ( count >7000) {
+                $('#fa-arrow').html('<i class="fa fa-arrow-up" aria-hidden="true"></i>');
+                $('#money , #money-value , #fa-arrow').addClass('addMoney');
+            }
+            if (workingDayR1Fact > workingDayR1) {
+                $('#fa-arrow').html('<i class="fa fa-arrow-up" aria-hidden="true"></i>');
+                $('#money , #money-value , #fa-arrow').addClass('addMoney');
+            }
+            if (workingDayR1Fact < workingDayR1) {
+                $('#fa-arrow').html('<i class="fa fa-arrow-down" aria-hidden="true"></i>');
+                $('#money , #money-value , #fa-arrow').addClass('lostMoney');
+            }
 
         //Щелчек по клеточке (выбор рабочий или выходной)
         $('.fact-row-count .dayGrid').click(function(){            
@@ -317,7 +335,7 @@ $( document ).ready(function() {
     
     prinGrid()           ; //вызываем печать сетки
 	cycleWorkDay()       ; //вызываем циклы расчета рабочих дней
-    // calculateMoney()     ; //вызываем расчет зароботной платы
+    calculateMoney()     ; //вызываем расчет зароботной платы
     
 	/*-------------------------------------------выбор следующего месяца----------------------------------------------------*/
 
@@ -574,7 +592,9 @@ $( document ).ready(function() {
         getSchedule_user_2()  ; // тут из sql вытягиваем график по факту 
         getSchedule_user_3()  ; // тут из sql вытягиваем график по факту  
         getSchedule_user_4()  ; // тут из sql вытягиваем график по факту 
-        // calculateMoney()      ; // Рабоота калькулятора оплаты труда
+        setInterval(function() {
+            calculateMoney();
+        }, 500);
     });//end click  
 
 	var	nowDate		=	new Date(),

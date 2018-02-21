@@ -41,7 +41,8 @@
                                     rest_schedule,
                                     artist_schedule,
                                     money,
-                                    admin) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
+                                    admin,
+                                    coast_schedule) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
                                 $addUser->execute(
                                     array(
                                         htmlspecialchars($_POST['first_name'])              ,   
@@ -63,6 +64,7 @@
                                         htmlspecialchars($_POST['artist_schedule'])         ,
                                         htmlspecialchars($_POST['money'])                   ,
                                         htmlspecialchars($_POST['admin-rights'])            ,
+                                        htmlspecialchars($_POST['coast_schedule'])          ,
 
                                     )
                                 );

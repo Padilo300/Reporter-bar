@@ -34,10 +34,16 @@
 			  		<?php require_once 'page-Artist.php'; ?>
 				</div>
 
+				<div class="tab-pane fade" id="coast">
+					<?php require_once 'page-coast.php'; ?>
+				</div>
+
 			</div>
 		</div><!--end col-lg-9 -->
+		
 		<div class="col-lg-3">
 			<?php require_once 'php/part-page/calculator.php'; ?>
 		</div>
 	</div><!--end row-->
+</div>
 <?php require_once 'footer.php'; ?>

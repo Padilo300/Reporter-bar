@@ -33,7 +33,7 @@
                     <li><a href="#">Еще одна отдельная ссылка</a></li>
                   </ul>
                 </li> -->
-                <li><a href="#coast">Coast</a></li>
+                <li><a href="#coast" id="hrefCoast" data-toggle="tab">Coast</a></li>
                 <li class="subbuttons">
                   <a  href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/page-info.php">
                     <i class="fa fa-info" aria-hidden="true"></i>

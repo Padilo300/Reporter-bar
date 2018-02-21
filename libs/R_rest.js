@@ -10,75 +10,13 @@ $( document ).ready(function() {
         daysInMonth =   dInMonth(Month-1,Year),//Количество дней в месяц
         scoreR1     =   5,
         scoreR2     =   2,  
-        count       =   7000,
         m           =   ['january','february','march','april','may','june','july','august','september','october','november','december'];
 
 /*------------------------------------ закончились установки календаря------------------------------------------------------*/
 
 	function dInMonth(month,year){return new Date(year, month, 0).getDate(); console.log(year + month)};//узнаем сколько дней в месяце
 	function dow(Month,Day) {return new Date(Year,Month,Day).getDay();}//узнаем день недели
-    function countMoney(dayWork){ return Math.floor(7000/dayWork)}
-    function calculateMoney(){
-        var workingDayR1 = $('#WrapR_rest .row-1 .black').length;// Кол-во выходов по графику
-        var workingDayR2 = $('#WrapR_rest .row-2 .black').length;// Кол-во выходов по графику
-        var workingDayR3 = $('#WrapR_rest .row3 .black').length;// Кол-во выходов по графику
-        var workingDayR4 = $('#WrapR_rest .row4 .black').length;// Кол-во выходов по графику
 
-        var workingDayR1Fact = workingDayR1; //Кол-во выходов по факту
-
-        $('.workingDay').text('Количество смен по графику: ' + workingDayR1);
-        $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн');
-        $('.visits').text('Выходов по факту: ' + workingDayR1Fact);
-        $('.payment').text('Оплата: ' + count + 'грн');
-
-        $('#WrapR_rest .row-1 .dayGrid').click(function(){
-            // if ($(this).hasClass('black') || $(this).hasClass('addBlack') === true) { //проверям на рабочий день
-
-            //         $(this).removeClass('black addBlack'); //eсли рабочий то снять класс (черный)
-            //         count-= countMoney(workingDayR1); //отнять с оплаты цену за выход на работу
-            //         workingDayR1Fact--;//Снять один выход по факту
-
-            //         $('.workingDay').text('Количество смен по графику: ' + workingDayR1);  
-            //         $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн');
-            //         $('.visits').html('Выходов по факту: ' + '<span>' + workingDayR1Fact + '</span>');
-            //         $('.payment').html('Оплата: ' + '<span>' + count + 'грн' + '</span>');
-
-            // }else{ //если класс не стоит (выходной) тогда добавить класс (вырабрать рабочую смену)
-
-            //     $(this).addClass('addBlack');
-
-            //     count+= countMoney(workingDayR1); // добавить к оплате цену за выход на работу
-            //     workingDayR1Fact++;//Добавить один выход по факту
-
-            //     $('.workingDay').text('Количество смен по графику: ' + workingDayR1);
-            //     $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн');
-            //     $('.visits').html('Выходов по факту: ' + '<span>' + workingDayR1Fact + '</span>');
-            //     $('.payment').html('Оплата: ' + '<span>' + count + 'грн' + ' ' + '</span>');
-            // }
-
-            if (count<7000) {
-
-                $('.payment span').append('<i class="fa fa-arrow-down" aria-hidden="true"></i>');
-                $('.payment span').addClass('lostMoney');
-            }
-
-            if (count>7000) {
-                $('.payment span').append('<i class="fa fa-arrow-up" aria-hidden="true"></i>');
-                $('.payment span').addClass('addMoney');
-
-            }
-
-            if (workingDayR1Fact > workingDayR1) {
-                $('.visits span').append('<i class="fa fa-arrow-up" aria-hidden="true"></i>');
-                $('.visits span').addClass('addMoney');
-            }
-            if (workingDayR1Fact < workingDayR1) {
-                $('.visits span').append('<i class="fa fa-arrow-down" aria-hidden="true"></i>');
-                $('.visits span').addClass('lostMoney');
-
-            }
-        });// end click
-    }//end function calculateMoney
     function getSchedule_user_1() {
         //посылает запрос с текущим месяцем
         $.get("/php/script/schedule_Day.php",{ 
@@ -211,7 +149,6 @@ $( document ).ready(function() {
 	
     prinGrid()           ; //вызываем печать общей сетки
 	cycleWorkDay()       ; //вызываем циклы расчета рабочих дней
-    calculateMoney()     ; //вызываем расчет зароботной платы
 
     /*--------------------GET запросы-----------------*/
     /*----тут клик по клеточке изменяет рабочий/выходной ----*/ 
@@ -357,7 +294,6 @@ $( document ).ready(function() {
 
 
 		cycleWorkDay();//циклы для расписания наступившего нового месяца
-        calculateMoney();//Работа калькулятора оплаты труда
         getSchedule_user_1() ; // тут из sql вытягиваем график по факту 
         getSchedule_user_2() ; // тут из sql вытягиваем график по факту
     });//end click	
@@ -460,7 +396,6 @@ $( document ).ready(function() {
         $('#WrapR_rest .month p').text(nameMonth[Month-1])          ; //Печать названия нового месяца
         prinGrid()           ; //печать сетки
         reverseEachWorkDay() ; //печатаем рабочие дни
-        calculateMoney()     ; //расчет оплаты заработной платы
         getSchedule_user_1() ; // тут из sql вытягиваем график по факту 
         getSchedule_user_2() ; // тут из sql вытягиваем график по факту
     });//end click	

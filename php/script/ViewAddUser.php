@@ -6,6 +6,7 @@
   $pab          = 'pab_schedule'    ;
   $rest         = 'rest_schedule'   ;
   $artist       = 'artist_schedule' ;
+  $coast        = 'coast_schedule'  ;
 
   $Barmen1      = 'бармен1'       ;
   $Barmen2      = 'бармен2'       ;
@@ -131,12 +132,12 @@
                 <th>
                     <select name="coast_schedule" >
                       <option selected disabled value="null">Сделайте выбор</option>
-                      <option value="бармен1">старший бармен смена(1)</option>
-                      <option value="бармен2">старший бармен смена(2)</option>
-                      <option value="бармен3">бармен смена(1) этаж 1</option>
-                      <option value="бармен4">бармен смена(1) этаж 2</option>
-                      <option value="бармен5">бармен смена(2) этаж 1</option>
-                      <option value="бармен6">бармен смена(2) этаж 2</option>
+                      <option value="бармен1">старший бармен смена(1) <?php $viewUsers->userNameCafe($coast,$Barmen1);?></option>
+                      <option value="бармен2">старший бармен смена(2) <?php $viewUsers->userNameCafe($coast,$Barmen2);?></option>
+                      <option value="бармен3">бармен смена(1) этаж 1  <?php $viewUsers->userNameCafe($coast,$Barmen3);?></option>
+                      <option value="бармен4">бармен смена(1) этаж 2  <?php $viewUsers->userNameCafe($coast,$Barmen4);?></option>
+                      <option value="бармен5">бармен смена(2) этаж 1  <?php $viewUsers->userNameCafe($coast,$Barmen5);?></option>
+                      <option value="бармен6">бармен смена(2) этаж 2  <?php $viewUsers->userNameCafe($coast,$Barmen6);?></option>
                     </select>
                 </th>
               </tr>

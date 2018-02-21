@@ -85,9 +85,7 @@ $(document).ready(function(){
 
 	/*---------Приветствующее сообщение добрый вечер/день/ночь/утро----------*/
 	var	nowDate		=	new Date()			; //получили дату
-    // var    time		=   nowDate.getHours()	; //получили текущий час
-    var time = 14;
-    console.log(time);
+    var    time		=   nowDate.getHours()	; //получили текущий час
     if ( time >= 6 && time < 13) {
     	$('#hellow-user').prepend('Доброе утро, ').append('!');
     } else if(time >= 12 && time < 18){

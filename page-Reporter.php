@@ -150,15 +150,18 @@
             <br>
             <table>
               <tr>
-                <td>
-                  <input 
-                    type="button" 
-                    onclick="tableToExcel('table-schedule-reporter', 'W3C Example Table')" 
-                    value="Скачать в XLS">
+                <td>  
+                  <button type="button" onclick="tableToExcel('table-schedule-reporter', 'W3C Example Table')" value="Скачать в XLS" class="btn btn-primary btn-sm"> 
+                     скачать <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+                  </button>
                 </td>
                 <td>&#160;</td>
                 <td>
-                  <a href="page-quickly-print-cafe.php"><button>Быстрая печать</button></a>
+                  <a href="page-quickly-print-cafe.php">
+                    <button  type="button" class="btn btn-primary btn-sm">
+                      Быстрая печать <i class="fa fa-print" aria-hidden="true"></i>
+                    </button>
+                  </a>
                 </td>
               </tr>
             </table>
@@ -259,14 +262,18 @@
     <table><!--/////////////////  end WrapR_pab //////////////////--> 
       <tr>
         <td>
-          <input 
-            type="button" 
-            onclick="tableToExcel('WrapR_pab', 'W3C Example Table')" 
-            value="Скачать в XLS">
+        <button type="button" onclick="tableToExcel('WrapR_pab', 'W3C Example Table')" value="Скачать в XLS" class="btn btn-primary btn-sm"> 
+            скачать <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+        </button>
         </td>
         <td>&#160;</td>
         <td>
-          <a href="page-quickly-print-pab.php"><button>Быстрая печать</button></a>
+          <a href="page-quickly-print-pab.php">
+            <button  type="button" class="btn btn-primary btn-sm">
+              Быстрая печать <i class="fa fa-print" aria-hidden="true"></i>
+            </button>
+          </a>
+
         </td>
       </tr>
     </table>
@@ -332,14 +339,17 @@
             <table><!--/////////////////  end WrapR_rest //////////////////--> 
               <tr>
                 <td>
-                  <input 
-                    type="button" 
-                    onclick="tableToExcel('WrapR_rest', 'W3C Example Table')" 
-                    value="Скачать в XLS">
+                <button type="button" onclick="tableToExcel('WrapR_rest', 'W3C Example Table')" value="  Скачать в XLS" class="btn btn-primary btn-sm"> 
+                  скачать <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+                </button>
                 </td>
                 <td>&#160;</td>
                 <td>
-                  <a href="page-quickly-print-rest.php"><button>Быстрая печать</button></a>
+                  <a href="page-quickly-print-rest.php">
+                    <button  type="button" class="btn btn-primary btn-sm">
+                      Быстрая печать <i class="fa fa-print" aria-hidden="true"></i>
+                    </button>
+                  </a>
                 </td>
               </tr>
             </table>

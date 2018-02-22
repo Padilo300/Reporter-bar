@@ -1,11 +1,17 @@
+$mq-mobile-portrait		: 320px  !default
+$mq-mobile-landscape	: 480px  !default
+$mq-tablet-portrait		: 768px  !default
+$mq-tablet-landscape	: 1024px !default
+$mq-desktop				: 1382px !default
+
 .login-page 
 	transition: all 2s ease-out
-	height: 100vh
 	width: 100%
 	background: url('/img/coast_min.jpg')
 	background-size: cover
 	background-repeat: no-repeat
 	background-position: top
+	background: #fff;
 	color: #fff
 
 	.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover, .nav>li>a:focus, .nav>li>a:hover, .nav-tabs>li>a
@@ -74,3 +80,7 @@
 		    height: 		20px
 		    line-height: 	5px
 		    width: 			45%
+	#form2
+		@media (max-width: $mq-tablet-portrait)
+			background-color: #d8c9c952
+			padding-bottom: 10px

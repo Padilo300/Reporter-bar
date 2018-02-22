@@ -26,7 +26,7 @@ body {
 	font-size: 0.885em;
 	padding: 1em 2em;
 	margin: 0 auto;
-	background: rgba(251, 224, 148, 0.8);
+	background: transparent);
 	-webkit-transition: background 0.3s, opacity 0.3s;
 	transition: background 0.3s, opacity 0.3s;
 }
@@ -36,14 +36,14 @@ body {
 }
 
 .btn:hover {
-	background: rgba(251, 224, 148, 1);
+	background: transparent;
 }
 
 .btn--trigger {
 	width: 15em;
 	position: absolute;
-	bottom: 2em;
-	left: 50%;
+	bottom: 1em;
+	right: 1em;
 	margin: 0 0 0 -7.5em;
 }
 

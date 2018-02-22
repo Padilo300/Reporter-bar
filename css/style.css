@@ -13,6 +13,9 @@ a:hover {
 .text-black {
   color: #000; }
 
+.text-justify {
+  text-align: justify; }
+
 .float-right {
   float: right; }
 
@@ -58,7 +61,7 @@ a:hover {
 
 body {
   position: relative;
-  min-height: 100vh; }
+  min-height: 150vh; }
 
 .navbar-default {
   background-image: none;

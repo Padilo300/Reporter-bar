@@ -11,15 +11,30 @@ session_start();
     <link rel="shortcut icon" href="/img/reporter (1).png" type="image/x-icon">
     <title>Репортер</title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.css"       >
-    <link rel="stylesheet" href="css/login.css"           >
-    <link rel="stylesheet" href="css/normalize.css"       >
-    <link rel="stylesheet" href="css/demo.css"            >
-    <link rel="stylesheet" href="css/component.css"       >
-    <link rel="stylesheet" href="css/buttonVictoria.css"  >
-  	<link rel="stylesheet" href="css/libs.css"        >
-    <script src="js/jquery-3.2.1.min.js"         ></script>
+    
+    <!-- пусть эти подключения останутся на случай если собьется gulp, либо если вы
+        захотите что-то поменять, вам поможет эта последовательность подключения стилей,
+        для настройки таска concat. Удачи Вам!
+    <link rel="stylesheet" href="/css/button.css"          >
+    <link rel="stylesheet" href="/css/login.css"           >
+    <link rel="stylesheet" href="/css/normalize.css"       >
+    <link rel="stylesheet" href="/css/demo.css"            >
+    <link rel="stylesheet" href="/css/component.css"       >
+    <link rel="stylesheet" href="/css/buttonVictoria.css"  >
+    <link rel="stylesheet" href="/css/csshake.min.css"     >
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/cart_user.css"       >
+    <link rel="stylesheet" href="/css/addUser.css"         >
+    <link rel="stylesheet" href="/css/animate.css"         >
+    <link rel="stylesheet" href="/css/bootstrap.css"       >
+    <link rel="stylesheet" href="/css/table.css"           >
+    <link rel="stylesheet" href="/css/page-admin.css"      >
+    <link rel="stylesheet" href="/css/login.css"           >
+    <link rel="stylesheet" href="/css/style.css"           >
+  	<link rel="stylesheet" href="css/libs.css"             > -->
+    <link rel="stylesheet" href="css/all.min.css">
+
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

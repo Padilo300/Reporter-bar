@@ -75,7 +75,7 @@
           </a>
         </li>
       </ul>
-        <br>
+        <p></p>
       <!-- Tab panes -->
       <div class="tab-content">
         <div class="tab-pane fade active in" id="home">
@@ -89,10 +89,10 @@
               <div class="col-lg-12">
                 <form class="form-style" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id='changePassword' method='POST' >
                   <input type="password" name="newPass1" placeholder="Введите новый пароль" class="required" required title="" id="newPass1">
-                  <br>
+                  <p></p>
                   <input type="password" name="newPass2" placeholder="Повторите пароль" title="">
                             <?php echo $passwordsAreNotEqual; ?>
-                  <br>
+                  <p></p>
                   <button type="submit" class="btn btn-success">Обновить пароль!</button>
                 </form>
               </div>
@@ -108,7 +108,7 @@
 
             <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
             <input type="file" name="userIMG">
-            <br>
+            <p></p>
             <button type="submit" class="btn btn-success">Обновить аватар!</button>
           </form>
         </div>
@@ -162,7 +162,7 @@
                   </p>
                 </div>
                 <div class="row">
-                  <br>
+                  <p></p>
                   <form 
                     class   = "col-lg-5 col-lg-offset-4 form-style flex-center-column" 
                     action  = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" 
@@ -173,7 +173,7 @@
                       id          = "facebookInput" 
                       placeholder = "https:// ссылка на вашу страницу" 
                       class       = "width-100">
-                    <br>
+                    <p></p>
                     <button type="submit" class="btn btn-success" > Добавить</button>
                   </form>
                 </div>
@@ -190,7 +190,7 @@
                       id          = "vk" 
                       placeholder = "https:// ссылка на вашу страницу" 
                       class       = "width-100">
-                    <br>
+                    <p></p>
                     <button type="submit"  class="btn btn-success"> Добавить</button>
                   </form>
 
@@ -207,7 +207,7 @@
                     id="pinterest" 
                     name="pinterest" 
                     placeholder="https:// ссылка на вашу страницу">
-                  <br>
+                  <p></p>
                   <button type="submit" class="btn btn-success"> Добавить</button>
                 </form>
               </div>
@@ -223,7 +223,7 @@
                     name  = "skype" 
                     id    = "skype" 
                     placeholder = "Ваш логин">
-                  <br>
+                  <p></p>
                   <button type="submit" class="btn btn-success"> Добавить</button>
                 </form>
               </div>
@@ -239,7 +239,7 @@
                     name  = "twitter"  
                     id    = "twitter" 
                     placeholder="https:// ссылка на вашу страницу">
-                  <br>
+                  <p></p>
                   <button type="submit" class="btn btn-success"> Добавить</button>
                 </form>
               </div>

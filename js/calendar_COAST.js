@@ -246,55 +246,55 @@ $( document ).ready(function() {
         })
     }/*---------end getShedule_user_6---------*/
     function reverseEachWorkDay(){
-            $($("body #Wrap_Calendar_coast .row-1 .dayGrid").get().reverse()).each(function() {
+            $($("#Wrap_Calendar_coast .row-1 .dayGrid").get().reverse()).each(function() {
                 scoreR1++;
-                if(scoreR1==7){scoreR1=1}
-                if(scoreR1==4 || scoreR1==5 || scoreR1==6){
+                if(scoreR1==5){scoreR1=1}
+                if(scoreR1==3 || scoreR1==4){
                     $(this).addClass('black');
                     $(this).attr('bgcolor','#000');
                 
                 }});//end reverse.each
 
-            $($("body #Wrap_Calendar_coast .row-2 .dayGrid").get().reverse()).each(function() {
+            $($("#Wrap_Calendar_coast .row-2 .dayGrid").get().reverse()).each(function() {
                 scoreR2++;
-                if(scoreR2==7){scoreR2=1}
-                if(scoreR2==4 || scoreR2==5 || scoreR2==6){
+                if(scoreR2==5){scoreR2=1}
+                if(scoreR2==3 || scoreR2==4){
                     $(this).addClass('black');
                     $(this).attr('bgcolor','#000');
                 
                 }});//end reverse.each
 
-            $($("body #Wrap_Calendar_coast .row-3 .dayGrid").get().reverse()).each(function() {
+            $($("#Wrap_Calendar_coast .row-3 .dayGrid").get().reverse()).each(function() {
                 scoreR3++;
-                if(scoreR3==7){scoreR3=1}
-                if(scoreR3==4 || scoreR3==5 || scoreR3==6){
+                if(scoreR3==5){scoreR3=1}
+                if(scoreR3==3 || scoreR3==4){
                     $(this).addClass('black');
                     $(this).attr('bgcolor','#000');
                 
                 }});//end reverse.each
 
-            $($("body #Wrap_Calendar_coast .row-4 .dayGrid").get().reverse()).each(function() {
+            $($("#Wrap_Calendar_coast .row-4 .dayGrid").get().reverse()).each(function() {
                 scoreR4++;
-                if(scoreR4==7){scoreR4=1}
-                if(scoreR4==4 || scoreR4==5 || scoreR4==6){
+                if(scoreR4==5){scoreR4=1}
+                if(scoreR4==3 || scoreR4==4){
                     $(this).addClass('black');
                     $(this).attr('bgcolor','#000');
                 
                 }});//end reverse.each
 
-            $($("body #Wrap_Calendar_coast .row-5 .dayGrid").get().reverse()).each(function() {
+            $($("#Wrap_Calendar_coast .row-5 .dayGrid").get().reverse()).each(function() {
                 scoreR5++;
-                if(scoreR5==7){scoreR5=1}
-                if(scoreR5==4 || scoreR5==5 || scoreR5==6){
+                if(scoreR5==5){scoreR5=1}
+                if(scoreR5==3 || scoreR5==4){
                     $(this).addClass('black');
                     $(this).attr('bgcolor','#000');
                 
                 }});//end reverse.each
 
-            $($("body #Wrap_Calendar_coast .row-6 .dayGrid").get().reverse()).each(function() {
+            $($("#Wrap_Calendar_coast .row-6 .dayGrid").get().reverse()).each(function() {
                 scoreR6++;
-                if(scoreR6==7){scoreR6=1}
-                if(scoreR6==4 || scoreR6==5 || scoreR6==6){
+                if(scoreR6==5){scoreR6=1}
+                if(scoreR6==3 || scoreR6==4){
                     $(this).addClass('black');
                     $(this).attr('bgcolor','#000');
                 
@@ -397,145 +397,133 @@ $( document ).ready(function() {
 
         var preLastArr                  =   $('body #Wrap_Calendar_coast .row-1 .dayGrid') ; //узнаем сколько элементов есть
         var preLastElementL2            =   preLastArr[preLastArr.length-2] ; //выберем предпоследний HTML элемент
-        var preLastElementL3            =   preLastArr[preLastArr.length-3] ; //выберем третий с конца HTML элемент
-        var preLastElementL4            =   preLastArr[preLastArr.length-4] ; //выберем четвертый с конца HTML элемент
 
         var preLastArrRow2              =   $('body #Wrap_Calendar_coast .row-2 .dayGrid') ; //узнаем сколько элементов есть
         var preLastElementLRow2_2       =   preLastArrRow2[preLastArrRow2.length-2] ; //выберем предпоследний HTML элемент
-        var preLastElementLRow2_3       =   preLastArrRow2[preLastArrRow2.length-3] ; //выберем третий с конца HTML элемент
-        var preLastElementLRow2_4       =   preLastArrRow2[preLastArrRow2.length-4] ; //выберем четвертый с конца HTML элемент
 
         var preLastArrRow3              =   $('body #Wrap_Calendar_coast .row-3 .dayGrid') ; //узнаем сколько элементов есть
         var preLastElementLRow3_2       =   preLastArrRow3[preLastArrRow3.length-2] ; //выберем предпоследний HTML элемент
-        var preLastElementLRow3_3       =   preLastArrRow3[preLastArrRow3.length-3] ; //выберем третий с конца HTML элемент
-        var preLastElementLRow3_4       =   preLastArrRow3[preLastArrRow3.length-4] ; //выберем четвертый с конца HTML элемент
 
         var preLastArrRow4              =   $('body #Wrap_Calendar_coast .row-4 .dayGrid') ; //узнаем сколько элементов есть
         var preLastElementLRow4_2       =   preLastArrRow4[preLastArrRow4.length-2] ; //выберем предпоследний HTML элемент
-        var preLastElementLRow4_3       =   preLastArrRow4[preLastArrRow4.length-3] ; //выберем третий с конца HTML элемент
-        var preLastElementLRow4_4       =   preLastArrRow4[preLastArrRow4.length-4] ; //выберем четвертый с конца HTML элемент
 
         var preLastArrRow5              =   $('body #Wrap_Calendar_coast .row-5 .dayGrid') ; //узнаем сколько элементов есть
         var preLastElementLRow5_2       =   preLastArrRow5[preLastArrRow5.length-2] ; //выберем предпоследний HTML элемент
-        var preLastElementLRow5_3       =   preLastArrRow5[preLastArrRow5.length-3] ; //выберем третий с конца HTML элемент
-        var preLastElementLRow5_4       =   preLastArrRow5[preLastArrRow5.length-4] ; //выберем четвертый с конца HTML элемент
 
         var preLastArrRow6              =   $('body #Wrap_Calendar_coast .row-6 .dayGrid') ; //узнаем сколько элементов есть
         var preLastElementLRow6_2       =   preLastArrRow6[preLastArrRow6.length-2] ; //выберем предпоследний HTML элемент
-        var preLastElementLRow6_3       =   preLastArrRow6[preLastArrRow6.length-3] ; //выберем третий с конца HTML элемент
-        var preLastElementLRow6_4       =   preLastArrRow6[preLastArrRow6.length-4] ; //выберем четвертый с конца HTML элемент
 
 		/*------------------------------------условия для работы графика --------------------------------------------------------*/
-        if ($('body #table-schedule-reporter .row-1 .dayGrid:last-child').hasClass('black')=== false    &&  
-            $(preLastElement).hasClass('black')=== false) {
+        if ($('body #Wrap_Calendar_coast .row-1 .dayGrid:last-child').hasClass('black')=== false    &&  
+            $(preLastElementL2).hasClass('black')=== false) {
             scoreR1 = 2;
         }
-        if ($('body #table-schedule-reporter .row-1 .dayGrid:last-child').hasClass('black')=== true &&  
-            $(preLastElement).hasClass('balck')=== false) {
+        if ($('body #Wrap_Calendar_coast .row-1 .dayGrid:last-child').hasClass('black')=== true &&  
+            $(preLastElementL2).hasClass('balck')=== false) {
             scoreR1 = 3;
         }
-        if ($('body #table-schedule-reporter .row-1 .dayGrid:last-child').hasClass('black')=== true &&  
-            $(preLastElement).hasClass('black')=== true) {
+        if ($('body #Wrap_Calendar_coast .row-1 .dayGrid:last-child').hasClass('black')=== true &&  
+            $(preLastElementL2).hasClass('black')=== true) {
             scoreR1 = 0;
         }
-        if ($('body #table-schedule-reporter .row-1 .dayGrid:last-child').hasClass('black')=== false    &&  
-            $(preLastElement).hasClass('black')=== true) {
+        if ($('body #Wrap_Calendar_coast .row-1 .dayGrid:last-child').hasClass('black')=== false    &&  
+            $(preLastElementL2).hasClass('black')=== true) {
             scoreR1 = 1;
         }
 
     	/*------------------------------------end row1--------------------------------------------*/
 
         /*------------------------------------ row2 --------------------------------------------*/
-        if ($('body #table-schedule-reporter   .row-2 .dayGrid:last-child').hasClass('black')=== false   &&  
-            $(preLastElement2).hasClass('black')=== false) {
+        if ($('body #Wrap_Calendar_coast   .row-2 .dayGrid:last-child').hasClass('black')=== false   &&  
+            $(preLastElementLRow2_2).hasClass('black')=== false) {
             scoreR2 = 2;
         }
-        if ($('body #table-schedule-reporter   .row-2 .dayGrid:last-child').hasClass('black')=== true    &&  
-            $(preLastElement2).hasClass('balck')=== false) {
+        if ($('body #Wrap_Calendar_coast   .row-2 .dayGrid:last-child').hasClass('black')=== true    &&  
+            $(preLastElementLRow2_2).hasClass('balck')=== false) {
             scoreR2 = 3;
         }
-        if ($('body #table-schedule-reporter   .row-2 .dayGrid:last-child').hasClass('black')=== true    &&  
-            $(preLastElement2).hasClass('black')=== true) {
+        if ($('body #Wrap_Calendar_coast   .row-2 .dayGrid:last-child').hasClass('black')=== true    &&  
+            $(preLastElementLRow2_2).hasClass('black')=== true) {
             scoreR2 = 0;
         }
-        if ($('body #table-schedule-reporter  .row-2 .dayGrid:last-child').hasClass('black')=== false    &&  
-            $(preLastElement2).hasClass('black')=== true) {
+        if ($('body #Wrap_Calendar_coast  .row-2 .dayGrid:last-child').hasClass('black')=== false    &&  
+            $(preLastElementLRow2_2).hasClass('black')=== true) {
             scoreR2 = 1;
         }
     	/*------------------------------------end row2--------------------------------------------*/
 
         /*------------------------------------ row3 --------------------------------------------*/
-        if ($('body #table-schedule-reporter .row-3 .dayGrid:last-child').hasClass('black')=== false    &&  
-            $(preLastElement3).hasClass('black')=== false) {
+        if ($('body #Wrap_Calendar_coast .row-3 .dayGrid:last-child').hasClass('black')=== false    &&  
+            $(preLastElementLRow3_2).hasClass('black')=== false) {
             scoreR3 = 2;
         }
-        if ($('body #table-schedule-reporter .row-3 .dayGrid:last-child').hasClass('black')=== true &&  
-            $(preLastElement3).hasClass('balck')=== false) {
+        if ($('body #Wrap_Calendar_coast .row-3 .dayGrid:last-child').hasClass('black')=== true &&  
+            $(preLastElementLRow3_2).hasClass('balck')=== false) {
             scoreR3 = 3;
         }
-        if ($('body #table-schedule-reporter .row-3 .dayGrid:last-child').hasClass('black')=== true &&  
-            $(preLastElement3).hasClass('black')=== true) {
+        if ($('body #Wrap_Calendar_coast .row-3 .dayGrid:last-child').hasClass('black')=== true &&  
+            $(preLastElementLRow3_2).hasClass('black')=== true) {
             scoreR3 = 0;
         }
-        if ($('body #table-schedule-reporter .row-3 .dayGrid:last-child').hasClass('black')=== false    &&  
-            $(preLastElement3).hasClass('black')=== true) {
+        if ($('body #Wrap_Calendar_coast .row-3 .dayGrid:last-child').hasClass('black')=== false    &&  
+            $(preLastElementLRow3_2).hasClass('black')=== true) {
             scoreR3 = 1;
         }
         /*------------------------------------end row3--------------------------------------------*/
 
         /*------------------------------------ row4 --------------------------------------------*/
-        if ($('body #table-schedule-reporter  .row-4 .dayGrid:last-child').hasClass('black')=== false    &&  
-            $(preLastElement4).hasClass('black')=== false) {
+        if ($('body #Wrap_Calendar_coast  .row-4 .dayGrid:last-child').hasClass('black')=== false    &&  
+            $(preLastElementLRow4_2).hasClass('black')=== false) {
             scoreR4 = 2;
         }
-        if ($('body #table-schedule-reporter  .row-4 .dayGrid:last-child').hasClass('black')=== true &&  
-            $(preLastElement4).hasClass('balck')=== false) {
+        if ($('body #Wrap_Calendar_coast  .row-4 .dayGrid:last-child').hasClass('black')=== true &&  
+            $(preLastElementLRow4_2).hasClass('balck')=== false) {
             scoreR4 = 3;
         }
-        if ($('body #table-schedule-reporter  .row-4 .dayGrid:last-child').hasClass('black')=== true &&  
-            $(preLastElement4).hasClass('black')=== true) {
+        if ($('body #Wrap_Calendar_coast  .row-4 .dayGrid:last-child').hasClass('black')=== true &&  
+            $(preLastElementLRow4_2).hasClass('black')=== true) {
             scoreR4 = 0;
         }
-        if ($('body #table-schedule-reporter  .row-4 .dayGrid:last-child').hasClass('black')=== false    &&  
-            $(preLastElement4).hasClass('black')=== true) {
+        if ($('body #Wrap_Calendar_coast  .row-4 .dayGrid:last-child').hasClass('black')=== false    &&  
+            $(preLastElementLRow4_2).hasClass('black')=== true) {
             scoreR4 = 1;
         }
         /*------------------------------------end row4--------------------------------------------*/
 
         /*------------------------------------ row-5 --------------------------------------------*/
-        if ($('body #table-schedule-reporter  .row-5 .dayGrid:last-child').hasClass('black')=== false    &&  
-            $(preLastElement4).hasClass('black')=== false) {
+        if ($('body #Wrap_Calendar_coast  .row-5 .dayGrid:last-child').hasClass('black')=== false    &&  
+            $(preLastElementLRow5_2).hasClass('black')=== false) {
             scoreR5 = 2;
         }
-        if ($('body #table-schedule-reporter  .row-5 .dayGrid:last-child').hasClass('black')=== true &&  
-            $(preLastElement4).hasClass('balck')=== false) {
+        if ($('body #Wrap_Calendar_coast  .row-5 .dayGrid:last-child').hasClass('black')=== true &&  
+            $(preLastElementLRow5_2).hasClass('balck')=== false) {
             scoreR5 = 3;
         }
-        if ($('body #table-schedule-reporter  .row-5 .dayGrid:last-child').hasClass('black')=== true &&  
-            $(preLastElement4).hasClass('black')=== true) {
+        if ($('body #Wrap_Calendar_coast  .row-5 .dayGrid:last-child').hasClass('black')=== true &&  
+            $(preLastElementLRow5_2).hasClass('black')=== true) {
             scoreR5 = 0;
         }
-        if ($('body #table-schedule-reporter  .row-5 .dayGrid:last-child').hasClass('black')=== false    &&  
-            $(preLastElement4).hasClass('black')=== true) {
+        if ($('body #Wrap_Calendar_coast  .row-5 .dayGrid:last-child').hasClass('black')=== false    &&  
+            $(preLastElementLRow5_2).hasClass('black')=== true) {
             scoreR5 = 1;
         }
         /*------------------------------------ end row-5 ----------------------------------------*/
 
         /*------------------------------------ row-6 --------------------------------------------*/
-        if ($('body #table-schedule-reporter  .row-6 .dayGrid:last-child').hasClass('black')=== false    &&  
-            $(preLastElement4).hasClass('black')=== false) {
+        if ($('body #Wrap_Calendar_coast  .row-6 .dayGrid:last-child').hasClass('black')=== false    &&  
+            $(preLastElementLRow6_2).hasClass('black')=== false) {
             scoreR6 = 2;
         }
-        if ($('body #table-schedule-reporter  .row-6 .dayGrid:last-child').hasClass('black')=== true &&  
-            $(preLastElement4).hasClass('balck')=== false) {
+        if ($('body #Wrap_Calendar_coast  .row-6 .dayGrid:last-child').hasClass('black')=== true &&  
+            $(preLastElementLRow6_2).hasClass('balck')=== false) {
             scoreR6 = 3;
         }
-        if ($('body #table-schedule-reporter  .row-6 .dayGrid:last-child').hasClass('black')=== true &&  
-            $(preLastElement4).hasClass('black')=== true) {
+        if ($('body #Wrap_Calendar_coast  .row-6 .dayGrid:last-child').hasClass('black')=== true &&  
+            $(preLastElementLRow6_2).hasClass('black')=== true) {
             scoreR6 = 0;
         }
-        if ($('body #table-schedule-reporter  .row-6 .dayGrid:last-child').hasClass('black')=== false    &&  
-            $(preLastElement4).hasClass('black')=== true) {
+        if ($('body #Wrap_Calendar_coast  .row-6 .dayGrid:last-child').hasClass('black')=== false    &&  
+            $(preLastElementLRow6_2).hasClass('black')=== true) {
             scoreR6 = 1;
         }
         /*------------------------------------ end row-6 ----------------------------------------*/
@@ -567,266 +555,158 @@ $( document ).ready(function() {
     		Year--;
     		Month = 13;
     	}
-    	if ($('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(0)').hasClass('black') === false	&&	
-    		$('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(1)').hasClass('black') === false   &&
-            $('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(2)').hasClass('black') === false) {
-
-    		scoreR1 = 3;
-   		}
-
-        if ($('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(1)').hasClass('black') === false   &&
-            $('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_coast  .row-1 .dayGrid:eq(0)').hasClass('black') === false &&  
+            $('body #Wrap_Calendar_coast  .row-1 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR1 = 2;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(1)').hasClass('black') === true    &&
-            $('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_coast  .row-1 .dayGrid:eq(0)').hasClass('black') === true  &&  
+            $('body #Wrap_Calendar_coast  .row-1 .dayGrid:eq(1)').hasClass('black') === false) {
 
-            scoreR1 = 1;
+            scoreR1 = 3;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(1)').hasClass('black') === true   &&
-            $('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_coast  .row-1 .dayGrid:eq(0)').hasClass('black') === true  &&  
+            $('body #Wrap_Calendar_coast  .row-1 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR1 = 0;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(1)').hasClass('black') === true   &&
-            $('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(2)').hasClass('black') === false) {
+        if ($('body #Wrap_Calendar_coast  .row-1 .dayGrid:eq(0)').hasClass('black') === false &&  
+            $('body #Wrap_Calendar_coast  .row-1 .dayGrid:eq(1)').hasClass('black') === true) {
 
-            scoreR1 = 5;
-        }
-
-        if ($('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(1)').hasClass('black') === false  &&
-            $('body #Wrap_Calendar_coast .row-1 .dayGrid:eq(2)').hasClass('black') === false) {
-
-            scoreR1 = 4;
+            scoreR1 = 1 ;
         }
 
     	/*------------------------------------end row1--------------------------------------------*/
 
-        if ($('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(1)').hasClass('black') === false   &&
-            $('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(2)').hasClass('black') === false) {
-
-            scoreR2 = 3;
-        }
-
-        if ($('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(1)').hasClass('black') === false   &&
-            $('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(0)').hasClass('black') === false &&  
+            $('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR2 = 2;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(1)').hasClass('black') === true    &&
-            $('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(0)').hasClass('black') === true  &&  
+            $('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(1)').hasClass('black') === false) {
 
-            scoreR2 = 1;
+            scoreR2 = 3;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(1)').hasClass('black') === true   &&
-            $('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(0)').hasClass('black') === true  &&  
+            $('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR2 = 0;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(1)').hasClass('black') === true   &&
-            $('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(2)').hasClass('black') === false) {
+        if ($('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(0)').hasClass('black') === false &&  
+            $('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(1)').hasClass('black') === true) {
 
-            scoreR2 = 5;
-        }
-
-        if ($('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(1)').hasClass('black') === false  &&
-            $('body #Wrap_Calendar_coast .row-2 .dayGrid:eq(2)').hasClass('black') === false) {
-
-            scoreR2 = 4;
+            scoreR2 = 1 ;
         }
 		/*------------------------------------end row2--------------------------------------------*/ 
         /*------------------------------------ row3 --------------------------------------------*/  
-        if ($('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(1)').hasClass('black') === false   &&
-            $('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(2)').hasClass('black') === false) {
-
-            scoreR3 = 3;
-        }
-
-        if ($('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(1)').hasClass('black') === false   &&
-            $('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body  #Wrap_Calendar_coast .row-3 .dayGrid:eq(0)').hasClass('black') === false    &&  
+            $('body  #Wrap_Calendar_coast .row-3 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR3 = 2;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(1)').hasClass('black') === true    &&
-            $('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body  #Wrap_Calendar_coast .row-3 .dayGrid:eq(0)').hasClass('black') === true &&  
+            $('body  #Wrap_Calendar_coast .row-3 .dayGrid:eq(1)').hasClass('black') === false) {
 
-            scoreR3 = 1;
+            scoreR3 = 3;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(1)').hasClass('black') === true   &&
-            $('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body  #Wrap_Calendar_coast .row-3 .dayGrid:eq(0)').hasClass('black') === true &&  
+            $('body  #Wrap_Calendar_coast .row-3 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR3 = 0;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(1)').hasClass('black') === true   &&
-            $('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(2)').hasClass('black') === false) {
+        if ($('body  #Wrap_Calendar_coast .row-3 .dayGrid:eq(0)').hasClass('black') === false    &&  
+            $('body  #Wrap_Calendar_coast .row-3 .dayGrid:eq(1)').hasClass('black') === true) {
 
-            scoreR3 = 5;
+            scoreR3 = 1 ;
         }
-
-        if ($('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(1)').hasClass('black') === false  &&
-            $('body #Wrap_Calendar_coast .row-3 .dayGrid:eq(2)').hasClass('black') === false) {
-
-            scoreR3 = 4;
-        }  	
         /*------------------------------------end row3 --------------------------------------------*/  
 
         /*------------------------------------ row4 --------------------------------------------*/  
-        if ($('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(1)').hasClass('black') === false   &&
-            $('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(2)').hasClass('black') === false) {
-
-            scoreR4 = 3;
-        }
-
-        if ($('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(1)').hasClass('black') === false   &&
-            $('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(0)').hasClass('black') === false &&  
+            $('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR4 = 2;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(1)').hasClass('black') === true    &&
-            $('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(0)').hasClass('black') === true  &&  
+            $('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(1)').hasClass('black') === false) {
 
-            scoreR4 = 1;
+            scoreR4 = 3;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(1)').hasClass('black') === true   &&
-            $('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(0)').hasClass('black') === true  &&  
+            $('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR4 = 0;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(1)').hasClass('black') === true   &&
-            $('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(2)').hasClass('black') === false) {
+        if ($('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(0)').hasClass('black') === false &&  
+            $('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(1)').hasClass('black') === true) {
 
-            scoreR4 = 5;
-        }
-
-        if ($('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(1)').hasClass('black') === false  &&
-            $('body #Wrap_Calendar_coast .row-4 .dayGrid:eq(2)').hasClass('black') === false) {
-
-            scoreR4 = 4;
+            scoreR4 = 1 ;
         }
         /*------------------------------------end row4 --------------------------------------------*/  
 
         /*------------------------------------ row5 --------------------------------------------*/ 
-        if ($('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(1)').hasClass('black') === false   &&
-            $('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(2)').hasClass('black') === false) {
-
-            scoreR5 = 3;
-        }
-
-        if ($('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(1)').hasClass('black') === false   &&
-            $('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(0)').hasClass('black') === false &&  
+            $('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR5 = 2;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(1)').hasClass('black') === true    &&
-            $('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(0)').hasClass('black') === true  &&  
+            $('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(1)').hasClass('black') === false) {
 
-            scoreR5 = 1;
+            scoreR5 = 3;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(1)').hasClass('black') === true   &&
-            $('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(0)').hasClass('black') === true  &&  
+            $('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR5 = 0;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(1)').hasClass('black') === true   &&
-            $('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(2)').hasClass('black') === false) {
+        if ($('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(0)').hasClass('black') === false &&  
+            $('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(1)').hasClass('black') === true) {
 
-            scoreR5 = 5;
-        }
-
-        if ($('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(1)').hasClass('black') === false  &&
-            $('body #Wrap_Calendar_coast .row-5 .dayGrid:eq(2)').hasClass('black') === false) {
-
-            scoreR5 = 4;
+            scoreR5 = 1 ;
         }
         /*------------------------------------end row5 --------------------------------------------*/  
 
         /*------------------------------------ row6 --------------------------------------------*/
-        if ($('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(1)').hasClass('black') === false   &&
-            $('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(2)').hasClass('black') === false) {
-
-            scoreR6 = 3;
-        }
-
-        if ($('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(1)').hasClass('black') === false   &&
-            $('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(0)').hasClass('black') === false &&  
+            $('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(1)').hasClass('black') === false) {
 
             scoreR6 = 2;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(0)').hasClass('black') === false   &&  
-            $('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(1)').hasClass('black') === true    &&
-            $('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(0)').hasClass('black') === true  &&  
+            $('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(1)').hasClass('black') === false) {
 
-            scoreR6 = 1;
+            scoreR6 = 3;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(1)').hasClass('black') === true   &&
-            $('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(2)').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(0)').hasClass('black') === true  &&  
+            $('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(1)').hasClass('black') === true) {
 
             scoreR6 = 0;
         }
 
-        if ($('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(1)').hasClass('black') === true   &&
-            $('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(2)').hasClass('black') === false) {
+        if ($('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(0)').hasClass('black') === false &&  
+            $('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(1)').hasClass('black') === true) {
 
-            scoreR6 = 5;
+            scoreR6 = 1 ;
         }
-
-        if ($('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(0)').hasClass('black') === true   &&  
-            $('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(1)').hasClass('black') === false  &&
-            $('body #Wrap_Calendar_coast .row-6 .dayGrid:eq(2)').hasClass('black') === false) {
-
-            scoreR6 = 4;
-        }  
         /*------------------------------------end row6 --------------------------------------------*/  
 
 

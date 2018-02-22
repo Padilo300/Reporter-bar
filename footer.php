@@ -5,6 +5,7 @@
  ?>
 <footer>
   <br>
+  <br>
   <div id="footer">
     <p class="text-center">
       <a href="#" class="text-center">Padilo
@@ -12,17 +13,19 @@
       </a>
     </p>
   </div>
-  <script src="js/anime.min.js"				         ></script>
-  <script src="js/imagesloaded.pkgd.min.js"	   ></script>
-  <script src="js/main.js"					           ></script>
-  <script src='js/bootstrap.min.js' 		       ></script>
-  <script src='libs/R_rest.js' 				         ></script>
-  <script src="libs/R_pab.js" 				         ></script>
-  <script src='libs/calendar_ARTIST.js' 	     ></script>
-  <script src='libs/calendar_COAST.js'         ></script>
-  <script src="libs/userSripts.js" 			       ></script>
-  <script src="libs/calendar.js"               ></script>
-  <script src="js/jquery.validate.min.js"	     ></script>
+  <!-- <script src="js/jquery-3.2.1.min.js"       ></script>
+  <script src="js/anime.min.js"              ></script>
+  <script src="js/imagesloaded.pkgd.min.js"  ></script>        
+  <script src="js/main.js"                   ></script>
+  <script src='js/bootstrap.min.js' 		     ></script>
+  <script src='js/R_rest.js' 				         ></script>
+  <script src="js/R_pab.js" 				         ></script>
+  <script src='js/calendar_ARTIST.js' 	     ></script>
+  <script src='js/calendar_COAST.js'         ></script>
+  <script src="js/userSripts.js" 			       ></script>
+  <script src="js/calendar.js"               ></script>
+  <script src="js/jquery.validate.min.js"	   ></script> -->
+  <script src="js/libs.min.js"></script>
 </footer>
 </body>
 </html>

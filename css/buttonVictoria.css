@@ -27,10 +27,10 @@ a.animated-button:link:after, a.animated-button:visited:after {
 	top: 50%;
 	width: 150%;
 	z-index: -1;
-	-webkit-transition: all 0.75s ease 0s;
-	-moz-transition: all 0.75s ease 0s;
-	-o-transition: all 0.75s ease 0s;
-	transition: all 0.75s ease 0s;
+	-webkit-transition: all 0.75s ease0s;
+	-moz-transition: all 0.75s ease0s;
+	-o-transition: all 0.75s ease0s;
+	transition: all 0.75s ease0s;
 }
 a.animated-button:link:hover, a.animated-button:visited:hover {
 	color: #FFF;
@@ -331,8 +331,7 @@ a.animated-button.thar-three {
 	display: block;
 	position: relative;
 	border: 2px solid #F7CA18;
-	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
-0s;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1) 0s;
 }
 a.animated-button.thar-three:hover {
 	color: #000 !important;
@@ -355,8 +354,7 @@ a.animated-button.thar-three:before {
 	content: '';
 	color: #000 !important;
 	background: #F7CA18;
-	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
-0s;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1) 0s;
 }
 a.animated-button.thar-four {
 	color: #fff;
@@ -364,8 +362,7 @@ a.animated-button.thar-four {
 	display: block;
 	position: relative;
 	border: 2px solid #F7CA18;
-	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
-0s;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1) 0s;
 }
 a.animated-button.thar-four:hover {
 	color: #000 !important;
@@ -388,6 +385,5 @@ a.animated-button.thar-four:before {
 	content: '';
 	color: #000 !important;
 	background: #F7CA18;
-	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
-0s;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1) 0s;
 }

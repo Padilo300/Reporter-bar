@@ -8,9 +8,9 @@
     //если открыта страница кабинеа, выровнять под правую сторону
     if ($_SERVER['PHP_SELF'] !== '/page-editUser.php') { echo "col-lg-offset-4";}
   }
-  
 ?>
 <div class="col-lg-8 <?php positioning_of_the_bar(); ?>  col-md-12 col-sm-12">
+
     <?php foreach ($users as $user): ?>
       <!--................ Модальное окно ..........-->
       <div class="modal fade bs-example-modal-lg" id="<?php echo $user['id']?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

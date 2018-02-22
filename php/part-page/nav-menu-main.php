@@ -42,7 +42,7 @@
                 </li>
                 <li class="subbuttons">
                   <a   href="page-db_people.php"> 
-                    <i class="fa fa-globe" aria-hidden="true"></i> 
+                   <i class="fa fa-users" aria-hidden="true"></i>
                     База сотрудников
                   </a>
                 </li>

@@ -17,11 +17,11 @@
   $passwordsAreNotEqual = $login->changePassword($_POST['newPass1'],$_POST['newPass2']);
 
   $id            = $_SESSION['id']  ;
-  $facebook      = htmlspecialchars($_POST['facebook' ]);
-  $pinterest     = htmlspecialchars($_POST['pinterest']);
-  $vkontakte     = htmlspecialchars($_POST['vk'       ]);
-  $skype         = htmlspecialchars($_POST['skype'    ]);
-  $twitter       = htmlspecialchars($_POST['twitter'  ]);
+  $facebook      = trim(htmlspecialchars($_POST['facebook' ]));
+  $pinterest     = trim(htmlspecialchars($_POST['pinterest']));
+  $vkontakte     = trim(htmlspecialchars($_POST['vk'       ]));
+  $skype         = trim(htmlspecialchars($_POST['skype'    ]));
+  $twitter       = trim(htmlspecialchars($_POST['twitter'  ]));
 
   //обновляет ссылку на соц.сеть; Возвращает сообщение, о успешной смене адреса.
   $returnFacebook  = $login->addFacebook($facebook,  $id);
@@ -56,6 +56,12 @@
             <i class="fa fa-address-card" aria-hidden="true"></i> Профиль
           </a>
         </li>
+        <li>
+          <a href="#settingsNumberPhone" data-toggle="tab">
+             <i class="fa fa-phone" aria-hidden="true"></i>
+            Изменить номер телефона
+          </a>
+        </li>
 
         <li>
           <a href="#settingsPassword" data-toggle="tab">
@@ -83,6 +89,33 @@
         </div>
         <div class="tab-pane" id="profile">
           <?php $viewUsers->viewThisUsers(); ?>
+        </div>
+        <div class="tab-pane fade" id="settingsNumberPhone">
+          <div class="col-lg-12">
+            <h2 class="text-center">Просто введите новый номер вместо старого и нажмите ok</h2>
+            <form class="form-style form-center-collum" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+              <p class="flex-content-space-between">
+                <label for="first_number">Ваш личный номер</label>
+                <input type="number" class="float-right" id="first_number" name="first_number" value="<?php $login->echoFirstNumber($_SESSION['id']); ?>">
+                <button class=" float-right btn btn-success btn-xs no-margin">ok</button>
+              </p>
+                <p class="text-center">
+                  <?php echo $successfullyFirstMobileNumber; ?>
+                </p>
+              <br>
+            </form>
+            <form class="form-style form-center-collum" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+              <p class="flex-content-space-between">
+                <label for="first_number">Дополнительный номер</label>
+                <input type="number" id="last_number" name="last_number" value="<?php $login->echoLastNumber($_SESSION['id']); ?>">
+                <button class="float-right no-margin btn btn-success btn-xs">ok</button>
+                <p class="text-center">
+                  <?php echo $successfullyLastMobileNumber; ?>
+                </p>
+              </p>
+              <br>
+            </form>
+          </div>
         </div>
         <div class="tab-pane fade" id="settingsPassword">
             <div class="row">

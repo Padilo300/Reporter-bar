@@ -14,7 +14,7 @@ require_once 'connect_db.php';
 				//тут в session попадает информация о пользователе
 				public function validForm($get_email, $get_password)
 				{
-					if (!empty($get_email) && !empty($get_password) ) 
+					if (!empty(trim($get_email)) && !empty(trim($get_password)) ) 
 					{
 						$query		=	$this->db->prepare("SELECT * FROM users WHERE email = ?");
 						try 
@@ -25,19 +25,23 @@ require_once 'connect_db.php';
 							$first_name	= $row['first_name'];
 
 							if (password_verify($get_password, $password)) {
-								$_SESSION['nameUser'] 					= 	$first_name			  ;
-								$_SESSION['first_name']					=	$row['first_name'] 	  ;
-								$_SESSION['last_name']					=	$row['last_name']	  ;
-								$_SESSION['admin']						=	$row['admin']		  ;
-								$_SESSION['id']							=	$row['id']			  ;
-								$_SESSION['place_of_work']				=	$row['place_of_work'] ;
-								$_SESSION['money']						=	$row['money']		  ;
+								$_SESSION['nameUser'] 					= 	$first_name			  	;
+								$_SESSION['first_name']					=	$row['first_name'] 	  	;
+								$_SESSION['last_name']					=	$row['last_name']	  	;
+								$_SESSION['admin']						=	$row['admin']		  	;
+								$_SESSION['id']							=	$row['id']			  	;
+								$_SESSION['place_of_work']				=	$row['place_of_work'] 	;
+								$_SESSION['money']						=	$row['money']		  	;
+								$_SESSION['coast_schedule']			    =   $row['coast_schedule']	;
+								$_SESSION['artist_schedule']			=   $row['artist_schedule']	;
 
 								//в репортере три разных бара если зашел сотрудник из репортера
 								//тогда узнать из какого он бара и занести это в сессию	
 								if ($_SESSION['place_of_work'] == 'репортер') {
 									$_SESSION['bar_of_work_in_reporter']  = $row['bar_of_work_in_reporter'] ;
 									$_SESSION['cafe_schedule']			  = $row['cafe_schedule']			;
+									$_SESSION['pab_schedule']			  = $row['pab_schedule']			;
+									$_SESSION['rest_schedule']			  = $row['rest_schedule']			;
  								}
 								
 						 	    header("Location: index.php");
@@ -134,7 +138,7 @@ require_once 'connect_db.php';
 				public function addFacebook($facebook,$id)
 				{
 					if (
-						$_SERVER['REQUEST_METHOD'] === "POST" && (strlen($facebook) > 0)) {
+						$_SERVER['REQUEST_METHOD'] === "POST" && (strlen(trim($facebook)) > 0)) {
 						try {
 								$query	=	$this->db->prepare("UPDATE users SET fecebook=? WHERE id=?"); 	
 								$query->execute(array($facebook, $id));
@@ -148,7 +152,7 @@ require_once 'connect_db.php';
 				}	
 				public function addVkontakte($vkontakte,$id)
 				{
-					if ($_SERVER['REQUEST_METHOD'] === "POST" && (strlen($vkontakte) > 0)) {
+					if ($_SERVER['REQUEST_METHOD'] === "POST" && (strlen(trim($vkontakte)) > 0)) {
 						try {
 								$query	=	$this->db->prepare("UPDATE users SET vkontakte=? WHERE id=?"); 	
 								$query->execute(array($vkontakte, $id));
@@ -162,7 +166,7 @@ require_once 'connect_db.php';
 				}			
 				public function addPinterest($pinterest,$id)
 				{
-					if ($_SERVER['REQUEST_METHOD'] === "POST" && (strlen($pinterest) > 0)) {
+					if ($_SERVER['REQUEST_METHOD'] === "POST" && (strlen(trim($pinterest)) > 0)) {
 						try {
 								$query	=	$this->db->prepare("UPDATE users SET pinterest=? WHERE id=?"); 	
 								$query->execute(array($pinterest, $id));
@@ -176,7 +180,7 @@ require_once 'connect_db.php';
 				}
 				public function addSkype($skype,$id)
 				{
-					if ($_SERVER['REQUEST_METHOD'] === "POST" && (strlen($skype) > 0)) {
+					if ($_SERVER['REQUEST_METHOD'] === "POST" && (strlen(trim($skype)) > 0)) {
 						try {
 								$query	=	$this->db->prepare("UPDATE users SET skype=? WHERE id=?"); 	
 								$query->execute(array($skype, $id));
@@ -191,7 +195,7 @@ require_once 'connect_db.php';
 
 				public function addTwitter($twitter,$id)
 				{
-					if ($_SERVER['REQUEST_METHOD'] === "POST" && (strlen($twitter) > 0)) {
+					if ($_SERVER['REQUEST_METHOD'] === "POST" && (strlen(trim($twitter)) > 0)) {
 						try {
 								$query	=	$this->db->prepare("UPDATE users SET twitter=? WHERE id=?"); 	
 								$query->execute(array($twitter, $id));
@@ -204,5 +208,66 @@ require_once 'connect_db.php';
 					}
 				}
 
+				public function echoFirstNumber($sessionID)
+				{
+					try {
+						$query = $this->db->prepare("SELECT mobileNumber FROM users WHERE id=?");
+						$query->execute(array($sessionID))	;
+						$row 		= $query->fetch()		;
+						echo $row['mobileNumber'];
+					} catch (Exception $e) {
+					 	 echo '<div class=\'error\'>Произошла ошибка при подключении к базе ебаной, PDO говорит что:<p class=\'sqlerror\'>'.$e.'</p><br>Если Вы видите это сообщение, пожалуста немедленно сообщите адинистратору, или вашему программисту. 
+		                        <br> - сделайте скриншот ошибки
+		                        <br> - или скопируйте текст ошибки</div>';
+					}
+				}
+
+				public function echoLastNumber($sessionID)
+				{
+					try {
+						$query = $this->db->prepare("SELECT mobileNumber2 FROM users WHERE id=?");
+						$query->execute(array($sessionID))	;
+						$row 		= $query->fetch()		;
+						echo $row['mobileNumber2'];
+					} catch (Exception $e) {
+					 	 echo '<div class=\'error\'>Произошла ошибка при подключении к базе ебаной, PDO говорит что:<p class=\'sqlerror\'>'.$e.'</p><br>Если Вы видите это сообщение, пожалуста немедленно сообщите адинистратору, или вашему программисту. 
+		                        <br> - сделайте скриншот ошибки
+		                        <br> - или скопируйте текст ошибки</div>';
+					}
+				}
+				public function chengeMobileNumber($newNumber,$sessionID)
+				{
+					if ($_SERVER['REQUEST_METHOD'] === "POST" && (strlen(trim($newNumber)) > 0)){
+						try {
+							$query	=	$this->db->prepare("UPDATE users SET mobileNumber=? WHERE id=?"); 	
+							$query->execute(array($newNumber, $sessionID));
+							if ($newNumber > 0) {
+								return "Номер телефона успешно изменен!";
+							}
+							
+						} catch (Exception $e) {
+							echo '<div class=\'error\'>Произошла ошибка при подключении к базе ебаной, PDO говорит что:<p class=\'sqlerror\'>'.$e.'</p><br>Если Вы видите это сообщение, пожалуста немедленно сообщите адинистратору, или вашему программисту. 
+			                        <br> - сделайте скриншот ошибки
+			                        <br> - или скопируйте текст ошибки</div>';	
+						}
+					}
+				}
+				public function chengeMobileNumber2($newNumber,$sessionID)
+				{
+					if ($_SERVER['REQUEST_METHOD'] === "POST" && (strlen(trim($newNumber)) > 0)){
+						try {
+							$query	=	$this->db->prepare("UPDATE users SET mobileNumber2=? WHERE id=?"); 	
+							$query->execute(array($newNumber, $sessionID));
+							if ($newNumber > 0) {
+								return "Номер телефона успешно изменен!";
+							}
+							
+						} catch (Exception $e) {
+							echo '<div class=\'error\'>Произошла ошибка при подключении к базе ебаной, PDO говорит что:<p class=\'sqlerror\'>'.$e.'</p><br>Если Вы видите это сообщение, пожалуста немедленно сообщите адинистратору, или вашему программисту. 
+			                        <br> - сделайте скриншот ошибки
+			                        <br> - или скопируйте текст ошибки</div>';	
+						}
+					}
+				}
 			}
-			?>			
+?>			

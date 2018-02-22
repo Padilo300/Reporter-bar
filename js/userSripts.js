@@ -14,6 +14,18 @@ $(document).ready(function(){
 				$('a[href="#artist"]').tab('show')
 			}
 		}
+//--------------перейти на страницу index.php и выбрать соотвецвующий таб
+		function tabCoast() {
+			var url 		= document.location.href;
+			$('a[href="#coast"]').click(function(){
+				if ((url	==	'' + URL_SERVER + '/index.php')	===	false ) {
+			 		location = '' + URL_SERVER + '/index.php#coast';
+				 	}	
+			});
+			if (url == '' + URL_SERVER + '/index.php#coast') {
+				$('a[href="#coast"]').tab('show')
+			}
+		}
 	//---------------перейти на страницу index.php и выбрать соотвецвующий таб
 		function tabReporter() {
 			var url 		= document.location.href;
@@ -23,6 +35,7 @@ $(document).ready(function(){
 				 	}	
 			});
 		}
+
 	//----------------это скрипт открывает график по нажатию на тумблер
 		$('.trigger').click(function(){
 			$(this).next('.clickButton').trigger('click');
@@ -31,6 +44,7 @@ $(document).ready(function(){
 	//----------------вызов функции табов при переходе на страницу index.php
 		tabArtist()   ;
 		tabReporter() ;
+		tabCoast()	  ;
 
 	//----------------Валидация форм плагином validate
 		//-----проверка смены пароля пользователя.

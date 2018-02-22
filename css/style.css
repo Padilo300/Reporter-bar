@@ -38,6 +38,16 @@ a:hover {
       -ms-flex-pack: center;
           justify-content: center; }
 
+.flex-content-space-between {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
 .width-100 {
   width: 100%; }
 

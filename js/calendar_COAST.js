@@ -731,14 +731,14 @@ $( document ).ready(function() {
     });//end click	
     
     /*-----переводим календарь на текущий месяц-----*/
-	// var	nowDate		=	new Date(),
- //        newYear     =   nowDate.getFullYear(),
- //        Year        =   newYear,
-	// 	nowMonth	=	nowDate.getMonth();
+	var	nowDate		=	new Date(),
+        newYear     =   nowDate.getFullYear(),
+        Year        =   newYear,
+		nowMonth	=	nowDate.getMonth();
 
-	// for (var i = 0; i < nowMonth; i++) {
- //        $('#Table-coast-next_Month').trigger('click');
- //    }
+	for (var i = 0; i < nowMonth; i++) {
+        $('#Table-coast-next_Month').trigger('click');
+    }
 
     /*--Эти функции должны вызываться после того как перевели календарь на текущий месяц--*/ 
     /*-- Они будут нужны только в январе когда триггер не будет срабатывать

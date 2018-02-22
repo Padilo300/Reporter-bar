@@ -23,6 +23,7 @@
        который позволяет JS пересчитать зарплату
        по факту выходов на работу.---*/
   //кол-во выходов по факту для JS
+  //для проверки ей нужно передавать значения строк SQL
   function cafe_print_class_for_count_fact($position)
   { 
     $pw = $_SESSION['cafe_schedule'];
@@ -36,6 +37,7 @@
        который позволяет JS пересчитать зарплату
        по плану графика.---*/
   //кол-во выходов по плану для JS
+  //для проверки ей нужно передавать значения строк SQL
   function cafe_print_class_for_count_plan($position)
   { 
     $pw = $_SESSION['cafe_schedule'];
@@ -43,7 +45,36 @@
       echo " plan-row-count ";
     }
   }
+  function pab_print_class_for_count_plan($position)
+  {
+    $pw = $_SESSION['pab_schedule'];
+    if ($pw == $position ) {
+      echo " plan-row-count ";
+    }
+  }
+  function pab_print_class_for_count_fact($position)
+  { 
+    $pw = $_SESSION['pab_schedule'];
+    if ($pw == $position ) {
+      echo " fact-row-count ";
+    }
+  }
+  function rest_print_class_for_count_plan($position)
+  {
+    $pw = $_SESSION['rest_schedule'];
+    if ($pw == $position ) {
+      echo " plan-row-count ";
+    }
+  }
+  function rest_print_class_for_count_fact($position)
+  { 
+    $pw = $_SESSION['rest_schedule'];
+    if ($pw == $position ) {
+      echo " fact-row-count ";
+    }
+  }
 ?>
+
 
 
 <div class="tab-pane active" id="reporter">        
@@ -52,7 +83,7 @@
         <div class="panel-heading">
           <h4 class="panel-title">
             <span class="toggle trigger">
-              <input type="checkbox" class="trigger">
+              <input type="checkbox" class="trigger" title="Нажми меня!">
               <label data-off="&#10006;" data-on="&#10004;"></label>
             </span>
             <a data-toggle="collapse"  href="#collapseOne" class="clickButton v-alignTop">
@@ -174,7 +205,7 @@
         <div class="panel-heading">
           <h4 class="panel-title">
             <span class="toggle trigger">
-              <input type="checkbox" class="trigger">
+              <input type="checkbox" class="trigger"  title="Нажми меня!">
               <label data-off="&#10006;" data-on="&#10004;"></label>
             </span>
             <a data-toggle="collapse"  href="#collapseTwo" class="clickButton v-alignTop">
@@ -202,57 +233,72 @@
       <tr class="table-schedule__row" id="number-day-pab">
         <td class="table-schedule_border1 table-schedule__th"></td>
       </tr>
-      <tr class="table-schedule__row row-1">
+      <tr class="table-schedule__row row-1 <?php pab_print_class_for_count_plan(бармен1); ?>">
        <td class="table-schedule_border1 table-schedule__th" >
           <?php $viewUsers->userNameCafe($pab, $Barmen1);?>    
        </td>
       </tr>
-      <tr class="table-schedule__row row-2">
+      <tr class="table-schedule__row row-2 <?php pab_print_class_for_count_plan(бармен2); ?>">
         <td class="table-schedule_border1 table-schedule__th">
           <?php $viewUsers->userNameCafe($pab, $Barmen2);?>    
         </td>
       </tr>
-      <tr class="table-schedule__row row-3">
+      <tr class="table-schedule__row row-3 <?php pab_print_class_for_count_plan(бармен3); ?>">
         <td class="table-schedule_border1 table-schedule__th">
           <?php $viewUsers->userNameCafe($pab, $Barmen3);?>    
           </td>
       </tr>
-      <tr class="table-schedule__row row-4">
+      <tr class="table-schedule__row row-4 <?php pab_print_class_for_count_plan(бармен4); ?>">
         <td class="table-schedule_border1 table-schedule__th">
           <?php $viewUsers->userNameCafe($pab, $Barmen4);?>
         </td>
       </tr>
-      <tr class="table-schedule__row row-5">
+      <tr class="table-schedule__row row-5 <?php pab_print_class_for_count_plan(бармен5); ?>">
         <td class="table-schedule_border1 table-schedule__th">
           <?php $viewUsers->userNameCafe($pab, $Barmen5);?>
         </td>
       </tr>
       <tr class="table-schedule__row fact-row-1 fact
-      <?php if($_SESSION['bar_of_work_in_reporter'] == 'паб' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} ?>" >
+      <?php 
+        if($_SESSION['bar_of_work_in_reporter'] == 'паб' || $_SESSION['admin'] == 'true')
+          {echo 'true-user';}else{echo 'false-user';} 
+        pab_print_class_for_count_fact(бармен1);
+        ?>" >
        <td class="table-schedule_border1 table-schedule__th" >
          <?php $viewUsers->userNameCafe($pab, $Barmen1);?>    
        </td>
       </tr>
       <tr class="table-schedule__row fact-row-2 fact
-      <?php if($_SESSION['bar_of_work_in_reporter'] == 'паб' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} ?>">
+      <?php if($_SESSION['bar_of_work_in_reporter'] == 'паб' || $_SESSION['admin'] == 'true')
+        {echo 'true-user';}else{echo 'false-user';} 
+        pab_print_class_for_count_fact(бармен2);?>">
         <td class="table-schedule_border1 table-schedule__th">
           <?php $viewUsers->userNameCafe($pab, $Barmen2);?>    
         </td>
       </tr>
       <tr class="table-schedule__row fact-row-3 fact
-      <?php if($_SESSION['bar_of_work_in_reporter'] == 'паб' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} ?>">
+      <?php if($_SESSION['bar_of_work_in_reporter'] == 'паб' || $_SESSION['admin'] == 'true')
+        {echo 'true-user';}else{echo 'false-user';} 
+        pab_print_class_for_count_fact(бармен3);
+        ?>">
         <td class="table-schedule_border1 table-schedule__th">
           <?php $viewUsers->userNameCafe($pab, $Barmen3);?>    
         </td>
       </tr>
       <tr class="table-schedule__row fact-row-4 fact
-      <?php if($_SESSION['bar_of_work_in_reporter'] == 'паб' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} ?>">
+      <?php if($_SESSION['bar_of_work_in_reporter'] == 'паб' || $_SESSION['admin'] == 'true')
+        {echo 'true-user';}else{echo 'false-user';} 
+        pab_print_class_for_count_fact(бармен4);
+        ?>">
         <td class="table-schedule_border1 table-schedule__th">
           <?php $viewUsers->userNameCafe($pab, $Barmen4);?>
         </td>
       </tr>
       <tr class="table-schedule__row fact-row-5 fact
-      <?php if($_SESSION['bar_of_work_in_reporter'] == 'паб' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';} ?>">
+      <?php if($_SESSION['bar_of_work_in_reporter'] == 'паб' || $_SESSION['admin'] == 'true')
+        {echo 'true-user';}else{echo 'false-user';} 
+        pab_print_class_for_count_fact(бармен5);
+        ?>">
         <td class="table-schedule_border1 table-schedule__th">
           <?php $viewUsers->userNameCafe($pab, $Barmen5);?>
         </td>
@@ -284,7 +330,7 @@
         <div class="panel-heading">
           <h4 class="panel-title">
             <span class="toggle trigger">
-              <input type="checkbox" class="trigger">
+              <input type="checkbox" class="trigger"  title="Нажми меня!">
               <label data-off="&#10006;" data-on="&#10004;"></label>
             </span>
             <a data-toggle="collapse"  href="#collapseThree" class="clickButton v-alignTop">
@@ -312,24 +358,32 @@
               <tr class="table-schedule__row" id="number-day-rest">
                 <td class="table-schedule_border1 table-schedule__th"></td>
               </tr>
-              <tr class="table-schedule__row row-1">
+              <tr class="table-schedule__row row-1 <?php rest_print_class_for_count_plan(бармен1); ?>">
                <td class="table-schedule_border1 table-schedule__th" >
                   <?php $viewUsers->userNameCafe($rest, $Barmen1);?> 
                </td>
               </tr>
-              <tr class="table-schedule__row row-2">
+              <tr class="table-schedule__row row-2 <?php rest_print_class_for_count_plan(бармен2); ?>">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($rest, $Barmen2);?>    
                 </td>
               </tr>
               <tr class="table-schedule__row fact-row-1 fact 
-              <?php if($_SESSION['bar_of_work_in_reporter'] == 'ресторан' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';}?>" >
+              <?php 
+                if($_SESSION['bar_of_work_in_reporter'] == 'ресторан' || $_SESSION['admin'] == 'true')
+                  {echo 'true-user';}else{echo 'false-user';}
+                  rest_print_class_for_count_fact(бармен1); 
+                ?>" >
                <td class="table-schedule_border1 table-schedule__th" >
                  <?php $viewUsers->userNameCafe($rest, $Barmen1);?>
                </td>
               </tr>
               <tr class="table-schedule__row fact-row-2 fact 
-              <?php if($_SESSION['bar_of_work_in_reporter'] == 'ресторан' || $_SESSION['admin'] == 'true'){echo 'true-user';}else{echo 'false-user';}?>">
+              <?php 
+                if($_SESSION['bar_of_work_in_reporter'] == 'ресторан' || $_SESSION['admin'] == 'true')
+                  {echo 'true-user';}else{echo 'false-user';}
+                  rest_print_class_for_count_fact(бармен2); 
+                ?>">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($rest, $Barmen2);?>    
                 </td>

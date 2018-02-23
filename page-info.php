@@ -11,7 +11,9 @@
     				<table class="table-hover table table-bordered table-striped table ">
     					<tbody>
                             <tr>
-                                <td><h2 class="text-center">Coast</h2></td>
+                                <td>
+                                    <img src="/img/coastlogo1.png" alt="COAST">
+                                </td>
                             </tr>
     						<tr>
     							<th>Номер администратора:</th>
@@ -28,7 +30,9 @@
     							</td>
     						</tr>
                             <tr>
-                                <td class="text-center"><h2>Репортер</h2></td>
+                                <td>
+                                    <img src="img/reporter_logo.png" alt="Репортер">
+                                </td>
                             </tr>
     						<tr>
     							<th>Кафе: </th>
@@ -56,7 +60,12 @@
 									(угол улиц Карла Маркса и Баррикадной)
     							</td>
     						</tr>
-                            <tr><td><h2 class="text-center">Артист</h2></td></tr>
+                            <tr>
+                                <td>
+                                    <img width="200px" src="img/logo-on-main.png" alt="Artist">
+                                    
+                                </td>
+                            </tr>
     						<tr>
     							<th>Администратор:</th>
     							<td class="text-center">

@@ -35,7 +35,7 @@
                       -webkit-box-shadow: 0 0 0px 1000px transparent inset;
                       transition: width 0.3s, background-color 5000s ease-in-out 0s;
                       background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,174,255,0.04) 50%,rgba(255,255,255,0) 51%,rgba(0,174,255,0.03) 100%);  ">
-        <a href="#" type="sumbit" 
+        <a href="#" type="sumbit" title="Нажмите что-бы войти!" 
             onclick="document.getElementById('form1').submit();" return false; 
             class="center-block  animated-button sandy-three">Войти</a>
         
@@ -69,7 +69,7 @@
 </div>
 <div class="segmenter" style="background-image: url(img/coast.jpg)"></div>
 </div>
-<a href="#" class="btn btn--trigger btn--hidden hidden-sm hidden-md hidden-xs shake-slow"><img width="100px" src="img/whiskey.png" alt=""></a>
+<a href="#" class="btn btn--trigger btn--hidden hidden-sm hidden-md hidden-xs shake-slow"><img width="100px" src="img/whiskey.png" alt="Джэк Дениэлс" title="Выпей меня!"></a>
 <?php require_once 'footer.php'; ?>
 
 <script>

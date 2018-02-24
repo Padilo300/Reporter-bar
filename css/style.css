@@ -133,6 +133,11 @@ body {
   left: -15px;
   width: auto;
   z-index: 1; }
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .container-fluid .navbar-default .collapse .navbar-nav .subbuttons {
+      position: absolute;
+      top: 40px;
+      left: 0; } }
   .container-fluid .navbar-default .collapse .navbar-nav .subbuttons a {
     padding: 3px 15px 3px 20px;
     font-size: 1em; }
@@ -141,6 +146,11 @@ body {
   border-right: 1px solid #999;
   -webkit-border-radius: 0 0 50px 0;
           border-radius: 0 0 50px 0; }
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .container-fluid .navbar-default .collapse .navbar-nav .subbuttons:last-child {
+      position: absolute;
+      top: 40px;
+      left: 9em; } }
 
 .addBlack, .black {
   -webkit-transition: all;

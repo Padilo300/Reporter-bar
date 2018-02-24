@@ -113,11 +113,16 @@ body
 			border-radius: 0 0 50px 0
 			box-shadow: 4px -1px 3px #999
 
-.container-fluid .navbar-default .collapse .navbar-nav .subbuttons 
+.container-fluid .navbar-default .collapse .navbar-nav .subbuttons
 	position: relative
 	left: -15px
 	width: auto
 	z-index: 1
+
+	@media (max-width: $mq-tablet-landscape) and (min-width : 769px)
+		position: absolute
+		top: 40px
+		left: 0
 
 	a
 		padding: 3px 15px 3px 20px;
@@ -128,10 +133,13 @@ body
 .container-fluid .navbar-default .collapse .navbar-nav .subbuttons:last-child
 	border:
 		right: 1px solid #999
+	border-radius: 0 0 50px 0
+	@media (max-width: $mq-tablet-landscape) and (min-width : 769px)
+		position: absolute
+		top: 40px
+		left: 9em
 
-	border-radius: 0 0 50px 0	
-
-.addBlack, .black	
+.addBlack, .black
 	transition: all
 	animation-duration: 1000ms
 	background: #000

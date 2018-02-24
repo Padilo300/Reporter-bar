@@ -1,8 +1,3 @@
-<?php 
-  if (!array_key_exists('nameUser', $_SESSION ) ) {
-    header("Location: http://".$_SERVER['HTTP_HOST']."/page-login.php");
-  }
- ?>
 <footer>
   <br>
   <br>

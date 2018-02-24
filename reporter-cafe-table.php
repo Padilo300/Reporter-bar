@@ -67,22 +67,22 @@
                   <?php $viewUsers->userNameCafe($cafe,$cafeCAKE2);?>
                 </td>
               </tr>
-              <tr class="table-schedule__row fact-row-1" >
+              <tr class="table-schedule__row fact-row-1 fact" >
                <td class="table-schedule_border1 table-schedule__th" >
                  <?php $viewUsers->userNameCafe($cafe, $Barmen1);?>
                </td>
               </tr>
-              <tr class="table-schedule__row fact-row-2">
+              <tr class="table-schedule__row fact-row-2 fact">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($cafe,$cafeCAKE1);?>
                 </t>
               </tr>
-              <tr class="table-schedule__row fact-row-3">
+              <tr class="table-schedule__row fact-row-3 fact">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($cafe,$Barmen2);?>
                 </td>
               </tr>
-              <tr class="table-schedule__row fact-row-4">
+              <tr class="table-schedule__row fact-row-4 fact">
                 <td class="table-schedule_border1 table-schedule__th">
                   <?php $viewUsers->userNameCafe($cafe,$cafeCAKE2);?>
                 </td>

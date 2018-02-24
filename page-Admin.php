@@ -1,7 +1,5 @@
 <?php 
-if (!$_SESSION['admin']) {
-    header("Location: http://".$_SERVER['HTTP_HOST']."/index.php");
-  }
+  
   require_once 'head.php'                 ;  
   require_once 'php/script/addUser.php'   ;
   require_once 'php/script/login.php'     ;
@@ -40,7 +38,9 @@ if (!$_SESSION['admin']) {
   // /**/     header("location:$_SERVER[PHP_SELF]");
   // /**/  }
   /////////////////////////////////
-
+  if ($_SESSION['admin'] !== 'true') {
+    header("Location: http://".$_SERVER['HTTP_HOST']."/index.php");
+  }
  ?>
 <body>
   <div class="container-fluid">

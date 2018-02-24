@@ -44,7 +44,7 @@ require_once 'connect_db.php';
 									$_SESSION['rest_schedule']			  = $row['rest_schedule']			;
  								}
 								
-						 	    header("Location: index.php");
+						 	     header("Location: http://".$_SERVER['HTTP_HOST']."/index.php");
 							} else {
 							    return false;
 							}

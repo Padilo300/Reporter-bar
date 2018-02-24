@@ -1,9 +1,4 @@
 <?php require_once 'head.php'; ?>
-<?php 
-  if (isset($_SESSION['count'])) {
-    $_SESSION['count'] = $_SESSION['count'] +1;
-  }else{$_SESSION['count'] = 1;}
- ?>
 <body>
 <script type="text/javascript">
 	var tableToExcel = (function() {

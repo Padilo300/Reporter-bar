@@ -45,10 +45,10 @@
                                     coast_schedule) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
                                 $addUser->execute(
                                     array(
-                                        htmlspecialchars($_POST['first_name'])              ,   
-                                        htmlspecialchars($_POST['last_name'])               ,   
+                     trim(mb_strtolower(htmlspecialchars($_POST['first_name'])))            ,
+                     trim(mb_strtolower(htmlspecialchars($_POST['last_name'])))             ,
                                         htmlspecialchars($_POST['mobileNumber'])            ,   
-                                        htmlspecialchars($_POST['email'])                   ,   
+                     trim(mb_strtolower(htmlspecialchars($_POST['email'])))                 ,   
                                         htmlspecialchars($_POST['place_of_work'])           ,   
                                         htmlspecialchars($_POST['contact_name'])            ,   
                                         htmlspecialchars($_POST['mobileNumber2'])           ,   

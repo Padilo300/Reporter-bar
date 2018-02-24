@@ -8,6 +8,7 @@ session_start();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
     <link rel="shortcut icon" href="/img/reporter (1).png" type="image/x-icon">
     <title>Репортер</title>
 

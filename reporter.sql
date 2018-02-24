@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Фев 23 2018 г., 13:10
+-- Время создания: Фев 24 2018 г., 11:29
 -- Версия сервера: 10.1.26-MariaDB-0+deb9u1
 -- Версия PHP: 7.0.27-0+deb9u1
 
@@ -4634,7 +4634,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `password`, `email`, `day`, `mouth`, `year`, `mobileNumber`, `mobileNumber2`, `contact_name`, `img_src`, `address_passport`, `actual_address`, `place_of_work`, `bar_of_work_in_reporter`, `cafe_schedule`, `pab_schedule`, `rest_schedule`, `artist_schedule`, `coast_schedule`, `money`, `admin`, `fecebook`, `vkontakte`, `skype`, `twitter`, `pinterest`) VALUES
-(9, 'Константин', 'Падило', '$2y$10$pdafhTS94UL5jk0DeEv/UOK62UngFTYQZL9KVTBWzcyN9/gYdWcB6', 'padilo300@gmail.com', 6, 11, 1994, '998877333', '23123123', 'жена', '1518009513.jpg', 'пр.Победы 12', 'ул.Длинная 13', 'репортер', 'кофейня', 'кондитер1', '', '', '', '', 7000, 'true', 'fasebook', 'vkotakte', 'skype', 'twitter', 'Pinterst'),
+(9, 'Константин', 'Падило', '$2y$10$pdafhTS94UL5jk0DeEv/UOK62UngFTYQZL9KVTBWzcyN9/gYdWcB6', 'padilo300@gmail.com', 6, 11, 1994, '998877333', '0979933222', 'жена', '1518009513.jpg', 'пр.Победы 12', 'ул.Длинная 13', 'репортер', 'кофейня', 'кондитер1', '', '', '', '', 7000, 'true', 'fasebook', 'vkotakte', 'skype', 'twitter', 'Pinterst'),
 (10, 'Тихан', 'Бобров', 'тихон', 'padilo300@gmail.com', 0, 1, 0, '998877333', '23123123', 'мать', 'user-defoult.jpg', '', '', 'репортер', 'кофейня', 'бармен1', '', '', '', '', 7000, 'false', 'строка', '', '', '', ''),
 (13, 'Александр', 'Даценко', '$2y$10$AdxFqALsDj46SINjbW2ZL.E9XztiBl9xZq3jWLmclm774WnJce.lW', 'padilo300@gmail.com', 0, 1, 0, '0', '0', '', 'user-defoult.jpg', '', '', 'репортер', 'кофейня', 'бармен2', '', '', '', '', 7000, 'false', 'false', '', '', '', ''),
 (14, 'Александр', 'Коваленко', '$2y$10$AdxFqALsDj46SINjbW2ZL.E9XztiBl9xZq3jWLmclm774WnJce.lW', 'padilo300@gmail.com', 0, 1, 0, '0', '0', '', 'user-defoult.jpg', '', '', 'репортер', 'кофейня', 'кондитер2', '', '', '', '', 7000, 'false', '', '', '', '', ''),
@@ -4660,7 +4660,9 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `password`, `email`, `day`
 (37, 'П', 'Пеньков', '$2y$10$AdxFqALsDj46SINjbW2ZL.E9XztiBl9xZq3jWLmclm774WnJce.lW', 'p@gmail.com', 2, 2, 1993, '21312313', '0', '', 'user-defoult.jpg', '', '', 'coast', '', '', '', '', '', 'бармен3', 11000, '', '', '', '', '', ''),
 (38, 'Г', 'Бездворный', '$2y$10$AdxFqALsDj46SINjbW2ZL.E9XztiBl9xZq3jWLmclm774WnJce.lW', 'g@gmail.com', 5, 6, 1991, '21312313', '0', '', 'user-defoult.jpg', '', '', 'coast', '', '', '', '', '', 'бармен4', 9000, '', '', '', '', '', ''),
 (39, 'К', 'Тимофеева', '$2y$10$AdxFqALsDj46SINjbW2ZL.E9XztiBl9xZq3jWLmclm774WnJce.lW', 'mail@gmail.com', 2, 11, 1992, '21312313', '0', '', 'user-defoult.jpg', '', '', 'coast', '', '', '', '', '', 'бармен6', 2000, '', '', '', '', '', ''),
-(40, 'П', 'Пеньков', '$2y$10$AdxFqALsDj46SINjbW2ZL.E9XztiBl9xZq3jWLmclm774WnJce.lW', 'mail@gmail.com', 2, 12, 1888, '21312313', '0', '', 'user-defoult.jpg', '', '', 'coast', '', '', '', '', '', 'бармен5', 7000, '', '', '', '', '', '');
+(40, 'П', 'Пеньков', '$2y$10$AdxFqALsDj46SINjbW2ZL.E9XztiBl9xZq3jWLmclm774WnJce.lW', 'mail@gmail.com', 2, 12, 1888, '21312313', '0', '', 'user-defoult.jpg', '', '', 'coast', '', '', '', '', '', 'бармен5', 7000, '', '', '', '', '', ''),
+(41, 'проверка', 'регистрааа', '$2y$10$AdxFqALsDj46SINjbW2ZL.E9XztiBl9xZq3jWLmclm774WnJce.lW', 'padilo@gmail.com', 1, 5, 2014, '', '', '', 'user-defoult.jpg', '', '', 'артист', '', '', '', '', '', '', 0, '', '', '', '', '', ''),
+(42, 'проверка', 'полeй', '$2y$10$AdxFqALsDj46SINjbW2ZL.E9XztiBl9xZq3jWLmclm774WnJce.lW', 'padilo300@gmail.com', 1, 1, 2, '21312313', '23123123', '', 'user-defoult.jpg', 'пр.Победы 12', 'ул.Длинная 13', 'репортер', '', '', '', '', '', '', 1222, '', '', '', '', '', '');
 
 --
 -- Индексы сохранённых таблиц
@@ -4812,7 +4814,7 @@ ALTER TABLE `september`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

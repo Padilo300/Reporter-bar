@@ -8,7 +8,6 @@
           background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
-  background: #fff;
   color: #fff; }
   .login-page .nav-tabs > li.active > a, .login-page .nav-tabs > li.active > a:focus, .login-page .nav-tabs > li.active > a:hover, .login-page .nav > li > a:focus, .login-page .nav > li > a:hover, .login-page .nav-tabs > li > a {
     -webkit-transition: all 0.3s ease-out;

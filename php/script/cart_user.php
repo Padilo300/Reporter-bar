@@ -11,7 +11,7 @@
 ?>
 <div class="col-lg-8 <?php positioning_of_the_bar(); ?>  col-md-12 col-sm-12">
 
-    <?php foreach ($users as $user): ?>
+    <?php ksort($users); foreach ($users as $user): ?>
       <!--................ Модальное окно ..........-->
       <div class="modal fade bs-example-modal-lg" id="<?php echo $user['id']?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -44,7 +44,10 @@
         <div class="cart-user">
           <div class="cart-user__header__fullName-users">
               <p>
-                <a href="<?php echo $_SERVER['PHP_SELF'] ?>?user=<?php echo $user['id']?>" title="Перейти в анкету."><?php echo $user['first_name'] .' '. $user['last_name'] ; ?></a>
+                <a href="<?php echo $_SERVER['PHP_SELF'] ?>?user=<?php echo $user['id']?>" title="Перейти в анкету.">
+                  <?php echo mb_convert_case( $user['first_name'], MB_CASE_TITLE, "UTF-8").' '. mb_convert_case($user['last_name'], MB_CASE_TITLE, "UTF-8");
+
+                ?></a>
                 <i><?php echo 'Возраст '.$this->calculate_age("$user[year]-$user[mouth]-$user[day]");?></i>
               </p>
             </div>

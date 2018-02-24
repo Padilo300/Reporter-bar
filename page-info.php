@@ -63,7 +63,6 @@
                             <tr>
                                 <td>
                                     <img width="200px" src="img/logo-on-main.png" alt="Artist">
-                                    
                                 </td>
                             </tr>
     						<tr>

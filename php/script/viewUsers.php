@@ -17,7 +17,7 @@ class viewUsers extends conectdb{
 	public function viewUsers(){
 		try {
 			//строка запроса SQL
-			$this->querySTR 	=	'SELECT * FROM users';
+			$this->querySTR 	=	'SELECT * FROM users ORDER BY last_name';
 			//подготовить запрос SQL 
 			$this->query = $this->db->prepare($this->querySTR);
 			//отправить запрос

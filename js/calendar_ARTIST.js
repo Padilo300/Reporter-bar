@@ -377,7 +377,7 @@ $( document ).ready(function() {
             if ($(this).hasClass('black')) {
                 $.get("/php/script/changeDay.php", {day: dayNumber, value:'false', month: m[Month-1], year: Year, user: user, bar: bar}, function(data) {});
                 $(this).removeClass('black')
-                $(this).attr('bgcolor','#fff');
+                $(this).removeAttr('bgcolor');
             }else{
                 $.get("/php/script/changeDay.php", {day: dayNumber, value:'true' , month: m[Month-1], year: Year, user: user, bar: bar}, function(data) {});
                 $(this).addClass('black')

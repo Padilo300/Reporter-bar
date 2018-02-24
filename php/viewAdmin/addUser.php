@@ -43,7 +43,7 @@
               </tr>
               <tr>
                 <th><i class="fa fa-at" aria-hidden="true"></i> Почта:</th>
-                <th><input type="email" name="email" required placeholder="email@gmail.com"></th>
+                <th><input type="email" name="email" placeholder="email@gmail.com"></th>
               </tr>
               <tr>
                 <th><i class="fa fa-id-card-o" aria-hidden="true"></i> Дата рождения:</th>
@@ -51,7 +51,7 @@
               </tr>
               <tr>
                 <th><i class="fa fa-id-card-o" aria-hidden="true"></i> Адресс прописки:</th>
-                <th> <input type="text"  name="address_passport" placeholder="пр.Пушкина 13" required> </th>
+                <th> <input type="text"  name="address_passport" id="address_passport" placeholder="пр.Пушкина 13" required> </th>
               </tr>
               <tr>
                 <th>

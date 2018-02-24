@@ -1,5 +1,7 @@
 <?php 
-
+if (!$_SESSION['admin']) {
+    header("Location: http://".$_SERVER['HTTP_HOST']."/index.php");
+  }
   require_once 'head.php'                 ;  
   require_once 'php/script/addUser.php'   ;
   require_once 'php/script/login.php'     ;
@@ -11,8 +13,10 @@
 
   //метод загрузики нового аватара. Старое фото не удаляеся, просто лежит на сервере.
   $login->newAvatar();
-  
-
+  //обновляем номер телефона, если все ок то сообщение об успш-й смене номера ложим в переменную
+  //переменную потом выводим на страницу
+  $successfullyFirstMobileNumber = $login->chengeMobileNumber ($_POST['first_number'],$_SESSION['id']);
+  $successfullyLastMobileNumber  = $login->chengeMobileNumber2($_POST['last_number'] ,$_SESSION['id']);
   //замена пароля(принимает и сравнивает новый пароль)
   $passwordsAreNotEqual = $login->changePassword($_POST['newPass1'],$_POST['newPass2']);
 

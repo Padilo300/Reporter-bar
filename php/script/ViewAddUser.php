@@ -49,7 +49,7 @@
               <tr id="bar_of_work_reporter" class="displayNone">
                 <th>Бар:</th>
                 <th>
-                    <select name="bar_of_work_in_reporter" aria-required="true" onChange="SelectedBar(this)"  class="select"  required>
+                    <select name="bar_of_work_in_reporter" onChange="SelectedBar(this)"  class="select">
 
                       <option selected disabled value="null"> Выберете бар </option>
                       <option value="кофейня" > Кофейня   </option>
@@ -176,12 +176,12 @@
               </tr>
               <tr>
                 <th><i class="fa fa-at" aria-hidden="true"></i> Почта:</th>
-                <th><input type="email" name="email" required placeholder="email@gmail.com" title="Электронная почта сотрудникика."></th>
+                <th><input type="email" name="email" placeholder="email@gmail.com" title="Электронная почта сотрудникика."></th>
               </tr>
               <tr>
                 <th><i class="fa fa-id-card-o" aria-hidden="true"></i> Дата рождения:</th>
                 <th>
-                    <input type="number" name="day"   placeholder="день" title="Выберите число месяца когда родился сотрудник.">
+                    <input type="number" name="day"   placeholder="день" title="Выберите число месяца когда родился сотрудник." required>
                     <select name="mouth" id="" required title="Выберите месяц в который родился сотрудник.">
                         <option disabled>Выберите месяц рождения</option>
                         <option value="1">январь</option>
@@ -197,7 +197,7 @@
                         <option value="11">ноябрь</option>
                         <option value="12">декабрь</option>
                     </select> 
-                    <input type="number" name="year"  placeholder="год" title="Введите год, когда родился сотрудник.">
+                    <input type="number" name="year"  placeholder="год" title="Введите год, когда родился сотрудник." required>
                 </th>
               </tr>
               <tr>
@@ -205,7 +205,7 @@
                   <i class="fa fa-id-card-o" aria-hidden="true"></i> Адресс прописки:
                 </th>
                 <th> 
-                  <input type="text" name="address_passport" placeholder="пр.Пушкина 13" title="Введите адрес сотрудника, который указан у него в паспорте."> 
+                  <input type="text" name="address_passport" placeholder="пр.Пушкина 13" title="Введите адрес сотрудника, который указан у него в паспорте." required> 
                 </th>
               </tr>
               <tr>
@@ -214,7 +214,7 @@
                     Фактический адресс проживания:
                 </th>
                 <th>
-                    <input type="text" name="actual_address" placeholder="ул.Баррикадная 2" title="Введите фактический адрес проживания сотрудника. ">
+                    <input type="text" name="actual_address" placeholder="ул.Баррикадная 2" title="Введите фактический адрес проживания сотрудника. " required>
                 </th>
               </tr>
               <tr>

@@ -74,8 +74,6 @@ $(document).ready(function(){
 			}
 		});
 		
-
-
 	/*--------------- тут создаем кнопку вверх --------------------*/
 	$('body').append('<a href="#" id="go-top" title="Вверх"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>');
 	$(function() {

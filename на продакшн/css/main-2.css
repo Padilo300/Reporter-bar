@@ -1,0 +1,158 @@
+body{
+	background:
+	radial-gradient(black 15%, transparent 16%) 0 0,
+	radial-gradient(black 15%, transparent 16%) 8px 8px,
+	radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+	radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+	background-color:#1b1a1a;
+	background-size:16px 16px;
+}
+.xoverlay-data{
+	/*background: url('../img/pattern4.png');*/
+	background: #000;
+}
+@keyframes main-shadow {
+	from {box-shadow: 0 0 25px 5px #760096;}
+	50% {box-shadow: 0 0 15px 5px #009696;}
+	to {box-shadow: 0 0 10px 5px #300036;}
+}
+
+@keyframes main-text-shadow {
+	from {text-shadow: 0 0 10px #760096;}
+	50% {text-shadow: 0 0 10px #009696;}
+	to {text-shadow: 0 0 10px #300036;}
+}
+@keyframes progress-90{
+	from {width:0%;}
+	to {width:90%;}	
+}
+@keyframes progress-85{
+	from {width:0%;}
+	to {width:85%;}	
+}
+@keyframes progress-80{
+	from {width:0%;}
+	to {width:80%;}	
+}
+@keyframes progress-75{
+	from {width:0%;}
+	to {width:75%;}	
+}
+@keyframes progress-70{
+	from {width:0%;}
+	to {width:70%;}	
+}
+@keyframes progress-65{
+	from {width:0%;}
+	to {width:65%;}	
+}
+@keyframes progress-60{
+	from {width:0%;}
+	to {width:60%;}	
+}
+@keyframes progress-55{
+	from {width:0%;}
+	to {width:55%;}	
+}
+@keyframes progress-50{
+	from {width:0%;}
+	to {width:50%;}	
+}
+/*.shadow-conteiner{
+	animation: main-shadow  5s infinite alternate linear;
+}*/
+.main-text-shadow{
+	animation: main-text-shadow  5s infinite alternate linear;	
+}
+.text-shadow-blue{
+	text-shadow: 0 0 10px #00f;
+}
+
+.triangle-bottomleft::after {
+    content: ''; 
+    position: absolute; /* Абсолютное позиционирование */
+    left: auto; /* Положение треугольника */
+    bottom: 0; /* Положение треугольника */
+    right: -20px;
+  	border: 10px solid transparent;	
+  	border-bottom: 10px solid #00f;
+  	border-left: 10px solid #00f;
+   }
+
+.bg_aqva{
+	background-color: #56b3b8;
+}
+.triangle-bottomleft-c_aqva::after {
+    content: ''; 
+    position: absolute; /* Абсолютное позиционирование */
+    left: auto; /* Положение треугольника */
+    bottom: 0; /* Положение треугольника */
+    right: -20px;
+  	border: 10px solid transparent;	
+  	border-bottom: 10px solid #56b3b8;
+  	border-left: 10px solid #56b3b8;
+ }
+.bg_yellow::after{
+	
+	border-bottom-color: #fadf1c;
+	border-left-color: #fadf1c;
+}
+.bg_yellow{
+	background-color: #fadf1c;
+}
+ .bg_ligth-blue::after{
+	
+	border-bottom-color: #1b75bb;
+	border-left-color: #1b75bb;
+}
+.bg_ligth-blue{
+	background-color: #1b75bb;
+}
+ .bg_ligth-red::after{
+	
+	border-bottom-color: #e84c50;
+	border-left-color: #e84c50;
+}
+.bg_ligth-red{
+	background-color: #e84c50;
+}
+.bg_pink::after{
+	
+	border-bottom-color: #cf649a;
+	border-left-color: #cf649a;
+}
+.bg_pink{
+	background-color: #cf649a;
+}
+ .bg_strong-blue::after{
+	
+	border-bottom-color: #777bb3;
+	border-left-color: #777bb3;
+}
+.bg_strong-blue{
+	background-color: #777bb3;
+}
+.bg_silver::after{
+	
+	border-bottom-color: #bfcbd2;
+	border-left-color: #bfcbd2;
+}
+.bg_silver{
+	background-color: #bfcbd2;
+}
+ .bg_krem-blue::after{
+	
+	border-bottom-color: #5f3f8b;
+	border-left-color: #5f3f8b;
+}
+.bg_krem-blue{
+	background-color: #5f3f8b;
+}
+.bg_green::after{
+	
+	border-bottom-color: #00FF00;
+	border-left-color: #00FF00;
+}
+.bg_green{
+	background-color: #00FF00;
+}
